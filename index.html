@@ -246,7 +246,7 @@ h2{font-family:"Space Grotesk",sans-serif;font-size:clamp(1.8rem,3.5vw,2.8rem);f
 .card-desc{font-size:0.84rem;color:var(--ink2);line-height:1.68;margin-bottom:1rem;}
 .card-tags{display:flex;gap:6px;flex-wrap:wrap;}
 .tag{font-family:"Space Mono",monospace;font-size:0.6rem;letter-spacing:0.05em;padding:4px 10px;border-radius:4px;background:#0E0D16;color:var(--ink3);border:1px solid rgba(244,242,255,0.08);}
-.card-visual{width:160px;flex-shrink:0;aspect-ratio:4/3;display:flex;align-items:center;justify-content:center;font-size:2.2rem;color:#00FF41;}
+.card-visual{width:160px;flex-shrink:0;aspect-ratio:4/3;display:flex;align-items:center;justify-content:center;font-size:2.2rem;color:var(--teal);}
 .project-row{display:grid;grid-template-columns:1fr 1fr;gap:1rem;}
 
 /* SERVICES */
@@ -331,19 +331,19 @@ footer{position:relative;z-index:1;padding:1.2rem 2.5rem;display:flex;justify-co
 
 .radar-frame {
   position: relative;
-  background: #04100A;
+  background: var(--bg2);
   border-radius: 8px;
   overflow: hidden;
-  border: 1.5px solid #00FF41;
-  box-shadow: 0 0 0 1px #002208, inset 0 0 20px rgba(0,255,65,0.08);
+  border: 1px solid rgba(0,212,170,0.25);
+  box-shadow: 0 0 0 1px rgba(0,212,170,0.06), inset 0 0 18px rgba(0,212,170,0.04);
 }
 .radar-frame::before {
   content: '';
   position: absolute;
   inset: 0;
   background:
-    repeating-linear-gradient(0deg, transparent, transparent 12px, rgba(0,255,65,0.04) 12px, rgba(0,255,65,0.04) 13px),
-    repeating-linear-gradient(90deg, transparent, transparent 12px, rgba(0,255,65,0.04) 12px, rgba(0,255,65,0.04) 13px);
+    repeating-linear-gradient(0deg, transparent, transparent 14px, rgba(0,212,170,0.025) 14px, rgba(0,212,170,0.025) 15px),
+    repeating-linear-gradient(90deg, transparent, transparent 14px, rgba(0,212,170,0.025) 14px, rgba(0,212,170,0.025) 15px);
   z-index: 2;
   pointer-events: none;
 }
@@ -351,7 +351,7 @@ footer{position:relative;z-index:1;padding:1.2rem 2.5rem;display:flex;justify-co
   content: '';
   position: absolute;
   inset: 0;
-  background: radial-gradient(ellipse at 50% 0%, rgba(0,255,65,0.12) 0%, transparent 70%);
+  background: radial-gradient(ellipse at 50% 0%, rgba(0,212,170,0.07) 0%, transparent 65%);
   z-index: 2;
   pointer-events: none;
 }
@@ -360,10 +360,10 @@ footer{position:relative;z-index:1;padding:1.2rem 2.5rem;display:flex;justify-co
   top: 0;
   left: 0;
   right: 0;
-  height: 2px;
-  background: linear-gradient(90deg, transparent, rgba(0,255,65,0.6), transparent);
+  height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(0,212,170,0.4), transparent);
   z-index: 3;
-  animation: scan 3s ease-in-out infinite;
+  animation: scan 4s ease-in-out infinite;
 }
 @keyframes scan {
   0% { top: 0; opacity: 0; }
@@ -371,30 +371,28 @@ footer{position:relative;z-index:1;padding:1.2rem 2.5rem;display:flex;justify-co
   95% { opacity: 1; }
   100% { top: 100%; opacity: 0; }
 }
-.radar-corner { position: absolute; width: 10px; height: 10px; z-index: 4; }
-.radar-corner.tl { top: 4px; left: 4px; border-top: 1.5px solid #00FF41; border-left: 1.5px solid #00FF41; }
-.radar-corner.tr { top: 4px; right: 4px; border-top: 1.5px solid #00FF41; border-right: 1.5px solid #00FF41; }
-.radar-corner.bl { bottom: 4px; left: 4px; border-bottom: 1.5px solid #00FF41; border-left: 1.5px solid #00FF41; }
-.radar-corner.br { bottom: 4px; right: 4px; border-bottom: 1.5px solid #00FF41; border-right: 1.5px solid #00FF41; }
+.radar-corner { position: absolute; width: 8px; height: 8px; z-index: 4; }
+.radar-corner.tl { top: 5px; left: 5px; border-top: 1px solid var(--teal); border-left: 1px solid var(--teal); }
+.radar-corner.tr { top: 5px; right: 5px; border-top: 1px solid var(--teal); border-right: 1px solid var(--teal); }
+.radar-corner.bl { bottom: 5px; left: 5px; border-bottom: 1px solid var(--teal); border-left: 1px solid var(--teal); }
+.radar-corner.br { bottom: 5px; right: 5px; border-bottom: 1px solid var(--teal); border-right: 1px solid var(--teal); }
 .radar-label {
   position: absolute;
-  bottom: 6px;
+  bottom: 5px;
   left: 0;
   right: 0;
   text-align: center;
   z-index: 4;
-  font-family: monospace;
-  font-size: 9px;
-  color: rgba(0,255,65,0.6);
+  font-family: "Space Mono", monospace;
+  font-size: 8px;
+  color: rgba(0,212,170,0.45);
   letter-spacing: 0.12em;
 }
 .radar-frame img {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  opacity: 0.55;
-  mix-blend-mode: luminosity;
-  filter: sepia(1) hue-rotate(80deg) saturate(2) brightness(0.7);
+  opacity: 0.82;
   display: block;
 }
 </style>
