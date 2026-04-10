@@ -284,6 +284,10 @@ h2{font-family:"Space Grotesk",sans-serif;font-size:clamp(1.8rem,3.5vw,2.8rem);f
 
 /* FOOTER */
 footer{position:relative;z-index:1;padding:1.2rem 2.5rem;display:flex;justify-content:space-between;font-family:"Space Mono",monospace;font-size:0.65rem;color:var(--ink3);letter-spacing:0.05em;background:var(--bg);border-top:1px solid var(--line);flex-wrap:wrap;gap:0.5rem;}
+footer a{color:var(--ink3);text-decoration:none;transition:color 0.2s;}
+footer a:hover{color:var(--teal);}
+.footer-btn{background:none;border:none;padding:0;color:var(--ink3);font:inherit;letter-spacing:inherit;cursor:none;transition:color 0.2s;}
+.footer-btn:hover{color:var(--teal);}
 
 /* REVEAL */
 .reveal{opacity:0;transform:translateY(18px);transition:opacity 0.6s var(--ease),transform 0.6s var(--ease);}
@@ -396,32 +400,48 @@ footer{position:relative;z-index:1;padding:1.2rem 2.5rem;display:flex;justify-co
   opacity: 0.82;
   display: block;
 }
-</style>
-<script type="text/javascript">
-  !function(){"use strict";!function(e,t){var r=e.amplitude||{_q:[],_iq:{}};if(r.invoked)e.console&&console.error&&console.error("Amplitude snippet has been loaded.");else{var n=function(e,t){e.prototype[t]=function(){return this._q.push({name:t,args:Array.prototype.slice.call(arguments,0)}),this}},s=function(e,t,r){return function(n){e._q.push({name:t,args:Array.prototype.slice.call(r,0),resolve:n})}},o=function(e,t,r){e[t]=function(){if(r)return{promise:new Promise(s(e,t,Array.prototype.slice.call(arguments)))}}},i=function(e){for(var t=0;t<m.length;t++)o(e,m[t],!1);for(var r=0;r<y.length;r++)o(e,y[r],!0)};r.invoked=!0;var a=t.createElement("script");a.type="text/javascript",a.crossOrigin="anonymous",a.src="https://cdn.amplitude.com/libs/plugin-ga-events-forwarder-browser-0.4.2-min.js.gz",a.onload=function(){e.gaEventsForwarder&&e.gaEventsForwarder.plugin&&e.amplitude.add(e.gaEventsForwarder.plugin())};var c=t.createElement("script");c.type="text/javascript",c.integrity="sha384-pY2pkwHaLM/6UIseFHVU3hOKr6oAvhLcdYkoRZyaMDWLjpM6B7nTxtOdE823WAOQ",c.crossOrigin="anonymous",c.async=!0,c.src="https://cdn.amplitude.com/libs/analytics-browser-2.11.0-min.js.gz",c.onload=function(){e.amplitude.runQueuedFunctions||console.log("[Amplitude] Error: could not load SDK")};var u=t.getElementsByTagName("script")[0];u.parentNode.insertBefore(a,u),u.parentNode.insertBefore(c,u);for(var p=function(){return this._q=[],this},d=["add","append","clearAll","prepend","set","setOnce","unset","preInsert","postInsert","remove","getUserProperties"],l=0;l<d.length;l++)n(p,d[l]);r.Identify=p;for(var g=function(){return this._q=[],this},v=["getEventProperties","setProductId","setQuantity","setPrice","setRevenue","setRevenueType","setEventProperties"],f=0;f<v.length;f++)n(g,v[f]);r.Revenue=g;var m=["getDeviceId","setDeviceId","getSessionId","setSessionId","getUserId","setUserId","setOptOut","setTransport","reset","extendSession"],y=["init","add","remove","track","logEvent","identify","groupIdentify","setGroup","revenue","flush"];i(r),r.createInstance=function(e){return r._iq[e]={_q:[]},i(r._iq[e]),r._iq[e]},e.amplitude=r}}(window,document)}();
 
-  amplitude.init('217325c60793eb6b4c06907fd3f25307');
-</script>
-<!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-P89PQS3L"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-  gtag('config', 'G-P89PQS3L');
-</script>
+.consent-banner{
+  position:fixed;
+  left:1rem;
+  right:1rem;
+  bottom:1rem;
+  z-index:400;
+  background:rgba(14,13,22,0.96);
+  border:1px solid var(--line);
+  border-radius:10px;
+  box-shadow:0 18px 40px rgba(0,0,0,0.45);
+  backdrop-filter:blur(16px);
+  padding:0.95rem;
+}
+.consent-banner[hidden]{display:none;}
+.consent-inner{max-width:980px;margin:0 auto;display:flex;gap:0.8rem;align-items:center;justify-content:space-between;flex-wrap:wrap;}
+.consent-text{font-size:0.78rem;color:var(--ink2);line-height:1.55;max-width:680px;}
+.consent-actions{display:flex;gap:0.55rem;}
+.consent-actions .btn{padding:8px 14px;font-size:0.72rem;}
+</style>
 </head>
 <body>
 <canvas id="neural-canvas"></canvas>
 <div id="cursor-ship"></div>
 
+<aside class="consent-banner" id="consentBanner" hidden aria-live="polite">
+  <div class="consent-inner">
+    <p class="consent-text">PHNK gebruikt alleen analytics na jouw toestemming om verkeer en prestaties te begrijpen. Je kunt je keuze later altijd wijzigen via browseropslag.</p>
+    <div class="consent-actions">
+      <button class="btn btn-secondary" id="consentDecline" type="button"><span>Alleen noodzakelijk</span></button>
+      <button class="btn btn-primary" id="consentAccept" type="button"><span>Accepteer analytics</span></button>
+    </div>
+  </div>
+</aside>
+
 <header class="topbar" id="topbar">
   <div class="topbar-logo"><img src="assets/images/phnk-logo.png" alt="PHNK"></div>
   <div class="topbar-role">AI Concept &amp; Digital Deployment</div>
   <div class="lang-toggle">
-    <button class="lang-btn active" id="btn-nl" onclick="setLang('nl')">NL</button>
+    <button class="lang-btn active" id="btn-nl" type="button">NL</button>
     <span class="lang-sep">/</span>
-    <button class="lang-btn" id="btn-en" onclick="setLang('en')">EN</button>
+    <button class="lang-btn" id="btn-en" type="button">EN</button>
   </div>
 </header>
 
@@ -464,7 +484,7 @@ footer{position:relative;z-index:1;padding:1.2rem 2.5rem;display:flex;justify-co
             <div class="slide-title typewriter-line">Green Marine Motors</div>
             <div class="slide-desc-wrap"><p class="slide-desc"><span data-lang="nl">6-staps meertalige buitenboordmotor-calculator. React, Vercel, Pipedrive CRM. Beschikbaar in 5 talen. Verkocht en live.</span><span data-lang="en" style="display:none">6-step multilingual boat motor calculator. React, Vercel, Pipedrive CRM. Available in 5 languages. Sold and live.</span></p></div>
             <div class="slide-tags-wrap"><div class="slide-tags"><span class="slide-tag">React</span><span class="slide-tag"><span data-lang="nl">Meertalig</span><span data-lang="en" style="display:none">Multilingual</span></span><span class="slide-tag">CRM</span></div></div>
-            <div class="slide-link-wrap"><a href="https://greenmarinemotors.com" target="_blank" class="slide-link"><span data-lang="nl">Bekijk live &#8599;</span><span data-lang="en" style="display:none">View live &#8599;</span></a></div>
+            <div class="slide-link-wrap"><a href="https://greenmarinemotors.com" target="_blank" rel="noopener noreferrer" class="slide-link"><span data-lang="nl">Bekijk live &#8599;</span><span data-lang="en" style="display:none">View live &#8599;</span></a></div>
           </div>
           <div class="slide-preview"><img src="assets/images/projects/green-marine-motors.webp" alt="Green Marine Motors"></div>
         </div>
@@ -473,7 +493,7 @@ footer{position:relative;z-index:1;padding:1.2rem 2.5rem;display:flex;justify-co
           <div class="slide-title typewriter-line">Ruimte om te Spreken</div>
           <div class="slide-desc-wrap"><p class="slide-desc"><span data-lang="nl">Interactieve intake-tool voor een spreekcoach. Bezoekers brengen eerst hun spreekangst in kaart voordat ze een sessie boeken.</span><span data-lang="en" style="display:none">Interactive intake tool for a public speaking coach. Visitors identify their speaking anxiety before booking a session.</span></p></div>
           <div class="slide-tags-wrap"><div class="slide-tags"><span class="slide-tag">Wix Studio</span><span class="slide-tag"><span data-lang="nl">Leadtool</span><span data-lang="en" style="display:none">Lead tool</span></span></div></div>
-          <div class="slide-link-wrap"><a href="https://ruimteomtespreken.nl" target="_blank" class="slide-link"><span data-lang="nl">Bekijk live &#8599;</span><span data-lang="en" style="display:none">View live &#8599;</span></a></div>
+          <div class="slide-link-wrap"><a href="https://ruimteomtespreken.nl" target="_blank" rel="noopener noreferrer" class="slide-link"><span data-lang="nl">Bekijk live &#8599;</span><span data-lang="en" style="display:none">View live &#8599;</span></a></div>
         </div>
         <div class="slide">
           <div class="slide-num typewriter-line">// 03</div>
@@ -487,7 +507,7 @@ footer{position:relative;z-index:1;padding:1.2rem 2.5rem;display:flex;justify-co
           <div class="slide-title typewriter-line">De Stelling</div>
           <div class="slide-desc-wrap"><p class="slide-desc"><span data-lang="nl">Website voor een debat- en opinieplatform. Redactioneel ontwerp gericht op helderheid en inhoudshiërarchie.</span><span data-lang="en" style="display:none">Website for a debate and opinion platform. Editorial design focused on clarity and content hierarchy.</span></p></div>
           <div class="slide-tags-wrap"><div class="slide-tags"><span class="slide-tag"><span data-lang="nl">Webdesign</span><span data-lang="en" style="display:none">Web Design</span></span><span class="slide-tag"><span data-lang="nl">Redactioneel</span><span data-lang="en" style="display:none">Editorial</span></span></div></div>
-          <div class="slide-link-wrap"><a href="https://www.destelling.online" target="_blank" class="slide-link"><span data-lang="nl">Bekijk live &#8599;</span><span data-lang="en" style="display:none">View live &#8599;</span></a></div>
+          <div class="slide-link-wrap"><a href="https://www.destelling.online" target="_blank" rel="noopener noreferrer" class="slide-link"><span data-lang="nl">Bekijk live &#8599;</span><span data-lang="en" style="display:none">View live &#8599;</span></a></div>
         </div>
         <div class="slide slide-more">
           <div class="slide-num typewriter-line">// +</div>
@@ -515,7 +535,7 @@ footer{position:relative;z-index:1;padding:1.2rem 2.5rem;display:flex;justify-co
       <p><span data-lang="nl">Echte tools voor echte problemen &mdash; elk live en in gebruik.</span><span data-lang="en" style="display:none">Real tools for real problems &mdash; each one deployed and live.</span></p>
     </div>
     <div class="projects">
-      <a href="https://greenmarinemotors.com" target="_blank" class="card card-featured reveal">
+      <a href="https://greenmarinemotors.com" target="_blank" rel="noopener noreferrer" class="card card-featured reveal">
         <div class="card-visual radar-frame">
           <div class="radar-scanline"></div>
           <div class="radar-corner tl"></div>
@@ -533,14 +553,14 @@ footer{position:relative;z-index:1;padding:1.2rem 2.5rem;display:flex;justify-co
         </div>
       </a>
       <div class="project-row">
-        <a href="https://ruimteomtespreken.nl" target="_blank" class="card reveal d1">
+        <a href="https://ruimteomtespreken.nl" target="_blank" rel="noopener noreferrer" class="card reveal d1">
           <img class="card-thumb" src="assets/images/projects/ruimte-om-te-spreken.webp" alt="Ruimte om te Spreken" loading="lazy">
           <div class="card-top"><span class="card-num">// 02</span><div class="card-arrow">&#8599;</div></div>
           <div class="card-title">Ruimte om te Spreken</div>
           <p class="card-desc"><span data-lang="nl">Interactieve intake-tool voor een spreekcoach. Bezoekers brengen eerst hun spreekangst in kaart voordat ze boeken.</span><span data-lang="en" style="display:none">Interactive intake tool for a public speaking coach. Visitors identify their speaking anxiety before booking.</span></p>
           <div class="card-tags"><span class="tag">Wix Studio</span><span class="tag"><span data-lang="nl">Leadtool</span><span data-lang="en" style="display:none">Lead tool</span></span></div>
         </a>
-        <a href="https://www.destelling.online" target="_blank" class="card reveal d2">
+        <a href="https://www.destelling.online" target="_blank" rel="noopener noreferrer" class="card reveal d2">
           <img class="card-thumb" src="assets/images/projects/de-stelling.webp" alt="De Stelling" loading="lazy">
           <div class="card-top"><span class="card-num">// 03</span><div class="card-arrow">&#8599;</div></div>
           <div class="card-title">De Stelling</div>
@@ -606,18 +626,20 @@ footer{position:relative;z-index:1;padding:1.2rem 2.5rem;display:flex;justify-co
     <p class="contact-sub reveal d1"><span data-lang="nl">Laten we praten over wat AI voor jouw business kan doen &mdash; zonder jargon, zonder gedoe.</span><span data-lang="en" style="display:none">Let&rsquo;s talk about what AI can do for your business &mdash; no jargon, no pressure.</span></p>
     <div class="reveal d2" style="display:flex;gap:1rem;justify-content:center;flex-wrap:wrap;">
       <a href="mailto:patrick@phnkmedia.com" class="btn btn-primary"><span data-lang="nl">Stuur een bericht</span><span data-lang="en" style="display:none">Send a message</span></a>
-      <a href="https://linkedin.com/in/patrickhink" target="_blank" class="btn btn-secondary"><span>LinkedIn</span></a>
+      <a href="https://linkedin.com/in/patrickhink" target="_blank" rel="noopener noreferrer" class="btn btn-secondary"><span>LinkedIn</span></a>
     </div>
     <div class="contact-links reveal d3">
       <a href="mailto:patrick@phnkmedia.com">patrick@phnkmedia.com</a>
-      <a href="https://www.phnkmedia.com" target="_blank">phnkmedia.com</a>
-      <a href="https://linkedin.com/in/patrickhink" target="_blank">LinkedIn</a>
+      <a href="https://www.phnkmedia.com" target="_blank" rel="noopener noreferrer">phnkmedia.com</a>
+      <a href="https://linkedin.com/in/patrickhink" target="_blank" rel="noopener noreferrer">LinkedIn</a>
     </div>
   </div>
 </section>
 
 <footer>
   <span>&copy; 2026 PHNK Media &amp; Design</span>
+  <span><a href="/privacy.html"><span data-lang="nl">Privacybeleid</span><span data-lang="en" style="display:none">Privacy Policy</span></a></span>
+  <span><button id="privacySettingsBtn" class="footer-btn" type="button"><span data-lang="nl">Privacy-instellingen</span><span data-lang="en" style="display:none">Privacy Settings</span></button></span>
   <span>Oldeberkoop, Friesland</span>
 </footer>
 
@@ -800,7 +822,103 @@ function setLang(lang) {
   }
 }
 
+const btnNl = document.getElementById("btn-nl");
+const btnEn = document.getElementById("btn-en");
+if (btnNl && btnEn) {
+  btnNl.addEventListener("click", () => setLang("nl"));
+  btnEn.addEventListener("click", () => setLang("en"));
+}
+
 setLang("nl");
+
+// Consent-gated analytics loading (Amplitude + Google Analytics)
+const ANALYTICS_CONSENT_KEY = "phnk_analytics_consent";
+
+function loadScript(src, options = {}) {
+  return new Promise((resolve, reject) => {
+    const script = document.createElement("script");
+    script.src = src;
+    script.async = options.async !== false;
+    if (options.integrity) script.integrity = options.integrity;
+    if (options.crossOrigin) script.crossOrigin = options.crossOrigin;
+    script.onload = resolve;
+    script.onerror = reject;
+    document.head.appendChild(script);
+  });
+}
+
+async function enableAnalytics() {
+  if (window.__analyticsLoaded) return;
+  window.__analyticsLoaded = true;
+
+  try {
+    await loadScript("https://www.googletagmanager.com/gtag/js?id=G-P89PQS3L");
+    window.dataLayer = window.dataLayer || [];
+    window.gtag = function() { window.dataLayer.push(arguments); };
+    window.gtag("js", new Date());
+    window.gtag("config", "G-P89PQS3L");
+
+    await loadScript("https://cdn.amplitude.com/libs/analytics-browser-2.11.0-min.js.gz", {
+      integrity: "sha384-pY2pkwHaLM/6UIseFHVU3hOKr6oAvhLcdYkoRZyaMDWLjpM6B7nTxtOdE823WAOQ",
+      crossOrigin: "anonymous"
+    });
+    if (window.amplitude && typeof window.amplitude.init === "function") {
+      window.amplitude.init("217325c60793eb6b4c06907fd3f25307");
+    }
+  } catch (err) {
+    console.warn("Analytics could not be loaded:", err);
+  }
+}
+
+function setAnalyticsConsent(value) {
+  try {
+    localStorage.setItem(ANALYTICS_CONSENT_KEY, value ? "granted" : "denied");
+  } catch (_) {}
+
+  const banner = document.getElementById("consentBanner");
+  if (banner) banner.hidden = true;
+  if (value) enableAnalytics();
+}
+
+function openPrivacySettings() {
+  const banner = document.getElementById("consentBanner");
+  if (!banner) return;
+  banner.hidden = false;
+
+  const accept = document.getElementById("consentAccept");
+  if (accept) accept.focus();
+}
+
+function initAnalyticsConsent() {
+  const banner = document.getElementById("consentBanner");
+  const accept = document.getElementById("consentAccept");
+  const decline = document.getElementById("consentDecline");
+  const settings = document.getElementById("privacySettingsBtn");
+
+  if (accept) accept.addEventListener("click", () => setAnalyticsConsent(true));
+  if (decline) decline.addEventListener("click", () => setAnalyticsConsent(false));
+  if (settings) settings.addEventListener("click", openPrivacySettings);
+
+  let choice = null;
+  try {
+    choice = localStorage.getItem(ANALYTICS_CONSENT_KEY);
+  } catch (_) {}
+
+  if (choice === "granted") {
+    if (banner) banner.hidden = true;
+    enableAnalytics();
+    return;
+  }
+
+  if (choice === "denied") {
+    if (banner) banner.hidden = true;
+    return;
+  }
+
+  if (banner) banner.hidden = false;
+}
+
+initAnalyticsConsent();
 
 // Slider auto-rotation
 (function(){
