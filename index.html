@@ -436,22 +436,56 @@ footer a:hover{color:var(--teal);}
 
 .consent-banner{
   position:fixed;
-  left:1rem;
-  right:1rem;
-  bottom:1rem;
-  z-index:400;
-  background:rgba(14,13,22,0.96);
-  border:1px solid var(--line);
-  border-radius:10px;
-  box-shadow:0 18px 40px rgba(0,0,0,0.45);
-  backdrop-filter:blur(16px);
-  padding:0.95rem;
+  inset:0;
+  z-index:450;
+  background:rgba(2,4,8,0.68);
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  padding:1rem;
 }
 .consent-banner[hidden]{display:none;}
-.consent-inner{max-width:980px;margin:0 auto;display:flex;gap:0.8rem;align-items:center;justify-content:space-between;flex-wrap:wrap;}
-.consent-text{font-size:0.78rem;color:var(--ink2);line-height:1.55;max-width:680px;}
-.consent-actions{display:flex;gap:0.55rem;}
-.consent-actions .btn{padding:8px 14px;font-size:0.72rem;}
+.consent-inner{
+  width:min(920px,96vw);
+  max-height:92vh;
+  overflow:auto;
+  background:#e8ebf1;
+  border:1px solid rgba(32,54,98,0.25);
+  border-radius:8px;
+  box-shadow:0 32px 70px rgba(0,0,0,0.45);
+  color:#2f3642;
+}
+.consent-panel{padding:1.35rem 1.45rem;}
+.consent-head{display:flex;align-items:center;justify-content:space-between;gap:1rem;margin-bottom:0.85rem;}
+.consent-title{font-size:1.02rem;font-weight:700;letter-spacing:0.02em;color:#1e3b86;margin:0;}
+.consent-lang-toggle{display:flex;align-items:center;gap:0.25rem;font-family:"Space Mono",monospace;font-size:0.64rem;letter-spacing:0.08em;color:#4c5872;}
+.consent-lang-btn{border:1px solid rgba(31,60,133,0.35);background:transparent;color:#1f3c85;padding:0.22rem 0.46rem;border-radius:4px;cursor:none;font:inherit;}
+.consent-lang-btn.active{background:#1f3c85;color:#f4f7ff;border-color:#1f3c85;}
+.consent-text{font-size:0.82rem;color:#4a5261;line-height:1.6;margin-bottom:1rem;}
+.consent-categories{display:grid;gap:0.6rem;margin-bottom:1rem;}
+.consent-category{display:grid;grid-template-columns:auto 1fr;gap:0.5rem 0.7rem;padding:0.62rem 0.7rem;border:1px solid rgba(44,62,92,0.2);border-radius:6px;background:rgba(255,255,255,0.32);}
+.consent-category input{margin-top:0.12rem;accent-color:#ff6b2b;}
+.consent-category label{font-size:0.8rem;font-weight:600;color:#3b4354;}
+.consent-category small{grid-column:2;font-size:0.75rem;line-height:1.52;color:#5a6376;}
+.consent-actions{display:flex;gap:0.6rem;justify-content:flex-end;flex-wrap:wrap;}
+.consent-actions .btn{padding:9px 16px;font-size:0.76rem;cursor:none;}
+.consent-actions .btn-secondary{background:#eef1f7;border-color:#2c4fa3;color:#2c4fa3;}
+.consent-actions .btn-primary{background:#ff6b2b;color:#fff;border-color:#ff6b2b;}
+
+.consent-settings{min-height:min(86vh,760px);display:flex;flex-direction:column;gap:0.8rem;}
+.consent-settings-list{display:grid;gap:0.5rem;}
+.consent-settings-item{border:1px solid rgba(44,62,92,0.2);border-radius:6px;background:rgba(255,255,255,0.34);padding:0.75rem 0.85rem;}
+.consent-settings-row{display:flex;align-items:center;gap:0.55rem;font-size:0.84rem;font-weight:600;color:#3b4354;margin-bottom:0.45rem;}
+.consent-settings-row input{accent-color:#ff6b2b;}
+.consent-settings-item p{font-size:0.77rem;line-height:1.58;color:#596175;}
+.consent-settings-footer{margin-top:auto;display:flex;justify-content:flex-end;gap:0.6rem;flex-wrap:wrap;padding-top:0.7rem;}
+
+@media (max-width: 720px){
+  .consent-inner{width:100%;max-height:94vh;}
+  .consent-head{align-items:flex-start;flex-direction:column;}
+  .consent-actions,.consent-settings-footer{justify-content:stretch;}
+  .consent-actions .btn,.consent-settings-footer .btn{width:100%;}
+}
 </style>
 </head>
 <body>
@@ -460,11 +494,92 @@ footer a:hover{color:var(--teal);}
 
 <aside class="consent-banner" id="consentBanner" hidden aria-live="polite">
   <div class="consent-inner">
-    <p class="consent-text">PHNK gebruikt alleen analytics na jouw toestemming om verkeer en prestaties te begrijpen. Je keuze geldt per kalendermaand en wordt op de eerste van elke maand opnieuw gevraagd.</p>
-    <div class="consent-actions">
-      <button class="btn btn-secondary" id="consentDecline" type="button"><span>Alleen noodzakelijk</span></button>
-      <button class="btn btn-primary" id="consentAccept" type="button"><span>Accepteer analytics</span></button>
-    </div>
+    <section class="consent-panel" id="consentMainPanel">
+      <div class="consent-head">
+        <p class="consent-title">
+          <span data-consent-lang="nl">Cookies &amp; dataverwerking</span>
+          <span data-consent-lang="en" style="display:none">Consent to Cookies &amp; Data processing</span>
+        </p>
+        <div class="consent-lang-toggle" aria-label="Cookie language">
+          <button class="consent-lang-btn active" id="consentLangNl" type="button">NL</button>
+          <span>/</span>
+          <button class="consent-lang-btn" id="consentLangEn" type="button">EN</button>
+        </div>
+      </div>
+
+      <p class="consent-text">
+        <span data-consent-lang="nl">Op deze website gebruiken we cookies en vergelijkbare functies voor functionele werking, statistiek en marketing. Je keuze is vrijwillig, wordt per kalendermaand opgeslagen en op de eerste dag van een nieuwe maand opnieuw gevraagd.</span>
+        <span data-consent-lang="en" style="display:none">On this website we use cookies and similar functions for functional operation, statistics and marketing. Your choice is voluntary, stored per calendar month and requested again on the first day of each new month.</span>
+      </p>
+
+      <div class="consent-categories">
+        <div class="consent-category">
+          <input id="consentNecessaryMain" type="checkbox" checked disabled>
+          <label for="consentNecessaryMain"><span data-consent-lang="nl">Functioneel</span><span data-consent-lang="en" style="display:none">Functional</span></label>
+          <small><span data-consent-lang="nl">Nodig voor basisfunctionaliteit van de website.</span><span data-consent-lang="en" style="display:none">Required for essential website functionality.</span></small>
+        </div>
+        <div class="consent-category">
+          <input id="consentStatisticsMain" type="checkbox">
+          <label for="consentStatisticsMain"><span data-consent-lang="nl">Statistiek</span><span data-consent-lang="en" style="display:none">Statistics</span></label>
+          <small><span data-consent-lang="nl">Meet anonieme prestaties en gebruik om de site te verbeteren.</span><span data-consent-lang="en" style="display:none">Measures anonymous usage and performance to improve the site.</span></small>
+        </div>
+        <div class="consent-category">
+          <input id="consentMarketingMain" type="checkbox">
+          <label for="consentMarketingMain"><span data-consent-lang="nl">Marketing</span><span data-consent-lang="en" style="display:none">Marketing</span></label>
+          <small><span data-consent-lang="nl">Helpt om relevante promotionele content te tonen.</span><span data-consent-lang="en" style="display:none">Helps show relevant promotional content.</span></small>
+        </div>
+      </div>
+
+      <div class="consent-actions">
+        <button class="btn btn-secondary" id="consentOpenSettings" type="button"><span>Settings</span></button>
+        <button class="btn btn-primary" id="consentAcceptAll" type="button"><span>Accept all</span></button>
+      </div>
+    </section>
+
+    <section class="consent-panel consent-settings" id="consentSettingsPanel" hidden>
+      <div class="consent-head">
+        <p class="consent-title">
+          <span data-consent-lang="nl">Pas je keuze aan</span>
+          <span data-consent-lang="en" style="display:none">Customize your choice</span>
+        </p>
+      </div>
+
+      <p class="consent-text">
+        <span data-consent-lang="nl">Op deze pagina vind je meer informatie over de doeleinden van dataverwerking en kun je per categorie je voorkeur instellen.</span>
+        <span data-consent-lang="en" style="display:none">On this page you can find more information about data processing purposes and set your preference per category.</span>
+      </p>
+
+      <div class="consent-settings-list">
+        <div class="consent-settings-item">
+          <div class="consent-settings-row">
+            <input id="consentNecessarySettings" type="checkbox" checked disabled>
+            <label for="consentNecessarySettings"><span data-consent-lang="nl">Functioneel</span><span data-consent-lang="en" style="display:none">Functional</span></label>
+          </div>
+          <p><span data-consent-lang="nl">Altijd actief om de website technisch te laten werken, waaronder navigatie, beveiliging en basisvoorkeuren.</span><span data-consent-lang="en" style="display:none">Always active to keep the website technically operational, including navigation, security and basic preferences.</span></p>
+        </div>
+
+        <div class="consent-settings-item">
+          <div class="consent-settings-row">
+            <input id="consentStatisticsSettings" type="checkbox">
+            <label for="consentStatisticsSettings"><span data-consent-lang="nl">Statistiek</span><span data-consent-lang="en" style="display:none">Statistics</span></label>
+          </div>
+          <p><span data-consent-lang="nl">Helpt ons te begrijpen hoe bezoekers de website gebruiken, zodat we prestaties en gebruikservaring kunnen verbeteren.</span><span data-consent-lang="en" style="display:none">Helps us understand how visitors use the website so we can improve performance and experience.</span></p>
+        </div>
+
+        <div class="consent-settings-item">
+          <div class="consent-settings-row">
+            <input id="consentMarketingSettings" type="checkbox">
+            <label for="consentMarketingSettings"><span data-consent-lang="nl">Marketing</span><span data-consent-lang="en" style="display:none">Marketing</span></label>
+          </div>
+          <p><span data-consent-lang="nl">Maakt het mogelijk om promotionele content relevanter te tonen via advertentie- en socialkanalen.</span><span data-consent-lang="en" style="display:none">Enables more relevant promotional content across advertising and social channels.</span></p>
+        </div>
+      </div>
+
+      <div class="consent-settings-footer">
+        <button class="btn btn-secondary" id="consentBackToMain" type="button"><span>Back to main page</span></button>
+        <button class="btn btn-primary" id="consentSaveExit" type="button"><span>Save + Exit</span></button>
+      </div>
+    </section>
   </div>
 </aside>
 
@@ -925,30 +1040,49 @@ function initTopbarRoleTypewriter() {
 
 initTopbarRoleTypewriter();
 
-// Consent-gated analytics loading (Amplitude + Google Analytics)
-const ANALYTICS_CONSENT_KEY = "phnk_analytics_consent";
+// Cookie consent loading (categories: necessary/statistics/marketing)
+const COOKIE_CONSENT_KEY = "phnk_cookie_consent";
+const LEGACY_ANALYTICS_CONSENT_KEY = "phnk_analytics_consent";
 
 function getConsentCycleStamp(date = new Date()) {
   return `${date.getFullYear()}-${String(date.getMonth() + 1).padStart(2, "0")}`;
 }
 
+function getDefaultConsentChoices() {
+  return {
+    necessary: true,
+    statistics: false,
+    marketing: false
+  };
+}
+
 function readStoredConsent() {
   try {
-    const raw = localStorage.getItem(ANALYTICS_CONSENT_KEY);
-    if (!raw) {
-      localStorage.removeItem('phnk_analytics_choice');
-      return null;
+    const raw = localStorage.getItem(COOKIE_CONSENT_KEY);
+    if (raw) {
+      const parsed = JSON.parse(raw);
+      if (parsed && typeof parsed === "object" && parsed.cycle && parsed.choices) {
+        return parsed;
+      }
     }
 
-    const parsed = JSON.parse(raw);
-    if (parsed && typeof parsed === "object" && parsed.status && parsed.cycle) {
-      return parsed;
+    // Backwards compatibility for old analytics-only format
+    const legacyRaw = localStorage.getItem(LEGACY_ANALYTICS_CONSENT_KEY);
+    if (legacyRaw) {
+      const legacyParsed = JSON.parse(legacyRaw);
+      if (legacyParsed && legacyParsed.cycle && legacyParsed.status) {
+        return {
+          cycle: legacyParsed.cycle,
+          choices: {
+            necessary: true,
+            statistics: legacyParsed.status === "granted",
+            marketing: false
+          }
+        };
+      }
     }
-    localStorage.removeItem(ANALYTICS_CONSENT_KEY);
-    localStorage.removeItem('phnk_analytics_choice');
   } catch (_) {
-    localStorage.removeItem(ANALYTICS_CONSENT_KEY);
-    localStorage.removeItem('phnk_analytics_choice');
+    // Ignore parse errors and fall back to no consent state
   }
 
   return null;
@@ -992,36 +1126,158 @@ async function enableAnalytics() {
   }
 }
 
-function setAnalyticsConsent(value) {
+function setCookieConsent(choices) {
+  const normalized = {
+    necessary: true,
+    statistics: Boolean(choices && choices.statistics),
+    marketing: Boolean(choices && choices.marketing)
+  };
+
   try {
-    localStorage.setItem(ANALYTICS_CONSENT_KEY, JSON.stringify({
-      status: value ? "granted" : "denied",
+    localStorage.setItem(COOKIE_CONSENT_KEY, JSON.stringify({
+      choices: normalized,
       cycle: getConsentCycleStamp()
     }));
+    localStorage.removeItem(LEGACY_ANALYTICS_CONSENT_KEY);
+    localStorage.removeItem("phnk_analytics_choice");
   } catch (_) {}
 
   const banner = document.getElementById("consentBanner");
   if (banner) banner.hidden = true;
-  if (value) enableAnalytics();
+  if (normalized.statistics) enableAnalytics();
+}
+
+function applyConsentChoicesToInputs(choices) {
+  const normalized = {
+    statistics: Boolean(choices && choices.statistics),
+    marketing: Boolean(choices && choices.marketing)
+  };
+
+  ["consentStatisticsMain", "consentStatisticsSettings"].forEach((id) => {
+    const input = document.getElementById(id);
+    if (input) input.checked = normalized.statistics;
+  });
+
+  ["consentMarketingMain", "consentMarketingSettings"].forEach((id) => {
+    const input = document.getElementById(id);
+    if (input) input.checked = normalized.marketing;
+  });
+}
+
+function getChoicesFromInputs() {
+  const statisticsMain = document.getElementById("consentStatisticsMain");
+  const statisticsSettings = document.getElementById("consentStatisticsSettings");
+  const marketingMain = document.getElementById("consentMarketingMain");
+  const marketingSettings = document.getElementById("consentMarketingSettings");
+
+  const statistics = statisticsMain ? statisticsMain.checked : Boolean(statisticsSettings && statisticsSettings.checked);
+  const marketing = marketingMain ? marketingMain.checked : Boolean(marketingSettings && marketingSettings.checked);
+
+  return {
+    necessary: true,
+    statistics,
+    marketing
+  };
+}
+
+function setConsentPanelMode(mode) {
+  const main = document.getElementById("consentMainPanel");
+  const settings = document.getElementById("consentSettingsPanel");
+  const inner = document.querySelector(".consent-inner");
+  if (!main || !settings) return;
+  const showSettings = mode === "settings";
+  main.hidden = showSettings;
+  settings.hidden = !showSettings;
+  if (inner) inner.scrollTop = 0;
+}
+
+function setConsentLanguage(lang) {
+  const nodes = document.querySelectorAll("[data-consent-lang]");
+  nodes.forEach((node) => {
+    node.style.display = node.getAttribute("data-consent-lang") === lang ? "" : "none";
+  });
+  const btnNl = document.getElementById("consentLangNl");
+  const btnEn = document.getElementById("consentLangEn");
+  if (btnNl && btnEn) {
+    btnNl.classList.toggle("active", lang === "nl");
+    btnEn.classList.toggle("active", lang === "en");
+  }
+}
+
+function bindConsentInputSync() {
+  const ids = [
+    "consentStatisticsMain",
+    "consentStatisticsSettings",
+    "consentMarketingMain",
+    "consentMarketingSettings"
+  ];
+
+  ids.forEach((id) => {
+    const input = document.getElementById(id);
+    if (!input) return;
+    input.addEventListener("change", () => {
+      applyConsentChoicesToInputs(getChoicesFromInputs());
+    });
+  });
 }
 
 function openPrivacySettings() {
   const banner = document.getElementById("consentBanner");
   if (!banner) return;
   banner.hidden = false;
+  setConsentPanelMode("settings");
 
-  const accept = document.getElementById("consentAccept");
-  if (accept) accept.focus();
+  const currentCycle = getConsentCycleStamp();
+  const choice = readStoredConsent();
+  if (choice && choice.cycle === currentCycle && choice.choices) {
+    applyConsentChoicesToInputs(choice.choices);
+  } else {
+    applyConsentChoicesToInputs(getDefaultConsentChoices());
+  }
+
+  const saveExit = document.getElementById("consentSaveExit");
+  if (saveExit) saveExit.focus();
 }
 
 function initAnalyticsConsent() {
   const banner = document.getElementById("consentBanner");
-  const accept = document.getElementById("consentAccept");
-  const decline = document.getElementById("consentDecline");
+  const acceptAll = document.getElementById("consentAcceptAll");
+  const openSettings = document.getElementById("consentOpenSettings");
+  const backToMain = document.getElementById("consentBackToMain");
+  const saveExit = document.getElementById("consentSaveExit");
+  const consentLangNl = document.getElementById("consentLangNl");
+  const consentLangEn = document.getElementById("consentLangEn");
   const settings = document.getElementById("privacySettingsBtn");
 
-  if (accept) accept.addEventListener("click", () => setAnalyticsConsent(true));
-  if (decline) decline.addEventListener("click", () => setAnalyticsConsent(false));
+  setConsentPanelMode("main");
+  setConsentLanguage("nl");
+  bindConsentInputSync();
+
+  if (consentLangNl) consentLangNl.addEventListener("click", () => setConsentLanguage("nl"));
+  if (consentLangEn) consentLangEn.addEventListener("click", () => setConsentLanguage("en"));
+
+  if (acceptAll) {
+    acceptAll.addEventListener("click", () => {
+      setCookieConsent({ necessary: true, statistics: true, marketing: true });
+    });
+  }
+  if (openSettings) {
+    openSettings.addEventListener("click", () => {
+      setConsentPanelMode("settings");
+      applyConsentChoicesToInputs(getChoicesFromInputs());
+    });
+  }
+  if (backToMain) {
+    backToMain.addEventListener("click", () => {
+      setConsentPanelMode("main");
+      applyConsentChoicesToInputs(getChoicesFromInputs());
+    });
+  }
+  if (saveExit) {
+    saveExit.addEventListener("click", () => {
+      setCookieConsent(getChoicesFromInputs());
+    });
+  }
   if (settings) settings.addEventListener("click", openPrivacySettings);
 
   const choice = readStoredConsent();
@@ -1029,14 +1285,14 @@ function initAnalyticsConsent() {
 
   if (choice && choice.cycle === currentCycle) {
     if (banner) banner.hidden = true;
-    if (choice.status === "granted") {
+    if (choice.choices && choice.choices.statistics) {
       enableAnalytics();
     }
     return;
   }
 
+  applyConsentChoicesToInputs(getDefaultConsentChoices());
   if (banner) banner.hidden = false;
-  window.setTimeout(() => setAnalyticsConsent(true), 1200);
 }
 
 initAnalyticsConsent();
