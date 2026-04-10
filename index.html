@@ -82,8 +82,12 @@ a,button{cursor:none;}
 /* TOPBAR */
 .topbar{position:fixed;top:0;left:0;right:0;z-index:200;padding:1.25rem 2.5rem;display:flex;align-items:center;justify-content:space-between;transition:all 0.3s var(--ease);}
 .topbar.scrolled{background:rgba(8,8,11,0.92);backdrop-filter:blur(20px);border-bottom:1px solid var(--line);padding:0.85rem 2.5rem;}
-.topbar-logo img{height:28px;object-fit:contain;}
-.topbar-role{font-family:"Space Mono",monospace;font-size:0.6rem;letter-spacing:0.1em;color:var(--orange);text-transform:uppercase;opacity:0.9;}
+.topbar-logo{display:flex;align-items:center;flex-shrink:0;}
+.topbar-logo img{height:56px;object-fit:contain;filter:brightness(1.16) contrast(1.08) drop-shadow(0 0 14px rgba(0,212,170,0.2));}
+.topbar-role{display:flex;align-items:center;justify-content:center;gap:0.45rem;flex:1;font-family:"Space Mono",monospace;font-size:0.66rem;letter-spacing:0.1em;color:var(--orange);text-transform:uppercase;opacity:0.92;padding:0 1rem;text-align:center;}
+.topbar-role-static{color:var(--ink2);}
+.topbar-role-dynamic{display:inline-block;min-width:19ch;text-align:left;color:var(--orange);border-right:1px solid rgba(255,107,43,0.8);padding-right:0.15rem;animation:role-caret 0.8s step-end infinite;}
+@keyframes role-caret{0%,100%{border-color:rgba(255,107,43,0.8);}50%{border-color:transparent;}}
 
 /* FAB — slow pulse, no ping in hero */
 .fab-wrap{position:fixed;bottom:2rem;right:2rem;z-index:300;display:flex;flex-direction:column;align-items:flex-end;gap:10px;}
@@ -237,9 +241,11 @@ h2{font-family:"Space Grotesk",sans-serif;font-size:clamp(1.8rem,3.5vw,2.8rem);f
 .card:hover{border-color:rgba(0,212,170,0.25);transform:translateY(-2px);box-shadow:0 0 30px rgba(0,212,170,0.07);}
 .card:hover::before{opacity:1;}
 .projects:hover .card:not(:hover){
-  box-shadow:0 16px 34px rgba(0,0,0,0.38);
-  border-color:rgba(244,242,255,0.05);
-  filter:saturate(0.88) brightness(0.9);
+  box-shadow:0 22px 44px rgba(0,0,0,0.48);
+  border-color:rgba(244,242,255,0.04);
+  opacity:0.72;
+  transform:scale(0.985);
+  filter:saturate(0.72) brightness(0.78);
 }
 .card-featured{display:flex;align-items:center;gap:2.5rem;}
 .card-top{display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:1rem;}
@@ -261,9 +267,11 @@ h2{font-family:"Space Grotesk",sans-serif;font-size:clamp(1.8rem,3.5vw,2.8rem);f
 .service{background:#1A1825;padding:2.25rem;transition:background 0.2s;}
 .service:hover{background:#211E2C;}
 .services-grid:hover .service:not(:hover){
-  background:#151320;
-  box-shadow:inset 0 0 0 1px rgba(244,242,255,0.03);
-  filter:saturate(0.86) brightness(0.9);
+  background:#120F1A;
+  box-shadow:inset 0 0 0 1px rgba(244,242,255,0.02), 0 16px 32px rgba(0,0,0,0.24);
+  opacity:0.7;
+  transform:scale(0.985);
+  filter:saturate(0.7) brightness(0.78);
 }
 .service-dot{width:8px;height:8px;border-radius:50%;background:var(--teal);box-shadow:0 0 10px rgba(0,212,170,0.7);margin-bottom:1.5rem;}
 .service h3{font-size:1.1rem;font-weight:600;margin-bottom:0.65rem;}
@@ -315,6 +323,9 @@ footer a:hover{color:var(--teal);}
   footer{flex-direction:column;text-align:center;padding:1.2rem;}
   .contact{padding:5rem 1.25rem;}
   .topbar{padding:1rem 1.25rem;}
+  .topbar-role{font-size:0.54rem;gap:0.3rem;padding:0 0.65rem;}
+  .topbar-role-dynamic{min-width:14ch;}
+  .topbar-logo img{height:48px;}
   .fab-wrap{bottom:1.5rem;right:1.25rem;}
   #cursor-ship{display:none;}
   body{cursor:auto;}a,button{cursor:auto;}
@@ -437,7 +448,7 @@ footer a:hover{color:var(--teal);}
 
 <aside class="consent-banner" id="consentBanner" hidden aria-live="polite">
   <div class="consent-inner">
-    <p class="consent-text">PHNK gebruikt alleen analytics na jouw toestemming om verkeer en prestaties te begrijpen. Je kunt je keuze later altijd wijzigen via browseropslag.</p>
+    <p class="consent-text">PHNK gebruikt alleen analytics na jouw toestemming om verkeer en prestaties te begrijpen. Je keuze geldt per kalendermaand en wordt op de eerste van elke maand opnieuw gevraagd.</p>
     <div class="consent-actions">
       <button class="btn btn-secondary" id="consentDecline" type="button"><span>Alleen noodzakelijk</span></button>
       <button class="btn btn-primary" id="consentAccept" type="button"><span>Accepteer analytics</span></button>
@@ -447,7 +458,7 @@ footer a:hover{color:var(--teal);}
 
 <header class="topbar" id="topbar">
   <div class="topbar-logo"><img src="assets/images/phnk-logo.png" alt="PHNK"></div>
-  <div class="topbar-role">AI Concept &amp; Digital Deployment</div>
+  <div class="topbar-role"><span class="topbar-role-static">AI Concept &amp;</span><span class="topbar-role-dynamic" id="topbarRoleDynamic">Digital Deployment</span></div>
   <div class="lang-toggle">
     <button class="lang-btn active" id="btn-nl" type="button">NL</button>
     <span class="lang-sep">/</span>
@@ -841,8 +852,77 @@ if (btnNl && btnEn) {
 
 setLang("nl");
 
+// Topbar role typewriter (slow: 15+ seconds per transition)
+function initTopbarRoleTypewriter() {
+  const role = document.getElementById("topbarRoleDynamic");
+  if (!role) return;
+
+  const phrases = ["Digital Deployment", "Digitale Implementatie"];
+  let phraseIndex = 0;
+  let charIndex = phrases[0].length;
+  let deleting = false;
+
+  function tick() {
+    const phrase = phrases[phraseIndex];
+
+    if (deleting) {
+      charIndex = Math.max(0, charIndex - 1);
+    } else {
+      charIndex = Math.min(phrase.length, charIndex + 1);
+    }
+
+    role.textContent = phrase.slice(0, charIndex);
+
+    let delay = deleting ? 88 : 140;
+    if (!deleting && charIndex === phrase.length) {
+      delay = 8400;
+      deleting = true;
+    } else if (deleting && charIndex === 0) {
+      deleting = false;
+      phraseIndex = (phraseIndex + 1) % phrases.length;
+      delay = 480;
+    }
+
+    window.setTimeout(tick, delay);
+  }
+
+  role.textContent = phrases[0];
+  window.setTimeout(() => {
+    deleting = true;
+    tick();
+  }, 3200);
+}
+
+initTopbarRoleTypewriter();
+
 // Consent-gated analytics loading (Amplitude + Google Analytics)
 const ANALYTICS_CONSENT_KEY = "phnk_analytics_consent";
+
+function getConsentCycleStamp(date = new Date()) {
+  return `${date.getFullYear()}-${String(date.getMonth() + 1).padStart(2, "0")}`;
+}
+
+function readStoredConsent() {
+  try {
+    const raw = localStorage.getItem(ANALYTICS_CONSENT_KEY);
+    if (!raw) {
+      localStorage.removeItem('phnk_analytics_choice');
+      return null;
+    }
+
+    const parsed = JSON.parse(raw);
+    if (parsed && typeof parsed === "object" && parsed.status && parsed.cycle) {
+      return parsed;
+    }
+    localStorage.removeItem(ANALYTICS_CONSENT_KEY);
+    localStorage.removeItem('phnk_analytics_choice');
+  } catch (_) {
+    localStorage.removeItem(ANALYTICS_CONSENT_KEY);
+    localStorage.removeItem('phnk_analytics_choice');
+  }
+
+  return null;
+}
 
 function loadScript(src, options = {}) {
   return new Promise((resolve, reject) => {
@@ -873,7 +953,9 @@ async function enableAnalytics() {
       crossOrigin: "anonymous"
     });
     if (window.amplitude && typeof window.amplitude.init === "function") {
-      window.amplitude.init("217325c60793eb6b4c06907fd3f25307");
+      window.amplitude.init("217325c60793eb6b4c06907fd3f25307", {
+        defaultTracking: true
+      });
     }
   } catch (err) {
     console.warn("Analytics could not be loaded:", err);
@@ -882,7 +964,10 @@ async function enableAnalytics() {
 
 function setAnalyticsConsent(value) {
   try {
-    localStorage.setItem(ANALYTICS_CONSENT_KEY, value ? "granted" : "denied");
+    localStorage.setItem(ANALYTICS_CONSENT_KEY, JSON.stringify({
+      status: value ? "granted" : "denied",
+      cycle: getConsentCycleStamp()
+    }));
   } catch (_) {}
 
   const banner = document.getElementById("consentBanner");
@@ -909,23 +994,19 @@ function initAnalyticsConsent() {
   if (decline) decline.addEventListener("click", () => setAnalyticsConsent(false));
   if (settings) settings.addEventListener("click", openPrivacySettings);
 
-  let choice = null;
-  try {
-    choice = localStorage.getItem(ANALYTICS_CONSENT_KEY);
-  } catch (_) {}
+  const choice = readStoredConsent();
+  const currentCycle = getConsentCycleStamp();
 
-  if (choice === "granted") {
+  if (choice && choice.cycle === currentCycle) {
     if (banner) banner.hidden = true;
-    enableAnalytics();
-    return;
-  }
-
-  if (choice === "denied") {
-    if (banner) banner.hidden = true;
+    if (choice.status === "granted") {
+      enableAnalytics();
+    }
     return;
   }
 
   if (banner) banner.hidden = false;
+  window.setTimeout(() => setAnalyticsConsent(true), 1200);
 }
 
 initAnalyticsConsent();
