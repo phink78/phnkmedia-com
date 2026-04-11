@@ -45,61 +45,32 @@ body{
   font-family:"Space Grotesk",sans-serif;
   background:var(--bg);color:var(--ink);
   line-height:1.65;-webkit-font-smoothing:antialiased;
-  overflow-x:hidden;cursor:none;
+  overflow-x:hidden;
 }
 #neural-canvas{position:fixed;top:0;left:0;width:100%;height:100%;pointer-events:none;z-index:0;opacity:0.55;}
 
-/* SPACESHIP CURSOR */
-#cursor-ship{
-  position:fixed;top:0;left:0;
-  width:20px;height:20px;
-  pointer-events:none;z-index:9999;
-  transition:none;
-}
-#cursor-ship::before{
-  content:'';
-  position:absolute;
-  top:50%;left:50%;
-  transform:translate(-50%,-50%);
-  width:0;height:0;
-  border-left:5px solid transparent;
-  border-right:5px solid transparent;
-  border-bottom:14px solid var(--orange);
-  filter:drop-shadow(0 0 6px rgba(255,107,43,0.95));
-}
-#cursor-ship::after{
-  content:'';
-  position:absolute;
-  top:60%;left:50%;
-  transform:translate(-50%,-50%);
-  width:6px;height:4px;
-  background:rgba(255,107,43,0.35);
-  border-radius:0 0 4px 4px;
-  filter:blur(2px);
-}
-a,button{cursor:none;}
+
 
 /* TOPBAR */
 .topbar{position:fixed;top:0;left:0;right:0;z-index:200;padding:1.25rem 2.5rem;display:flex;align-items:center;justify-content:space-between;transition:all 0.3s var(--ease);}
 .topbar.scrolled{background:rgba(8,8,11,0.92);backdrop-filter:blur(20px);border-bottom:1px solid var(--line);padding:0.85rem 2.5rem;}
-.topbar-logo{display:flex;align-items:center;flex-shrink:0;}
-.topbar-logo img{height:56px;object-fit:contain;filter:brightness(1.16) contrast(1.08) drop-shadow(0 0 14px rgba(0,212,170,0.2));}
-.topbar-role{display:flex;align-items:center;justify-content:center;gap:0.45rem;flex:1;font-family:"Space Mono",monospace;font-size:0.66rem;letter-spacing:0.1em;color:var(--orange);text-transform:uppercase;opacity:0.92;padding:0 1rem;text-align:center;}
-.topbar-role-static{color:var(--ink2);}
-.topbar-role-dynamic{display:inline-block;white-space:nowrap;text-align:left;color:var(--orange);border-right:1px solid rgba(255,107,43,0.8);padding-right:0.15rem;animation:role-caret 0.8s step-end infinite;}
-@keyframes role-caret{0%,100%{border-color:rgba(255,107,43,0.8);}50%{border-color:transparent;}}
+.topbar-logo{display:flex;align-items:center;flex-shrink:0;white-space:nowrap;}
+.topbar-logo-text{font-family:"Space Grotesk",sans-serif;font-weight:700;font-size:1.55rem;letter-spacing:0.06em;color:#fff;text-transform:uppercase;line-height:1;cursor:default;user-select:none;text-decoration:none;display:inline-block;}
+.topbar-role{display:none;}
+.topbar-role-dynamic{display:inline-block;white-space:nowrap;color:var(--orange);font-family:"Space Grotesk",sans-serif;font-weight:700;font-size:1.55rem;letter-spacing:0.06em;border-right:2px solid rgba(255,107,43,0.9);padding-right:0.15rem;min-width:0.5ch;animation:role-caret 0.8s step-end infinite;}
+@keyframes role-caret{0%,100%{border-right-color:rgba(255,107,43,0.9);}50%{border-right-color:transparent;}}
 
 /* FAB — slow pulse, no ping in hero */
 .fab-wrap{position:fixed;bottom:2rem;right:2rem;z-index:300;display:flex;flex-direction:column;align-items:flex-end;gap:10px;}
 .fab-items{display:flex;flex-direction:column;align-items:flex-end;gap:8px;}
-.fab-item{display:flex;align-items:center;gap:8px;padding:9px 18px 9px 12px;border-radius:100px;background:rgba(22,20,28,0.97);border:1px solid var(--line);color:var(--ink);font-family:"Space Grotesk",sans-serif;font-size:0.8rem;font-weight:500;cursor:none;white-space:nowrap;text-decoration:none;box-shadow:0 2px 20px rgba(0,0,0,0.5);transform:translateY(8px) scale(0.94);opacity:0;pointer-events:none;transition:transform 0.3s cubic-bezier(0.34,1.56,0.64,1),opacity 0.2s ease,background 0.2s,border-color 0.2s;backdrop-filter:blur(12px);}
+.fab-item{display:flex;align-items:center;gap:8px;padding:9px 18px 9px 12px;border-radius:100px;background:rgba(22,20,28,0.97);border:1px solid var(--line);color:var(--ink);font-family:"Space Grotesk",sans-serif;font-size:0.8rem;font-weight:500;white-space:nowrap;text-decoration:none;box-shadow:0 2px 20px rgba(0,0,0,0.5);transform:translateY(8px) scale(0.94);opacity:0;pointer-events:none;transition:transform 0.3s cubic-bezier(0.34,1.56,0.64,1),opacity 0.2s ease,background 0.2s,border-color 0.2s;backdrop-filter:blur(12px);}
 .fab-item:hover{background:linear-gradient(135deg,var(--orange),var(--orange2));border-color:transparent;box-shadow:0 0 20px rgba(255,107,43,0.3);}
 .fab-item.visible{transform:translateY(0) scale(1);opacity:1;pointer-events:auto;}
 .fab-icon{width:20px;height:20px;border-radius:50%;background:rgba(255,255,255,0.06);display:flex;align-items:center;justify-content:center;font-size:10px;flex-shrink:0;}
 .fab-btn{
   width:52px;height:52px;border-radius:50%;
   background:linear-gradient(135deg,var(--orange),var(--orange2));
-  border:none;cursor:none;
+  border:none;
   display:flex;align-items:center;justify-content:center;
   color:white;font-size:22px;font-weight:300;
   box-shadow:0 0 0 0 rgba(255,107,43,0.4);
@@ -115,7 +86,7 @@ a,button{cursor:none;}
 .fab-btn:hover{animation:none;box-shadow:0 0 28px rgba(255,107,43,0.6);}
 
 /* BUTTONS */
-.btn{display:inline-flex;align-items:center;gap:8px;padding:13px 28px;border-radius:6px;font-family:"Space Grotesk",sans-serif;font-size:0.88rem;font-weight:500;text-decoration:none;cursor:none;border:none;letter-spacing:0.02em;}
+.btn{display:inline-flex;align-items:center;gap:8px;padding:13px 28px;border-radius:6px;font-family:"Space Grotesk",sans-serif;font-size:0.88rem;font-weight:500;text-decoration:none;border:none;letter-spacing:0.02em;}
 .btn-primary{position:relative;overflow:hidden;background:linear-gradient(135deg,var(--teal),var(--teal2));color:white;transition:transform 0.2s,box-shadow 0.2s;box-shadow:0 0 20px rgba(0,212,170,0.3);}
 .btn-primary::after{content:"";position:absolute;top:-50%;left:-60%;width:36%;height:200%;background:rgba(255,255,255,0.2);transform:skewX(-20deg);transition:left 0.5s ease;}
 .btn-primary:hover::after{left:120%;}
@@ -143,6 +114,24 @@ h2{font-family:"Space Grotesk",sans-serif;font-size:clamp(1.8rem,3.5vw,2.8rem);f
 .hero-sub{font-size:1rem;color:var(--ink2);max-width:420px;line-height:1.8;margin:1.5rem 0 2.5rem;}
 .hero-cta{display:flex;gap:1rem;flex-wrap:wrap;align-items:center;}
 .hero-scroll{display:flex;align-items:center;gap:0.6rem;margin-top:1.4rem;font-family:"Space Mono",monospace;font-size:0.62rem;letter-spacing:0.08em;color:var(--ink3);text-transform:uppercase;}
+.hero-mobile-lab{
+  display:block;
+  position:relative;
+  width:100%;
+  height:480px;
+  border-radius:16px;
+  border:1px solid rgba(255,107,43,0.28);
+  background:radial-gradient(circle at 50% 30%,rgba(255,107,43,0.12),rgba(255,69,0,0.03) 45%,rgba(14,13,22,0.88) 88%);
+  touch-action:none;
+  user-select:none;
+  -webkit-user-select:none;
+  overflow:hidden;
+}
+#boatCanvas{
+  display:block;
+  width:100%;
+  height:100%;
+}
 .ping-wrap{position:relative;width:14px;height:14px;display:inline-flex;align-items:center;justify-content:center;}
 .ping-dot{width:6px;height:6px;border-radius:50%;background:var(--teal);box-shadow:0 0 10px rgba(0,212,170,0.7);position:relative;z-index:2;}
 .ping-ring,.ping-ring2{position:absolute;border:1px solid rgba(0,212,170,0.45);border-radius:50%;inset:0;animation:ping 2.2s ease-out infinite;}
@@ -227,7 +216,7 @@ h2{font-family:"Space Grotesk",sans-serif;font-size:clamp(1.8rem,3.5vw,2.8rem);f
 }
 .slider-dot{
   width:6px;height:6px;border-radius:50%;
-  background:var(--line);cursor:none;
+  background:var(--line);
   transition:background 0.25s,transform 0.25s;border:none;padding:0;
 }
 .slider-dot.active{background:var(--teal);transform:scale(1.3);}
@@ -260,6 +249,8 @@ h2{font-family:"Space Grotesk",sans-serif;font-size:clamp(1.8rem,3.5vw,2.8rem);f
 .card-visual{width:160px;flex-shrink:0;aspect-ratio:4/3;display:flex;align-items:center;justify-content:center;font-size:2.2rem;color:var(--teal);}
 .card-thumb{width:100%;aspect-ratio:16/9;object-fit:cover;border-radius:8px;margin-bottom:1.25rem;display:block;border:1px solid rgba(0,212,170,0.22);box-shadow:0 0 0 1px rgba(0,212,170,0.05),0 0 14px rgba(0,212,170,0.07);}
 .project-row{display:grid;grid-template-columns:1fr 1fr;gap:1rem;}
+.card-link-btn{display:inline-flex;align-items:center;gap:6px;font-size:0.8rem;font-weight:500;color:var(--teal);text-decoration:none;margin-top:1.25rem;padding:0.4rem 0;border-bottom:1px solid rgba(0,212,170,0.2);transition:gap 0.2s,border-color 0.2s;}
+.card-link-btn:hover{gap:10px;border-color:rgba(0,212,170,0.55);}
 
 /* SERVICES */
 .services{background:#0A0910;position:relative;z-index:2;}
@@ -296,7 +287,7 @@ h2{font-family:"Space Grotesk",sans-serif;font-size:clamp(1.8rem,3.5vw,2.8rem);f
 .tech-stack-inner{max-width:900px;margin:0 auto;}
 .tech-stack-heading{font-family:"Space Mono",monospace;font-size:0.66rem;letter-spacing:0.1em;color:var(--ink3);text-transform:uppercase;margin-bottom:2rem;opacity:0.8;}
 .tech-icons{display:flex;gap:2rem;justify-content:center;flex-wrap:wrap;align-items:center;}
-.tech-icon{width:48px;height:48px;display:flex;align-items:center;justify-content:center;background:rgba(244,242,255,0.03);border:1px solid rgba(0,212,170,0.15);border-radius:8px;cursor:none;transition:all 0.25s var(--ease);position:relative;overflow:hidden;}
+.tech-icon{width:48px;height:48px;display:flex;align-items:center;justify-content:center;background:rgba(244,242,255,0.03);border:1px solid rgba(0,212,170,0.15);border-radius:8px;transition:all 0.25s var(--ease);position:relative;overflow:hidden;}
 .tech-icon::before{content:"";position:absolute;inset:0;background:linear-gradient(135deg,rgba(0,212,170,0.1),rgba(255,107,43,0.05));opacity:0;transition:opacity 0.25s;border-radius:8px;}
 .tech-icon:hover{border-color:rgba(0,212,170,0.35);background:rgba(0,212,170,0.08);transform:translateY(-3px);box-shadow:0 6px 20px rgba(0,212,170,0.15);}
 .tech-icon:hover::before{opacity:1;}
@@ -316,7 +307,7 @@ h2{font-family:"Space Grotesk",sans-serif;font-size:clamp(1.8rem,3.5vw,2.8rem);f
 footer{position:relative;z-index:1;padding:1.2rem 2.5rem;display:flex;justify-content:space-between;font-family:"Space Mono",monospace;font-size:0.65rem;color:var(--ink3);letter-spacing:0.05em;background:var(--bg);border-top:1px solid var(--line);flex-wrap:wrap;gap:0.5rem;}
 footer a{color:var(--ink3);text-decoration:none;transition:color 0.2s;}
 footer a:hover{color:var(--teal);}
-.footer-btn{background:none;border:none;padding:0;color:var(--ink3);font:inherit;letter-spacing:inherit;cursor:none;transition:color 0.2s;}
+.footer-btn{background:none;border:none;padding:0;color:var(--ink3);font:inherit;letter-spacing:inherit;transition:color 0.2s;}
 .footer-btn:hover{color:var(--teal);}
 
 /* REVEAL */
@@ -325,22 +316,38 @@ footer a:hover{color:var(--teal);}
 .d1{transition-delay:0.1s;}.d2{transition-delay:0.2s;}.d3{transition-delay:0.3s;}
 
 @media(max-width:900px){
-  .hero{grid-template-columns:1fr;padding:5rem 1.25rem 3rem;}
-  .slider-wrap{margin-top:2rem;}
+  .hero{grid-template-columns:1fr;padding:5.2rem 1rem 2rem;gap:2.1rem;min-height:auto;}
+  .hero-left{order:1;margin-top:0;}
+  .hero-mobile-lab{order:2;width:min(100%,400px);height:360px;margin-left:auto;margin-right:auto;}
+  .hero h1{font-size:clamp(2.45rem,12.5vw,3.6rem);}
+  .hero-sub{margin:1rem 0 1.2rem;line-height:1.6;}
+  .hero-scroll{margin-top:0.9rem;}
   section{padding:4rem 1.25rem;}
   .card-featured{flex-direction:column;}.card-visual{width:100%;}
   .project-row{grid-template-columns:1fr;}
   .services-grid{grid-template-columns:1fr;}
   .about-grid{grid-template-columns:1fr;gap:3rem;}
+  .about-box{aspect-ratio:unset;height:220px;}
+  .about-badge{right:0.75rem;bottom:0.75rem;}
   footer{flex-direction:column;text-align:center;padding:1.2rem;}
   .contact{padding:5rem 1.25rem;}
   .topbar{padding:1rem 1.25rem;}
-  .topbar-role{font-size:0.54rem;gap:0.3rem;padding:0 0.65rem;}
-  .topbar-role-dynamic{min-width:0;}
-  .topbar-logo img{height:48px;}
+  .topbar-role-dynamic{font-size:1.25rem;min-width:0;}
+  .topbar-logo-text{font-size:1.25rem;}
   .fab-wrap{bottom:1.5rem;right:1.25rem;}
-  #cursor-ship{display:none;}
-  body{cursor:auto;}a,button{cursor:auto;}
+  .eyebrow-text{font-size:0.92rem;}
+
+}
+
+@media (max-width: 767px){
+  .hero{padding-top:6.9rem;gap:2rem;padding-bottom:2rem;align-items:start;}
+  .hero-left{max-width:100%;order:2;margin-top:0.25rem;}
+  .hero-mobile-lab{
+    order:1;
+    width:min(100%,360px);
+    height:280px;
+    margin:0.35rem auto 0;
+  }
 }
 
 .slide-with-img{display:flex;gap:1rem;align-items:flex-start;padding:1.25rem 1.75rem;}
@@ -356,7 +363,7 @@ footer a:hover{color:var(--teal);}
   letter-spacing:0.08em;
 }
 .lang-btn{
-  background:none;border:none;cursor:none;
+  background:none;border:none;
   padding:4px 8px;border-radius:4px;
   color:var(--ink3);font-family:"Space Mono",monospace;
   font-size:0.62rem;letter-spacing:0.08em;
@@ -459,7 +466,7 @@ footer a:hover{color:var(--teal);}
 .consent-head{display:flex;align-items:center;justify-content:space-between;gap:1rem;margin-bottom:0.85rem;}
 .consent-title{font-size:1.02rem;font-weight:700;letter-spacing:0.02em;color:#1e3b86;margin:0;}
 .consent-lang-toggle{display:flex;align-items:center;gap:0.25rem;font-family:"Space Mono",monospace;font-size:0.64rem;letter-spacing:0.08em;color:#4c5872;}
-.consent-lang-btn{border:1px solid rgba(31,60,133,0.35);background:transparent;color:#1f3c85;padding:0.22rem 0.46rem;border-radius:4px;cursor:none;font:inherit;}
+.consent-lang-btn{border:1px solid rgba(31,60,133,0.35);background:transparent;color:#1f3c85;padding:0.22rem 0.46rem;border-radius:4px;font:inherit;}
 .consent-lang-btn.active{background:#1f3c85;color:#f4f7ff;border-color:#1f3c85;}
 .consent-text{font-size:0.82rem;color:#4a5261;line-height:1.6;margin-bottom:1rem;}
 .consent-categories{display:grid;gap:0.6rem;margin-bottom:1rem;}
@@ -468,7 +475,7 @@ footer a:hover{color:var(--teal);}
 .consent-category label{font-size:0.8rem;font-weight:600;color:#3b4354;}
 .consent-category small{grid-column:2;font-size:0.75rem;line-height:1.52;color:#5a6376;}
 .consent-actions{display:flex;gap:0.6rem;justify-content:flex-end;flex-wrap:wrap;}
-.consent-actions .btn{padding:9px 16px;font-size:0.76rem;cursor:none;}
+.consent-actions .btn{padding:9px 16px;font-size:0.76rem;}
 .consent-actions .btn-secondary{background:#eef1f7;border-color:#2c4fa3;color:#2c4fa3;}
 .consent-actions .btn-primary{background:#ff6b2b;color:#fff;border-color:#ff6b2b;}
 
@@ -490,7 +497,6 @@ footer a:hover{color:var(--teal);}
 </head>
 <body>
 <canvas id="neural-canvas"></canvas>
-<div id="cursor-ship"></div>
 
 <aside class="consent-banner" id="consentBanner" hidden aria-live="polite">
   <div class="consent-inner">
@@ -584,8 +590,7 @@ footer a:hover{color:var(--teal);}
 </aside>
 
 <header class="topbar" id="topbar">
-  <div class="topbar-logo"><img src="assets/images/phnk-logo.png" alt="PHNK"></div>
-  <div class="topbar-role"><span class="topbar-role-static">AI Concept &amp;</span><span class="topbar-role-dynamic" id="topbarRoleDynamic">Digital Deployment</span></div>
+  <div class="topbar-logo"><a href="#hero" class="topbar-logo-text">PHNK</a><span class="topbar-role-dynamic" id="topbarRoleDynamic"> denkt.</span></div>
   <div class="lang-toggle">
     <button class="lang-btn active" id="btn-nl" type="button">NL</button>
     <span class="lang-sep">/</span>
@@ -596,9 +601,9 @@ footer a:hover{color:var(--teal);}
 <div class="fab-wrap">
   <div class="fab-items" id="fabItems">
     <a href="#hero" class="fab-item"><span class="fab-icon">&#9632;</span> <span data-lang="nl">Home</span><span data-lang="en" style="display:none">Home</span></a>
-    <a href="#work" class="fab-item"><span class="fab-icon">&#9724;</span> <span data-lang="nl">Werk</span><span data-lang="en" style="display:none">Work</span></a>
     <a href="#services" class="fab-item"><span class="fab-icon">&#9670;</span> <span data-lang="nl">Diensten</span><span data-lang="en" style="display:none">Services</span></a>
-    <a href="#about" class="fab-item"><span class="fab-icon">&#9711;</span> <span data-lang="nl">Over mij</span><span data-lang="en" style="display:none">About</span></a>
+    <a href="#work" class="fab-item"><span class="fab-icon">&#9724;</span> <span data-lang="nl">Werk</span><span data-lang="en" style="display:none">Work</span></a>
+    <a href="#about" class="fab-item"><span class="fab-icon">&#9711;</span> <span data-lang="nl">Over PHNK</span><span data-lang="en" style="display:none">About PHNK</span></a>
     <a href="#contact" class="fab-item"><span class="fab-icon">&#8594;</span> <span data-lang="nl">Contact</span><span data-lang="en" style="display:none">Contact</span></a>
   </div>
   <button class="fab-btn" id="fabBtn" aria-label="Menu">+</button>
@@ -606,72 +611,29 @@ footer a:hover{color:var(--teal);}
 
 <section class="hero" id="hero">
   <div class="hero-left reveal">
-    <h1><span data-lang="nl">Concept.<br><em>AI. Gebouwd.</em></span><span data-lang="en" style="display:none">Concept.<br><em>AI. Built.</em></span></h1>
-    <p class="hero-sub"><span data-lang="nl">Van business idee naar werkende digitale tool &mdash; AI, design en deployment in één hand.</span><span data-lang="en" style="display:none">From business idea to working digital tool &mdash; AI, design and deployment in one hand.</span></p>
+    <h1><span data-lang="nl">1, 2, 3, 4,<br><em>AI voor plezier.</em></span><span data-lang="en" style="display:none">1, 2, 3, 4,<br><em>AI for fun.</em></span></h1>
+    <p class="hero-sub"><span data-lang="nl">Geen papierwerk meer, laat ons het hoedje bouwen.</span><span data-lang="en" style="display:none">No more paperwork, let us build the hat.</span></p>
     <div class="hero-cta">
-      <a href="#work" class="btn btn-primary"><span data-lang="nl">Bekijk werk</span><span data-lang="en" style="display:none">View work</span></a>
-      <a href="#contact" class="btn btn-secondary"><span data-lang="nl">Laten we praten</span><span data-lang="en" style="display:none">Let's talk</span></a>
+      <a href="#work" class="btn btn-primary"><span data-lang="nl">Bekijk het werk</span><span data-lang="en" style="display:none">See the work</span></a>
+      <a href="#contact" class="btn btn-secondary"><span data-lang="nl">Plan een gesprek</span><span data-lang="en" style="display:none">Let's talk</span></a>
     </div>
     <div class="hero-scroll">
       <div class="ping-wrap"><div class="ping-ring"></div><div class="ping-ring2"></div><div class="ping-dot"></div></div>
       <span data-lang="nl">Scroll</span><span data-lang="en" style="display:none">Scroll</span>
     </div>
   </div>
-  <div class="reveal d1">
-    <div class="slider-wrap">
-      <div class="slider-header">
-        <div class="slider-dot-ui"></div>
-        <div class="slider-dot-ui"></div>
-        <div class="slider-dot-ui"></div>
-        <span class="slider-title-bar">PHNK / <span data-lang="nl">geselecteerd werk</span><span data-lang="en" style="display:none">selected work</span></span>
-      </div>
-      <div class="slides">
-        <div class="slide slide-with-img">
-          <div class="slide-left">
-            <div class="slide-num typewriter-line">// 01</div>
-            <div class="slide-title typewriter-line">Green Marine Motors</div>
-            <div class="slide-desc-wrap"><p class="slide-desc"><span data-lang="nl">6-staps meertalige buitenboordmotor-calculator. React, Vercel, Pipedrive CRM. Beschikbaar in 5 talen. Verkocht en live.</span><span data-lang="en" style="display:none">6-step multilingual boat motor calculator. React, Vercel, Pipedrive CRM. Available in 5 languages. Sold and live.</span></p></div>
-            <div class="slide-tags-wrap"><div class="slide-tags"><span class="slide-tag">React</span><span class="slide-tag"><span data-lang="nl">Meertalig</span><span data-lang="en" style="display:none">Multilingual</span></span><span class="slide-tag">CRM</span></div></div>
-            <div class="slide-link-wrap"><a href="https://greenmarinemotors.com" target="_blank" rel="noopener noreferrer" class="slide-link"><span data-lang="nl">Bekijk live &#8599;</span><span data-lang="en" style="display:none">View live &#8599;</span></a></div>
-          </div>
-          <div class="slide-preview"><img src="assets/images/projects/green-marine-motors.webp" alt="Green Marine Motors"></div>
-        </div>
-        <div class="slide">
-          <div class="slide-num typewriter-line">// 02</div>
-          <div class="slide-title typewriter-line">Ruimte om te Spreken</div>
-          <div class="slide-desc-wrap"><p class="slide-desc"><span data-lang="nl">Interactieve intake-tool voor een spreekcoach. Bezoekers brengen eerst hun spreekangst in kaart voordat ze een sessie boeken.</span><span data-lang="en" style="display:none">Interactive intake tool for a public speaking coach. Visitors identify their speaking anxiety before booking a session.</span></p></div>
-          <div class="slide-tags-wrap"><div class="slide-tags"><span class="slide-tag">Velo</span><span class="slide-tag"><span data-lang="nl">Leadtool</span><span data-lang="en" style="display:none">Lead tool</span></span></div></div>
-          <div class="slide-link-wrap"><a href="https://ruimteomtespreken.nl" target="_blank" rel="noopener noreferrer" class="slide-link"><span data-lang="nl">Bekijk live &#8599;</span><span data-lang="en" style="display:none">View live &#8599;</span></a></div>
-        </div>
-        <div class="slide">
-          <div class="slide-num typewriter-line">// 03</div>
-          <div class="slide-title typewriter-line">Bellers &mdash; AI Voice Agents</div>
-          <div class="slide-desc-wrap"><p class="slide-desc"><span data-lang="nl">Suite van inkomende AI voice agents op ElevenLabs, Gemini &amp; Twilio. Neemt gesprekken aan, kwalificeert leads en plant afspraken in.</span><span data-lang="en" style="display:none">Suite of inbound AI voice agents on ElevenLabs, Gemini &amp; Twilio. Handles calls, qualifies leads, books appointments.</span></p></div>
-          <div class="slide-tags-wrap"><div class="slide-tags"><span class="slide-tag">ElevenLabs</span><span class="slide-tag">Twilio</span><span class="slide-tag">Zapier</span></div></div>
-          <div class="slide-link-wrap"></div>
-        </div>
-        <div class="slide">
-          <div class="slide-num typewriter-line">// 04</div>
-          <div class="slide-title typewriter-line">De Stelling</div>
-          <div class="slide-desc-wrap"><p class="slide-desc"><span data-lang="nl">Website voor een debat- en opinieplatform. Redactioneel ontwerp gericht op helderheid en inhoudshiërarchie.</span><span data-lang="en" style="display:none">Website for a debate and opinion platform. Editorial design focused on clarity and content hierarchy.</span></p></div>
-          <div class="slide-tags-wrap"><div class="slide-tags"><span class="slide-tag"><span data-lang="nl">Webdesign</span><span data-lang="en" style="display:none">Web Design</span></span><span class="slide-tag"><span data-lang="nl">Redactioneel</span><span data-lang="en" style="display:none">Editorial</span></span></div></div>
-          <div class="slide-link-wrap"><a href="https://www.destelling.online" target="_blank" rel="noopener noreferrer" class="slide-link"><span data-lang="nl">Bekijk live &#8599;</span><span data-lang="en" style="display:none">View live &#8599;</span></a></div>
-        </div>
-        <div class="slide slide-more">
-          <div class="slide-num typewriter-line">// +</div>
-          <div class="slide-title typewriter-line"><span data-lang="nl">En veel meer.</span><span data-lang="en" style="display:none">And much more.</span></div>
-          <div class="slide-desc-wrap"><p class="slide-desc"><span data-lang="nl">Games, quizzes, dashboards, voice agents, intake-tools — als je het kunt bedenken, kan het gebouwd worden.</span><span data-lang="en" style="display:none">Games, quizzes, dashboards, voice agents, intake tools — if you can imagine it, it can be built.</span></p></div>
-          <div class="slide-tags-wrap"><div class="slide-tags"><span class="slide-tag"><span data-lang="nl">Games &amp; Quizzen</span><span data-lang="en" style="display:none">Games &amp; Quizzes</span></span><span class="slide-tag"><span data-lang="nl">Maatwerktools</span><span data-lang="en" style="display:none">Custom Tools</span></span><span class="slide-tag"><span data-lang="nl">Voice Agents</span><span data-lang="en" style="display:none">Voice Agents</span></span><span class="slide-tag"><span data-lang="nl">Dashboards</span><span data-lang="en" style="display:none">Dashboards</span></span><span class="slide-tag"><span data-lang="nl">Op aanvraag</span><span data-lang="en" style="display:none">On Request</span></span></div></div>
-          <div class="slide-link-wrap"><a href="#contact" class="slide-link"><span data-lang="nl">Start een gesprek &#8599;</span><span data-lang="en" style="display:none">Start a conversation &#8599;</span></a></div>
-        </div>
-      </div>
-      <div class="slider-footer">
-        <button class="slider-dot" aria-label="Slide 1"></button>
-        <button class="slider-dot" aria-label="Slide 2"></button>
-        <button class="slider-dot" aria-label="Slide 3"></button>
-        <button class="slider-dot" aria-label="Slide 4"></button>
-        <button class="slider-dot" aria-label="Slide 5"></button>
-      </div>
+  <div class="hero-mobile-lab reveal d1" id="heroMobileLab" aria-label="Interactief 3D object">
+    <canvas id="boatCanvas"></canvas>
+  </div>
+</section>
+
+<section id="services" class="services">
+  <div class="container">
+    <div class="reveal"><div class="eyebrow"><div class="eyebrow-line"></div><span class="eyebrow-text"><span data-lang="nl">Wat PHNK doet</span><span data-lang="en" style="display:none">What PHNK does</span></span></div><h2><span data-lang="nl">Iedereen denkt<br>dat het moeilijk is.</span><span data-lang="en" style="display:none">Everyone thinks<br>it&rsquo;s complicated.</span></h2></div>
+    <div class="services-grid reveal">
+      <div class="service"><div class="service-dot"></div><h3>AI Concept &amp; Strategie</h3><p><span data-lang="nl">Je weet dat er iets slimmer kan in je bedrijf &mdash; maar niet precies hoe. Dat is waar PHNK begint. Samen zoeken we uit waar AI tijd, geld of energie bespaart. Geen hype, geen vakjargon. Gewoon een helder plan dat past bij jouw bedrijf.</span><span data-lang="en" style="display:none">You know something in your business could be smarter &mdash; but you&rsquo;re not sure how. That&rsquo;s exactly where PHNK starts. Together we figure out where AI saves time, money or energy. No hype, no jargon. Just a clear plan that fits your business.</span></p></div>
+      <div class="service"><div class="service-dot"></div><h3>Digitale Tools &amp; Calculators</h3><p><span data-lang="nl">Offertetools, intake-formulieren, configurators, aanbevelingsmodules &mdash; tools die 24/7 voor jou werken. Klanten worden meteen goed geholpen. Jij bespaart tijd bij elke aanvraag, zonder dat je er naar om hoeft te kijken.</span><span data-lang="en" style="display:none">Quote tools, intake forms, configurators, recommendation modules &mdash; tools that work for you 24/7. Customers get helped straight away. You save time on every enquiry without having to look at it.</span></p></div>
+      <div class="service"><div class="service-dot"></div><h3>Voice &amp; Chat Agents</h3><p><span data-lang="nl">Telefoon wordt niet opgenomen? Vragen blijven liggen? Een AI voice- of chatagent neemt het over &mdash; beantwoordt vragen, plant afspraken in en kwalificeert leads. Automatisch. En menselijk genoeg dat niemand het doorheeft.</span><span data-lang="en" style="display:none">Phone going unanswered? Questions piling up? An AI voice or chat agent takes over &mdash; answers questions, books appointments and qualifies leads. Automatically. And human enough that no one notices the difference.</span></p></div>
     </div>
   </div>
 </section>
@@ -679,11 +641,11 @@ footer a:hover{color:var(--teal);}
 <section id="work">
   <div class="container">
     <div class="work-header reveal">
-      <div><div class="eyebrow"><div class="eyebrow-line"></div><span class="eyebrow-text"><span data-lang="nl">Geselecteerd werk</span><span data-lang="en" style="display:none">Selected work</span></span></div><h2><span data-lang="nl">Dingen die ik bouwde<br>die echt werken.</span><span data-lang="en" style="display:none">Things I built<br>that actually work.</span></h2></div>
-      <p><span data-lang="nl">Echte tools voor echte problemen &mdash; elk live en in gebruik.</span><span data-lang="en" style="display:none">Real tools for real problems &mdash; each one deployed and live.</span></p>
+      <div><div class="eyebrow"><div class="eyebrow-line"></div><span class="eyebrow-text"><span data-lang="nl">Geselecteerd werk</span><span data-lang="en" style="display:none">Selected work</span></span></div><h2><span data-lang="nl">Tools die werken<br>terwijl jij werkt.</span><span data-lang="en" style="display:none">Tools that work<br>while you work.</span></h2></div>
+      <p><span data-lang="nl">Geen prototypes. Elk project live, in gebruik &mdash; gebouwd voor echte bedrijven met echte uitdagingen.</span><span data-lang="en" style="display:none">No prototypes. Every project live and in use &mdash; built for real businesses with real challenges.</span></p>
     </div>
     <div class="projects">
-      <a href="https://greenmarinemotors.com" target="_blank" rel="noopener noreferrer" class="card card-featured reveal">
+      <div class="card card-featured reveal">
         <div class="card-visual radar-frame">
           <div class="radar-scanline"></div>
           <div class="radar-corner tl"></div>
@@ -691,58 +653,52 @@ footer a:hover{color:var(--teal);}
           <div class="radar-corner bl"></div>
           <div class="radar-corner br"></div>
           <div class="radar-label">SYS.ONLINE</div>
-          <img src="assets/images/projects/green-marine-motors.webp" alt="Green Marine Motors">
+          <img src="assets/images/projects/green-marine-motors.webp" alt="Aanbevelingscalculator">
         </div>
         <div>
-          <div class="card-top"><span class="card-num">// 01</span><div class="card-arrow">&#8599;</div></div>
-          <div class="card-title">Green Marine Motors</div>
-          <p class="card-desc"><span data-lang="nl">Een 6-staps meertalige aanbevelingscalculator voor buitenboordmotoren. Gebouwd in React, gedeployed op Vercel en gekoppeld aan Pipedrive CRM. Beschikbaar in NL, EN, DE, SE en DK. Verkocht en live.</span><span data-lang="en" style="display:none">A 6-step multilingual boat motor recommendation calculator. Built in React, deployed on Vercel, integrated with Pipedrive CRM. Available in NL, EN, DE, SE and DK. Sold and live.</span></p>
+          <div class="card-top"><span class="card-num">// 01</span></div>
+          <div class="card-title"><span data-lang="nl">Meertalige aanbevelingscalculator</span><span data-lang="en" style="display:none">Multilingual recommendation calculator</span></div>
+          <p class="card-desc"><span data-lang="nl">6-staps configurator voor buitenboordmotoren. Gebouwd in React, live op Vercel, gekoppeld aan Pipedrive CRM. Beschikbaar in NL, EN, DE, SE en DK.</span><span data-lang="en" style="display:none">6-step configurator for outboard motors. Built in React, live on Vercel, connected to Pipedrive CRM. Available in NL, EN, DE, SE and DK.</span></p>
           <div class="card-tags"><span class="tag">React</span><span class="tag"><span data-lang="nl">Meertalig</span><span data-lang="en" style="display:none">Multilingual</span></span><span class="tag">CRM</span><span class="tag">Vercel</span></div>
+          <a href="https://greenmarinemotors.com" target="_blank" rel="noopener noreferrer" class="card-link-btn"><span data-lang="nl">Bekijk live &#8599;</span><span data-lang="en" style="display:none">View live &#8599;</span></a>
         </div>
-      </a>
+      </div>
       <div class="project-row">
-        <a href="https://ruimteomtespreken.nl" target="_blank" rel="noopener noreferrer" class="card reveal d1">
-          <img class="card-thumb" src="assets/images/projects/ruimte-om-te-spreken.webp" alt="Ruimte om te Spreken" loading="lazy">
-          <div class="card-top"><span class="card-num">// 02</span><div class="card-arrow">&#8599;</div></div>
-          <div class="card-title">Ruimte om te Spreken</div>
-          <p class="card-desc"><span data-lang="nl">Interactieve intake-tool voor een spreekcoach. Bezoekers brengen eerst hun spreekangst in kaart voordat ze boeken.</span><span data-lang="en" style="display:none">Interactive intake tool for a public speaking coach. Visitors identify their speaking anxiety before booking.</span></p>
+        <div class="card reveal d1">
+          <img class="card-thumb" src="assets/images/projects/ruimte-om-te-spreken.webp" alt="Intake-tool voor coaches" loading="lazy">
+          <div class="card-top"><span class="card-num">// 02</span></div>
+          <div class="card-title"><span data-lang="nl">Intake-tool voor coaches</span><span data-lang="en" style="display:none">Intake tool for coaches</span></div>
+          <p class="card-desc"><span data-lang="nl">Interactieve intake voor een spreekcoach. Bezoekers brengen eerst hun spreekangst in kaart voordat ze boeken.</span><span data-lang="en" style="display:none">Interactive intake for a speaking coach. Visitors identify their speaking anxiety before booking.</span></p>
           <div class="card-tags"><span class="tag">Velo</span><span class="tag"><span data-lang="nl">Leadtool</span><span data-lang="en" style="display:none">Lead tool</span></span></div>
-        </a>
-        <a href="https://www.destelling.online" target="_blank" rel="noopener noreferrer" class="card reveal d2">
-          <img class="card-thumb" src="assets/images/projects/de-stelling.webp" alt="De Stelling" loading="lazy">
-          <div class="card-top"><span class="card-num">// 03</span><div class="card-arrow">&#8599;</div></div>
-          <div class="card-title">De Stelling</div>
-          <p class="card-desc"><span data-lang="nl">Website voor een debat- en opinieplatform. Redactioneel ontwerp gericht op helderheid en inhoudshiërarchie.</span><span data-lang="en" style="display:none">Website for a debate and opinion platform. Editorial design focused on clarity and content hierarchy.</span></p>
+          <a href="https://ruimteomtespreken.nl" target="_blank" rel="noopener noreferrer" class="card-link-btn"><span data-lang="nl">Bekijk live &#8599;</span><span data-lang="en" style="display:none">View live &#8599;</span></a>
+        </div>
+        <div class="card reveal d2">
+          <img class="card-thumb" src="assets/images/projects/de-stelling.webp" alt="Redactionele website" loading="lazy">
+          <div class="card-top"><span class="card-num">// 03</span></div>
+          <div class="card-title"><span data-lang="nl">Redactionele website</span><span data-lang="en" style="display:none">Editorial website</span></div>
+          <p class="card-desc"><span data-lang="nl">Website voor een debat- en opinieplatform. Redactioneel ontwerp gericht op helderheid en inhoudshi&euml;rarchie.</span><span data-lang="en" style="display:none">Website for a debate and opinion platform. Editorial design focused on clarity and content hierarchy.</span></p>
           <div class="card-tags"><span class="tag"><span data-lang="nl">Webdesign</span><span data-lang="en" style="display:none">Web Design</span></span><span class="tag"><span data-lang="nl">Redactioneel</span><span data-lang="en" style="display:none">Editorial</span></span></div>
-        </a>
+          <a href="https://www.destelling.online" target="_blank" rel="noopener noreferrer" class="card-link-btn"><span data-lang="nl">Bekijk live &#8599;</span><span data-lang="en" style="display:none">View live &#8599;</span></a>
+        </div>
       </div>
       <div class="project-row">
-        <div class="card reveal d1" style="cursor:none">
-          <img class="card-thumb" src="assets/images/projects/bellers-ai-voice-agents.webp" alt="Bellers — AI Voice Agents" loading="lazy">
+        <div class="card reveal d1">
+          <img class="card-thumb" src="assets/images/projects/bellers-ai-voice-agents.webp" alt="AI Voice Agents" loading="lazy">
           <div class="card-top"><span class="card-num">// 04</span></div>
-          <div class="card-title">Bellers &mdash; AI Voice Agents</div>
-          <p class="card-desc"><span data-lang="nl">Suite van inkomende AI voice agents gebouwd op ElevenLabs, Gemini en Twilio. Neemt gesprekken aan, kwalificeert leads en plant afspraken in.</span><span data-lang="en" style="display:none">Suite of inbound AI voice agents built on ElevenLabs, Gemini and Twilio. Handles calls, qualifies leads, books appointments.</span></p>
+          <div class="card-title"><span data-lang="nl">AI Voice Agent Suite</span><span data-lang="en" style="display:none">AI Voice Agent Suite</span></div>
+          <p class="card-desc"><span data-lang="nl">Suite van inkomende AI voice agents op ElevenLabs, Gemini en Twilio. Neemt gesprekken aan, kwalificeert leads en plant afspraken in.</span><span data-lang="en" style="display:none">Suite of inbound AI voice agents on ElevenLabs, Gemini and Twilio. Handles calls, qualifies leads, books appointments.</span></p>
           <div class="card-tags"><span class="tag">ElevenLabs</span><span class="tag">Twilio</span><span class="tag">Zapier</span></div>
+          <a href="#contact" class="card-link-btn"><span data-lang="nl">Vraag ernaar &#8594;</span><span data-lang="en" style="display:none">Ask about this &#8594;</span></a>
         </div>
-        <div class="card reveal d2" style="cursor:none">
-          <img class="card-thumb" src="assets/images/projects/family-easter-quiz.webp" alt="Family Easter Quiz" loading="lazy">
+        <div class="card reveal d2">
+          <img class="card-thumb" src="assets/images/projects/family-easter-quiz.webp" alt="Interactieve ervaringen" loading="lazy">
           <div class="card-top"><span class="card-num">// 05</span></div>
-          <div class="card-title">Family Easter Quiz</div>
-          <p class="card-desc"><span data-lang="nl">Een thematische interactieve quizgame gebouwd in React. Vragen met tijdslimiet, scoretracking en geanimeerde resultaten.</span><span data-lang="en" style="display:none">A themed interactive quiz game built in React. Timed questions, score tracking and animated results.</span></p>
+          <div class="card-title"><span data-lang="nl">Interactieve ervaringen</span><span data-lang="en" style="display:none">Interactive experiences</span></div>
+          <p class="card-desc"><span data-lang="nl">Games, quizzen en interactieve ervaringen gebouwd in React. Thematisch, met tijdslimiet, scoretracking en geanimeerde resultaten.</span><span data-lang="en" style="display:none">Games, quizzes and interactive experiences built in React. Themed, with time limits, score tracking and animated results.</span></p>
           <div class="card-tags"><span class="tag">React</span><span class="tag"><span data-lang="nl">Game design</span><span data-lang="en" style="display:none">Game design</span></span><span class="tag">GitHub Pages</span></div>
+          <a href="#contact" class="card-link-btn"><span data-lang="nl">Vraag ernaar &#8594;</span><span data-lang="en" style="display:none">Ask about this &#8594;</span></a>
         </div>
       </div>
-    </div>
-  </div>
-</section>
-
-<section id="services" class="services">
-  <div class="container">
-    <div class="reveal"><div class="eyebrow"><div class="eyebrow-line"></div><span class="eyebrow-text"><span data-lang="nl">Wat ik doe</span><span data-lang="en" style="display:none">What I do</span></span></div><h2><span data-lang="nl">De brug tussen<br>idee en werkend product.</span><span data-lang="en" style="display:none">The bridge between<br>idea and working product.</span></h2></div>
-    <div class="services-grid reveal">
-      <div class="service"><div class="service-dot"></div><h3>AI Concept &amp; Strategie</h3><p><span data-lang="nl">Ik help bedrijven begrijpen waar AI écht waarde toevoegt &mdash; en bouw daar een concept omheen. Geen buzzwords, geen hype. Gewoon een helder idee en een plan.</span><span data-lang="en" style="display:none">I help businesses understand where AI actually adds value &mdash; and design a concept around it. No buzzwords, no hype. Just a clear idea and a plan.</span></p></div>
-      <div class="service"><div class="service-dot"></div><h3>Digitale Tools &amp; Calculators</h3><p><span data-lang="nl">Interactieve configurators, intake tools, aanbevelingsmodules. Tools die leads vangen, klanten kwalificeren en uw dienst begrijpelijker maken.</span><span data-lang="en" style="display:none">Interactive configurators, intake tools, recommendation engines. Tools that capture leads, qualify customers and make your service easier to understand.</span></p></div>
-      <div class="service"><div class="service-dot"></div><h3>Voice &amp; Chat Agents</h3><p><span data-lang="nl">AI-agents die spreken en luisteren. Gebouwd op ElevenLabs, Twilio en Gemini. Van inkomende gesprekken tot afspraakinplanning &mdash; geautomatiseerd en natuurlijk.</span><span data-lang="en" style="display:none">AI agents that speak and listen. Built on ElevenLabs, Twilio and Gemini. From inbound call handling to appointment booking &mdash; automated and natural.</span></p></div>
     </div>
   </div>
 </section>
@@ -752,14 +708,14 @@ footer a:hover{color:var(--teal);}
     <div class="about-grid">
       <div style="position:relative" class="reveal">
         <div class="about-box"><div class="about-glow"></div><div class="about-mono">PH</div></div>
-        <div class="about-badge"><div class="badge-num">20+</div><div class="badge-label">yrs media &amp; production</div></div>
+        <div class="about-badge"><div class="badge-num">10+</div><div class="badge-label"><span data-lang="nl">jaar<br>media &amp; productie</span><span data-lang="en" style="display:none">years<br>media &amp; production</span></div></div>
       </div>
       <div class="about-text reveal d1">
-        <div class="eyebrow"><div class="eyebrow-line"></div><span class="eyebrow-text"><span data-lang="nl">Over mij</span><span data-lang="en" style="display:none">About</span></span></div>
-        <h2><span data-lang="nl">Operator.<br>Niet alleen een bouwer.</span><span data-lang="en" style="display:none">Operator.<br>Not just a builder.</span></h2>
-        <p><span data-lang="nl">Ik heb meer dan twintig jaar in de televisieproductie gewerkt in Amsterdam. Daarna maakte ik een bewuste keuze: opnieuw beginnen vanuit een ander fundament &mdash; verhaalinstinct combineren met moderne AI en digitale tools.</span><span data-lang="en" style="display:none">I spent over two decades in television production in Amsterdam. Then I made a deliberate choice: to rebuild from a different foundation &mdash; combining storytelling instinct with modern AI and digital tools.</span></p>
-        <p><span data-lang="nl">Gevestigd in Oldeberkoop, Friesland. Werkend voor klanten door heel Nederland. Ik lever niet aan &mdash; ik bezit het traject van concept tot deployment.</span><span data-lang="en" style="display:none">Based in Oldeberkoop, Friesland. Working for clients across the Netherlands. I don&rsquo;t hand off work &mdash; I own it from concept to deployment.</span></p>
-        <div class="skills"><span class="skill">cursor</span><span class="skill">webflow</span><span class="skill">react</span><span class="skill">elevenlabs</span><span class="skill">twilio</span><span class="skill">zapier</span><span class="skill">vercel</span><span class="skill">github</span><span class="skill">adobe-cc</span><span class="skill">n8n</span></div>
+        <div class="eyebrow"><div class="eyebrow-line"></div><span class="eyebrow-text"><span data-lang="nl">Over PHNK</span><span data-lang="en" style="display:none">About PHNK</span></span></div>
+        <h2><span data-lang="nl">Dezelfde vraag.<br>Ander gereedschap.</span><span data-lang="en" style="display:none">Same question.<br>Different tools.</span></h2>
+        <p><span data-lang="nl">Meer dan twintig jaar televisieprogramma's bedacht en gemaakt. Formats die bleven hangen. Grote teams, krappe deadlines, alles tegelijk &mdash; je leert snel wat werkt en wat niet. Die manier van denken neem ik mee naar elk digitaal project.</span><span data-lang="en" style="display:none">For over twenty years I conceived and produced television programmes. Formats that kept audiences watching. Big teams, tight deadlines, everything at once &mdash; you learn fast what works and what doesn&rsquo;t. That way of thinking I bring to every digital project.</span></p>
+        <p><span data-lang="nl">Ik werk vanuit Friesland &mdash; voor klanten door heel Nederland. Geen account manager, geen doorschuifcultuur. Jij praat altijd met mij, van het eerste gesprek tot het moment dat het live gaat.</span><span data-lang="en" style="display:none">I work from Friesland &mdash; for clients across the Netherlands. No account manager, no passing the buck. You always talk directly to me, from the first conversation to the moment it goes live.</span></p>
+        <div class="skills"><span class="skill">cursor</span><span class="skill">webflow</span><span class="skill">react</span><span class="skill">elevenlabs</span><span class="skill">twilio</span><span class="skill">zapier</span><span class="skill">vercel</span><span class="skill">github</span><span class="skill">adobe-cc</span><span class="skill">n8n</span><span class="skill">rtl4</span><span class="skill">conceptueel denken</span><span class="skill">storytelling</span></div>
       </div>
     </div>
   </div>
@@ -767,7 +723,7 @@ footer a:hover{color:var(--teal);}
 
 <section class="tech-stack reveal">
   <div class="tech-stack-inner">
-    <div class="tech-stack-heading"><span data-lang="nl">Tech Stack</span><span data-lang="en" style="display:none">Tech Stack</span></div>
+    <div class="tech-stack-heading"><span data-lang="nl">Mijn gereedschap</span><span data-lang="en" style="display:none">Tech Stack</span></div>
     <div class="tech-icons">
       <div class="tech-icon" title="React"><svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><circle cx="12" cy="13.5" r="1.5"/><path d="M12 2C6.48 2 2 9 2 13.5s4.48 11.5 10 11.5 10-7 10-11.5-4.48-11.5-10-11.5zm0 19c-4.41 0-8-5.82-8-9.5S7.59 5 12 5s8 5.82 8 9.5-3.59 8-8 8z" fill="currentColor"/></svg></div>
       <div class="tech-icon" title="GitHub"><svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 . 405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z" fill="currentColor"/></svg></div>
@@ -788,8 +744,8 @@ footer a:hover{color:var(--teal);}
     <div class="eyebrow" style="justify-content:center;margin-bottom:1rem;">
       <div class="eyebrow-line"></div><span class="eyebrow-text"><span data-lang="nl">Contact</span><span data-lang="en" style="display:none">Contact</span></span>
     </div>
-    <h2 class="reveal"><span data-lang="nl">Jij hebt een idee.<br>Ik weet hoe we het bouwen.</span><span data-lang="en" style="display:none">You have an idea.<br>I know how to build it.</span></h2>
-    <p class="contact-sub reveal d1"><span data-lang="nl">Laten we praten over wat AI voor jouw business kan doen &mdash; zonder jargon, zonder gedoe.</span><span data-lang="en" style="display:none">Let&rsquo;s talk about what AI can do for your business &mdash; no jargon, no pressure.</span></p>
+    <h2 class="reveal"><span data-lang="nl">E&eacute;n gesprek.<br>Dat is genoeg.</span><span data-lang="en" style="display:none">One conversation.<br>That&rsquo;s enough.</span></h2>
+    <p class="contact-sub reveal d1"><span data-lang="nl">Zo begon alles. Met een gesprek. Vertel wat er speelt &mdash; ik kom terug met een plan.</span><span data-lang="en" style="display:none">This is how it always starts. A conversation. Tell me what&rsquo;s going on &mdash; I&rsquo;ll come back with a plan.</span></p>
     <div class="reveal d2" style="display:flex;gap:1rem;justify-content:center;flex-wrap:wrap;">
       <a href="mailto:patrick@phnkmedia.com" class="btn btn-primary"><span data-lang="nl">Stuur een bericht</span><span data-lang="en" style="display:none">Send a message</span></a>
       <a href="https://linkedin.com/in/patrickhink" target="_blank" rel="noopener noreferrer" class="btn btn-secondary"><span>LinkedIn</span></a>
@@ -1002,10 +958,16 @@ function initTopbarRoleTypewriter() {
   const role = document.getElementById("topbarRoleDynamic");
   if (!role) return;
 
-  const phrases = ["Digital Deployment", "Digitale Implementatie"];
+  const phrases = [" denkt.", " ontwerpt.", " bouwt.", " test.", " deployt.", " optimaliseert.", " levert.", " maakt het."];
   let phraseIndex = 0;
   let charIndex = phrases[0].length;
   let deleting = false;
+
+  // Prevent layout shift: measure longest phrase and lock min-width
+  const longest = phrases.reduce((a, b) => a.length > b.length ? a : b);
+  role.textContent = longest;
+  role.style.minWidth = role.offsetWidth + 'px';
+  role.textContent = phrases[0];
 
   function tick() {
     const phrase = phrases[phraseIndex];
@@ -1035,7 +997,7 @@ function initTopbarRoleTypewriter() {
   window.setTimeout(() => {
     deleting = true;
     tick();
-  }, 3200);
+  }, 2400);
 }
 
 initTopbarRoleTypewriter();
@@ -1297,38 +1259,83 @@ function initAnalyticsConsent() {
 
 initAnalyticsConsent();
 
-// Slider auto-rotation
+// Slider auto-rotation (disabled — slider replaced by 3D boat)
+// (function(){...})();
+
+// 3D Paper boat loader
 (function(){
-  const slides = document.querySelectorAll('.slide');
-  if (!slides.length) return;
-  let current = 0;
-  function activate(idx) {
-    slides.forEach((s, i) => {
-      const on = i === idx;
-      s.classList.toggle('active', on);
-      s.querySelectorAll('.slide-desc-wrap,.slide-tags-wrap,.slide-link-wrap').forEach(el => {
-        el.classList.toggle('visible', on);
-      });
-    });
-  }
-  activate(0);
-  setInterval(() => { current = (current + 1) % slides.length; activate(current); }, 3600);
+  const container = document.getElementById('heroMobileLab');
+  const cvs = document.getElementById('boatCanvas');
+  if (!container || !cvs) return;
+
+  const importMapEl = document.createElement('script');
+  importMapEl.type = 'importmap';
+  importMapEl.textContent = JSON.stringify({imports:{"three":"https://cdn.jsdelivr.net/npm/three@0.165.0/build/three.module.js","three/addons/":"https://cdn.jsdelivr.net/npm/three@0.165.0/examples/jsm/"}});
+  document.head.appendChild(importMapEl);
+
+  const loader = document.createElement('script');
+  loader.type = 'module';
+  loader.textContent = `
+import * as THREE from 'three';
+import {GLTFLoader} from 'three/addons/loaders/GLTFLoader.js';
+import {OrbitControls} from 'three/addons/controls/OrbitControls.js';
+
+const container=document.getElementById('heroMobileLab');
+const cvs=document.getElementById('boatCanvas');
+const w=()=>container.clientWidth, h=()=>container.clientHeight;
+
+const scene=new THREE.Scene();
+const camera=new THREE.PerspectiveCamera(38,w()/h(),0.1,100);
+camera.position.set(0,1.8,4.2);
+
+const renderer=new THREE.WebGLRenderer({canvas:cvs,alpha:true,antialias:true});
+renderer.setPixelRatio(Math.min(devicePixelRatio,2));
+renderer.setSize(w(),h());
+renderer.outputColorSpace=THREE.SRGBColorSpace;
+renderer.toneMapping=THREE.ACESFilmicToneMapping;
+renderer.toneMappingExposure=1.6;
+
+scene.add(new THREE.AmbientLight(0xffffff,1.4));
+const dir=new THREE.DirectionalLight(0xfff4e6,2.6);
+dir.position.set(3,5,4);
+scene.add(dir);
+const rim=new THREE.DirectionalLight(0x00d4aa,0.5);
+rim.position.set(-3,2,-3);
+scene.add(rim);
+
+const controls=new OrbitControls(camera,cvs);
+controls.enableDamping=true;
+controls.dampingFactor=0.08;
+controls.enableZoom=false;
+controls.enablePan=false;
+controls.autoRotate=true;
+controls.autoRotateSpeed=1.2;
+controls.target.set(0,0.9,0);
+
+new GLTFLoader().load('assets/images/paper-boat.glb',gltf=>{
+  const model=gltf.scene;
+  const box=new THREE.Box3().setFromObject(model);
+  const c=box.getCenter(new THREE.Vector3());
+  const s=box.getSize(new THREE.Vector3());
+  const scale=2/Math.max(s.x,s.y,s.z);
+  model.scale.setScalar(scale);
+  model.position.sub(c.multiplyScalar(scale));
+  model.position.y+=0.5;
+  scene.add(model);
+});
+
+window.addEventListener('resize',()=>{
+  camera.aspect=w()/h();
+  camera.updateProjectionMatrix();
+  renderer.setSize(w(),h());
+});
+
+(function anim(){requestAnimationFrame(anim);controls.update();renderer.render(scene,camera);})();
+`;
+  document.body.appendChild(loader);
 })();
 
-// Spaceship cursor follower
-(function(){
-  const ship = document.getElementById('cursor-ship');
-  if (!ship) return;
-  let mx = window.innerWidth / 2, my = window.innerHeight / 2;
-  let sx = mx, sy = my;
-  document.addEventListener('mousemove', e => { mx = e.clientX; my = e.clientY; });
-  (function loop(){
-    sx += (mx - sx) * 0.18;
-    sy += (my - sy) * 0.18;
-    ship.style.transform = 'translate(' + (sx - 10) + 'px,' + (sy - 10) + 'px)';
-    requestAnimationFrame(loop);
-  })();
-})();
+
 </script>
 </body>
 </html>
