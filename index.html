@@ -52,13 +52,14 @@ body{
 
 
 /* TOPBAR */
-.topbar{position:fixed;top:0;left:0;right:0;z-index:200;padding:1.25rem 2.5rem;display:flex;align-items:center;justify-content:space-between;transition:all 0.3s var(--ease);}
+.topbar{position:fixed;top:0;left:0;right:0;z-index:200;padding:1.25rem 2.5rem;display:flex;align-items:center;justify-content:space-between;height:64px;box-sizing:border-box;transition:transform 0.35s var(--ease),background 0.3s var(--ease),backdrop-filter 0.3s var(--ease),border-color 0.3s var(--ease),padding 0.3s var(--ease);}
 .topbar.scrolled{background:rgba(8,8,11,0.92);backdrop-filter:blur(20px);border-bottom:1px solid var(--line);padding:0.85rem 2.5rem;}
+.topbar.hidden-up{transform:translateY(-100%);}
 .topbar-logo{display:flex;align-items:center;flex-shrink:0;white-space:nowrap;}
 .topbar-logo-text{font-family:"Space Grotesk",sans-serif;font-weight:700;font-size:1.55rem;letter-spacing:0.06em;color:#fff;text-transform:uppercase;line-height:1;cursor:default;user-select:none;text-decoration:none;display:inline-block;}
 .topbar-role{display:none;}
-.topbar-role-dynamic{display:inline-block;white-space:nowrap;color:var(--orange);font-family:"Space Grotesk",sans-serif;font-weight:700;font-size:1.55rem;letter-spacing:0.06em;border-right:2px solid rgba(255,107,43,0.9);padding-right:0.15rem;min-width:0.5ch;animation:role-caret 0.8s step-end infinite;}
-@keyframes role-caret{0%,100%{border-right-color:rgba(255,107,43,0.9);}50%{border-right-color:transparent;}}
+.topbar-role-dynamic{display:inline-block;white-space:nowrap;color:var(--orange);font-family:"Space Grotesk",sans-serif;font-weight:700;font-size:1.55rem;letter-spacing:0.06em;min-width:0.5ch;}
+
 
 /* FAB — slow pulse, no ping in hero */
 .fab-wrap{position:fixed;bottom:2rem;right:2rem;z-index:300;display:flex;flex-direction:column;align-items:flex-end;gap:10px;}
@@ -880,10 +881,18 @@ window.addEventListener("scroll", () => {
   scroll = window.scrollY;
 });
 
-// Topbar scroll effect
+// Topbar scroll: hide on scroll down, show on scroll up
 const topbar = document.getElementById("topbar");
+let lastScrollY = window.scrollY;
 window.addEventListener("scroll", () => {
-  topbar.classList.toggle("scrolled", window.scrollY > 60);
+  const sy = window.scrollY;
+  topbar.classList.toggle("scrolled", sy > 60);
+  if (sy > 120) {
+    topbar.classList.toggle("hidden-up", sy > lastScrollY);
+  } else {
+    topbar.classList.remove("hidden-up");
+  }
+  lastScrollY = sy;
 });
 
 // Floating action menu
@@ -958,7 +967,7 @@ function initTopbarRoleTypewriter() {
   const role = document.getElementById("topbarRoleDynamic");
   if (!role) return;
 
-  const phrases = [" denkt.", " ontwerpt.", " bouwt.", " test.", " deployt.", " optimaliseert.", " levert.", " maakt het."];
+  const phrases = [" bedenkt.", " maakt.", " levert."];
   let phraseIndex = 0;
   let charIndex = phrases[0].length;
   let deleting = false;
