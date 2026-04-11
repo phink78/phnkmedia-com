@@ -1254,7 +1254,8 @@ function initAnalyticsConsent() {
   }
 
   applyConsentChoicesToInputs(getDefaultConsentChoices());
-  if (banner) banner.hidden = false;
+  // Cookie banner disabled
+  if (banner) banner.hidden = true;
 }
 
 initAnalyticsConsent();
