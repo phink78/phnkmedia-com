@@ -1,3 +1,9 @@
 {
-    "github.copilot.chat.agentDebugLog.fileLogging.enabled": true
+    "github.copilot.chat.agentDebugLog.fileLogging.enabled": true,
+    "chat.tools.terminal.autoApprove": {
+        "/^python3 -c \"\nimport json\nedl=json\\.load\\(open\\('cutcontext_output/edit_decision_list\\.json'\\)\\)\nfor i,c in enumerate\\(edl\\['cuts'\\]\\):\n    print\\(f'\\{i\\+1\\}\\. \\[\\{c\\[\\\\\"start\\\\\"\\]:\\.1f\\}-\\{c\\[\\\\\"end\\\\\"\\]:\\.1f\\}\\] \\(\\{c\\[\\\\\"end\\\\\"\\]-c\\[\\\\\"start\\\\\"\\]:\\.1f\\}s\\) speaker=\\{c\\.get\\(\\\\\"speaker\\\\\",\\\\\"\\?\\\\\"\\)\\} \\| \\{c\\.get\\(\\\\\"text\\\\\",\\\\\"\\\\\"\\)\\[:60\\]\\}'\\)\n\"$/": {
+            "approve": true,
+            "matchCommandLine": true
+        }
+    }
 }
