@@ -1,1466 +1,1900 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="nl" prefix="og: https://ogp.me/ns#">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>PHNK — AI Concept &amp; Digital Deployment</title>
-<meta name="description" content="Patrick Hink bouwt AI-tools, voice agents en digitale oplossingen voor MKB Nederland. Van concept tot deployment — in één hand.">
-<meta name="author" content="Patrick Hink — PHNK Media &amp; Design">
-<meta name="robots" content="index, follow">
-<link rel="canonical" href="https://phnkmedia.com">
-<meta property="og:type" content="website">
-<meta property="og:url" content="https://phnkmedia.com">
-<meta property="og:title" content="PHNK — AI Concept &amp; Digital Deployment">
-<meta property="og:description" content="Van business idee naar werkende digitale tool — AI, design en deployment in één hand.">
-<meta property="og:image" content="https://phnkmedia.com/og-image.png">
-<meta property="og:image:width" content="1200">
-<meta property="og:image:height" content="630">
-<meta property="og:locale" content="nl_NL">
-<meta property="og:site_name" content="PHNK Media &amp; Design">
-<meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="PHNK — AI Concept &amp; Digital Deployment">
-<meta name="twitter:description" content="Van business idee naar werkende digitale tool — AI, design en deployment in één hand.">
-<meta name="twitter:image" content="https://phnkmedia.com/og-image.png">
+
+<!-- SEO PRIMARY -->
+<title>Patrick Hink — Concept, Webdesign &amp; AI | PHNK Media</title>
+<meta name="description" content="Patrick Hink (PHNK Media) ontwikkelt digitale producten: concept, webdesign en AI-integratie voor het Nederlandse MKB. Van idee tot live — één aanspreekpunt.">
+<meta name="keywords" content="Patrick Hink, PHNK Media, webdesign Friesland, AI strategie Nederland, voice agent, AI engineer, concept ontwikkeling, Wix Studio, Next.js, ElevenLabs, digitale medewerker, MKB automatisering">
+<meta name="author" content="Patrick Hink — PHNK Media">
+<meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large">
+<link rel="canonical" href="https://www.phnkmedia.com/">
+
+<!-- OPEN GRAPH -->
+<meta property="og:type"        content="website">
+<meta property="og:url"         content="https://www.phnkmedia.com/">
+<meta property="og:title"       content="Patrick Hink — Concept, Webdesign &amp; AI | PHNK Media">
+<meta property="og:description" content="Concept, webdesign en AI-integratie voor het Nederlandse MKB. Van spraakagenten tot SaaS-platforms — één aanspreekpunt in Friesland.">
+<meta property="og:locale"      content="nl_NL">
+<meta property="og:site_name"   content="PHNK Media">
+
+<!-- TWITTER CARD -->
+<meta name="twitter:card"        content="summary_large_image">
+<meta name="twitter:title"       content="Patrick Hink — Concept, Webdesign &amp; AI">
+<meta name="twitter:description" content="PHNK Media: van concept tot AI-integratie. Webdesign, voice agents en workshops voor het Nederlandse MKB.">
+
+<!-- SECURITY -->
+<meta http-equiv="X-Content-Type-Options" content="nosniff">
+<meta name="referrer" content="strict-origin-when-cross-origin">
+
+<!-- STRUCTURED DATA -->
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"ProfessionalService","name":"PHNK Media & Design","description":"AI concept, digitale tools en deployment voor MKB Nederland","url":"https://phnkmedia.com","founder":{"@type":"Person","name":"Patrick Hink"},"address":{"@type":"PostalAddress","addressLocality":"Oldeberkoop","addressRegion":"Friesland","addressCountry":"NL"},"serviceType":["AI Integratie","Voice Agents","Web Development","Digitale Tools"],"areaServed":"Nederland"}
+{"@context":"https://schema.org","@graph":[{"@type":"Person","@id":"https://www.phnkmedia.com/#person","name":"Patrick Hink","jobTitle":"Concept Developer, Web Designer & AI Engineer","description":"Patrick Hink is oprichter van PHNK Media en ontwikkelt digitale producten voor het Nederlandse MKB. Voormalig televisieproducent met credits bij Holland's Got Talent, X Factor, The Masked Singer en Dragons' Den.","url":"https://www.phnkmedia.com/","email":"info@phnkmedia.com","sameAs":["https://www.linkedin.com/in/patrickhink/"],"knowsAbout":["Conceptontwikkeling","Webdesign","AI-strategie","Voice Agents","ElevenLabs","Wix Studio","Next.js","n8n","LLM-integratie"],"worksFor":{"@id":"https://www.phnkmedia.com/#organization"}},{"@type":"Organization","@id":"https://www.phnkmedia.com/#organization","name":"PHNK Media","url":"https://www.phnkmedia.com/","email":"info@phnkmedia.com","founder":{"@id":"https://www.phnkmedia.com/#person"},"address":{"@type":"PostalAddress","addressLocality":"Oldeberkoop","addressRegion":"Friesland","addressCountry":"NL"},"areaServed":"NL","serviceType":["Webdesign","AI-strategie","Conceptontwikkeling","Voice Agent Development","AI Workshops"]},{"@type":"WebSite","@id":"https://www.phnkmedia.com/#website","url":"https://www.phnkmedia.com/","name":"Patrick Hink — PHNK Media","publisher":{"@id":"https://www.phnkmedia.com/#organization"},"inLanguage":["nl","en"]}]}
 </script>
+
+<!-- GA4: blocked until consent — REPLACE G-P89PQS3L WITH YOUR ACTUAL ID -->
+<script>
+  window.GA_ID = 'G-P89PQS3L';
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('consent','default',{analytics_storage:'denied',ad_storage:'denied',wait_for_update:500});
+</script>
+
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Space+Mono:ital@0;1&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Unbounded:wght@300;400;700;900&family=DM+Mono:ital,wght@0,300;0,400;1,300&display=swap" rel="stylesheet">
+
 <style>
-:root {
-  --bg:#08080B; --bg2:#0E0D16; --bg3:#1A1825;
-  --ink:#F4F2FF; --ink2:#B8B4D0; --ink3:#A8A4C0;
-  --teal:#00D4AA; --teal2:#0098A6;
-  --neon:#00FFCC; --neon2:#00C4D4;
-  --line:rgba(244,242,255,0.1);
-  --orange:#FF6B2B;
-  --orange2:#FF4500;
-  --orange:#FF6B2B;
-  --orange2:#FF4500;
-  --ease:cubic-bezier(0.4,0,0.2,1);
-}
-*{margin:0;padding:0;box-sizing:border-box;}
-html{scroll-behavior:smooth;}
-body{
-  font-family:"Space Grotesk",sans-serif;
-  background:var(--bg);color:var(--ink);
-  line-height:1.65;-webkit-font-smoothing:antialiased;
-  overflow-x:hidden;
-}
-#neural-canvas{position:fixed;top:0;left:0;width:100%;height:100%;pointer-events:none;z-index:0;opacity:0.55;}
-
-
-
-/* TOPBAR */
-.topbar{position:fixed;top:0;left:0;right:0;z-index:200;padding:1.25rem 2.5rem;display:flex;align-items:center;justify-content:space-between;height:64px;box-sizing:border-box;transition:transform 0.35s var(--ease),background 0.3s var(--ease),backdrop-filter 0.3s var(--ease),border-color 0.3s var(--ease),padding 0.3s var(--ease);}
-.topbar.scrolled{background:rgba(8,8,11,0.92);backdrop-filter:blur(20px);border-bottom:1px solid var(--line);padding:0.85rem 2.5rem;}
-.topbar.hidden-up{transform:translateY(-100%);}
-.topbar-logo{display:flex;align-items:center;flex-shrink:0;white-space:nowrap;}
-.topbar-logo-text{font-family:"Space Grotesk",sans-serif;font-weight:700;font-size:1.55rem;letter-spacing:0.06em;color:#fff;text-transform:uppercase;line-height:1;cursor:default;user-select:none;text-decoration:none;display:inline-block;}
-.topbar-role{display:none;}
-.topbar-role-dynamic{display:inline-block;white-space:nowrap;color:var(--orange);font-family:"Space Grotesk",sans-serif;font-weight:700;font-size:1.55rem;letter-spacing:0.06em;min-width:0.5ch;}
-
-
-/* FAB — slow pulse, no ping in hero */
-.fab-wrap{position:fixed;bottom:2rem;right:2rem;z-index:300;display:flex;flex-direction:column;align-items:flex-end;gap:10px;}
-.fab-items{display:flex;flex-direction:column;align-items:flex-end;gap:8px;}
-.fab-item{display:flex;align-items:center;gap:8px;padding:9px 18px 9px 12px;border-radius:100px;background:rgba(22,20,28,0.97);border:1px solid var(--line);color:var(--ink);font-family:"Space Grotesk",sans-serif;font-size:0.8rem;font-weight:500;white-space:nowrap;text-decoration:none;box-shadow:0 2px 20px rgba(0,0,0,0.5);transform:translateY(8px) scale(0.94);opacity:0;pointer-events:none;transition:transform 0.3s cubic-bezier(0.34,1.56,0.64,1),opacity 0.2s ease,background 0.2s,border-color 0.2s;backdrop-filter:blur(12px);}
-.fab-item:hover{background:linear-gradient(135deg,var(--orange),var(--orange2));border-color:transparent;box-shadow:0 0 20px rgba(255,107,43,0.3);}
-.fab-item.visible{transform:translateY(0) scale(1);opacity:1;pointer-events:auto;}
-.fab-icon{width:20px;height:20px;border-radius:50%;background:rgba(255,255,255,0.06);display:flex;align-items:center;justify-content:center;font-size:10px;flex-shrink:0;}
-.fab-btn{
-  width:52px;height:52px;border-radius:50%;
-  background:linear-gradient(135deg,var(--orange),var(--orange2));
-  border:none;
-  display:flex;align-items:center;justify-content:center;
-  color:white;font-size:22px;font-weight:300;
-  box-shadow:0 0 0 0 rgba(255,107,43,0.4);
-  transition:transform 0.3s cubic-bezier(0.34,1.56,0.64,1);
-  outline:none;
-  animation:fab-pulse 3s ease-in-out infinite;
-}
-@keyframes fab-pulse{
-  0%,100%{box-shadow:0 0 0 0 rgba(255,107,43,0.4);}
-  50%{box-shadow:0 0 0 10px rgba(255,107,43,0);}
-}
-.fab-btn.open{transform:rotate(45deg);animation:none;}
-.fab-btn:hover{animation:none;box-shadow:0 0 28px rgba(255,107,43,0.6);}
-
-/* BUTTONS */
-.btn{display:inline-flex;align-items:center;gap:8px;padding:13px 28px;border-radius:6px;font-family:"Space Grotesk",sans-serif;font-size:0.88rem;font-weight:500;text-decoration:none;border:none;letter-spacing:0.02em;}
-.btn-primary{position:relative;overflow:hidden;background:linear-gradient(135deg,var(--teal),var(--teal2));color:white;transition:transform 0.2s,box-shadow 0.2s;box-shadow:0 0 20px rgba(0,212,170,0.3);}
-.btn-primary::after{content:"";position:absolute;top:-50%;left:-60%;width:36%;height:200%;background:rgba(255,255,255,0.2);transform:skewX(-20deg);transition:left 0.5s ease;}
-.btn-primary:hover::after{left:120%;}
-.btn-primary:hover{transform:translateY(-2px);box-shadow:0 0 32px rgba(0,212,170,0.5);}
-.btn-secondary{position:relative;overflow:hidden;background:transparent;color:var(--ink);border:1px solid var(--line);transition:border-color 0.25s;}
-.btn-secondary::before{content:"";position:absolute;left:16px;top:50%;transform:translateY(-50%) scale(0);width:7px;height:7px;border-radius:50%;background:linear-gradient(135deg,var(--teal),var(--teal2));transition:transform 0.28s cubic-bezier(0.34,1.56,0.64,1);}
-.btn-secondary:hover::before{transform:translateY(-50%) scale(1);}
-.btn-secondary span{display:inline-block;transition:transform 0.28s var(--ease);}
-.btn-secondary:hover span{transform:translateX(13px);}
-.btn-secondary:hover{border-color:rgba(0,212,170,0.4);}
-
-/* LAYOUT */
-section{position:relative;z-index:2;padding:6.5rem 2.5rem;}
-.container{max-width:940px;margin:0 auto;}
-.eyebrow{display:flex;align-items:center;gap:10px;margin-bottom:1rem;}
-.eyebrow-line{width:20px;height:1px;background:linear-gradient(to right,var(--teal),var(--teal2));}
-.eyebrow-text{font-family:"Space Mono",monospace;font-size:0.65rem;letter-spacing:0.15em;text-transform:uppercase;color:var(--teal);}
-h1{font-family:"Space Grotesk",sans-serif;font-size:clamp(3.2rem,7vw,7rem);font-weight:700;line-height:1.0;letter-spacing:-0.03em;}
-h1 em{font-style:normal;font-weight:300;background:linear-gradient(135deg,var(--neon),var(--neon2));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;filter:drop-shadow(0 0 20px rgba(0,212,170,0.4));}
-h2{font-family:"Space Grotesk",sans-serif;font-size:clamp(1.8rem,3.5vw,2.8rem);font-weight:600;line-height:1.15;letter-spacing:-0.025em;}
-
-/* HERO */
-.hero{min-height:100vh;display:grid;grid-template-columns:1fr 1fr;align-items:center;gap:4rem;padding:6rem 2.5rem 4rem;position:relative;overflow:hidden;z-index:2;}
-.hero-left{position:relative;}
-.hero-sub{font-size:1rem;color:var(--ink2);max-width:420px;line-height:1.8;margin:1.5rem 0 2.5rem;}
-.hero-cta{display:flex;gap:1rem;flex-wrap:wrap;align-items:center;}
-.hero-scroll{display:flex;align-items:center;gap:0.6rem;margin-top:1.4rem;font-family:"Space Mono",monospace;font-size:0.62rem;letter-spacing:0.08em;color:var(--ink3);text-transform:uppercase;}
-.hero-mobile-lab{
-  display:block;
-  position:relative;
-  width:100%;
-  height:480px;
-  border-radius:16px;
-  border:1px solid rgba(255,107,43,0.28);
-  background:radial-gradient(circle at 50% 30%,rgba(255,107,43,0.12),rgba(255,69,0,0.03) 45%,rgba(14,13,22,0.88) 88%);
-  touch-action:none;
-  user-select:none;
-  -webkit-user-select:none;
-  overflow:hidden;
-}
-#boatCanvas{
-  display:block;
-  width:100%;
-  height:100%;
-}
-.ping-wrap{position:relative;width:14px;height:14px;display:inline-flex;align-items:center;justify-content:center;}
-.ping-dot{width:6px;height:6px;border-radius:50%;background:var(--teal);box-shadow:0 0 10px rgba(0,212,170,0.7);position:relative;z-index:2;}
-.ping-ring,.ping-ring2{position:absolute;border:1px solid rgba(0,212,170,0.45);border-radius:50%;inset:0;animation:ping 2.2s ease-out infinite;}
-.ping-ring2{animation-delay:0.9s;}
-@keyframes ping{0%{transform:scale(0.35);opacity:0.95;}70%{opacity:0.15;}100%{transform:scale(1.7);opacity:0;}}
-
-/* SLIDER DASHBOARD */
-.slider-wrap{
-  position:relative;
-  background:#0E0D16;
-  border:1px solid rgba(0,212,170,0.2);
-  border-radius:14px;
-  overflow:hidden;
-  box-shadow:0 0 40px rgba(0,212,170,0.08),inset 0 0 60px rgba(0,0,0,0.4);
-}
-.slider-header{
-  padding:10px 16px;
-  border-bottom:1px solid var(--line);
-  display:flex;align-items:center;gap:8px;
-  background:rgba(0,212,170,0.04);
-}
-.slider-dot-ui{width:8px;height:8px;border-radius:50%;}
-.slider-dot-ui:nth-child(1){background:#ff5f57;}
-.slider-dot-ui:nth-child(2){background:#febc2e;}
-.slider-dot-ui:nth-child(3){background:#28c840;}
-.slider-title-bar{
-  font-family:"Space Mono",monospace;
-  font-size:0.58rem;letter-spacing:0.08em;
-  color:var(--ink3);margin-left:auto;
-}
-.slides{position:relative;height:260px;}
-.slide{
-  position:absolute;inset:0;padding:1.75rem;
-  opacity:0;pointer-events:none;
-}
-.slide.active{opacity:1;pointer-events:auto;}
-.typewriter-line{
-  overflow:hidden;white-space:nowrap;
-  border-right:2px solid var(--teal);
-  width:0;animation:none;
-}
-.typewriter-line.typing{
-  animation:type-in 0.5s steps(30,end) forwards, blink 0.7s step-end 3;
-}
-.typewriter-line.done{
-  width:100%;border-right:none;
-}
-@keyframes type-in{from{width:0;}to{width:100%;}}
-@keyframes blink{0%,100%{border-color:var(--teal);}50%{border-color:transparent;}}
-.slide-desc-wrap{
-  overflow:hidden;max-height:0;
-  transition:max-height 0.4s var(--ease);
-}
-.slide-desc-wrap.visible{max-height:120px;}
-.slide-tags-wrap{
-  overflow:hidden;max-height:0;opacity:0;
-  transition:max-height 0.3s var(--ease),opacity 0.3s ease;
-}
-.slide-tags-wrap.visible{max-height:60px;opacity:1;}
-.slide-link-wrap{
-  overflow:hidden;max-height:0;opacity:0;
-  transition:max-height 0.3s var(--ease),opacity 0.3s ease;
-}
-.slide-link-wrap.visible{max-height:40px;opacity:1;}
-.slide-num{font-family:"Space Mono",monospace;font-size:0.6rem;color:var(--teal);letter-spacing:0.1em;margin-bottom:0.75rem;}
-.slide-title{font-size:1.1rem;font-weight:600;margin-bottom:0.5rem;letter-spacing:-0.01em;}
-.slide-desc{font-size:0.8rem;color:var(--ink2);line-height:1.65;margin-bottom:1rem;}
-.slide-tags{display:flex;gap:6px;flex-wrap:wrap;}
-.slide-tag{font-family:"Space Mono",monospace;font-size:0.58rem;padding:3px 8px;border-radius:3px;background:rgba(0,212,170,0.08);color:var(--teal);border:1px solid rgba(0,212,170,0.2);}
-.slide-link{
-  display:inline-flex;align-items:center;gap:6px;
-  font-size:0.75rem;font-weight:500;
-  color:var(--teal);text-decoration:none;
-  margin-top:0.75rem;
-  transition:gap 0.2s;
-}
-.slide-link:hover{gap:10px;}
-.slider-footer{
-  padding:10px 16px;border-top:1px solid var(--line);
-  display:flex;align-items:center;justify-content:center;gap:8px;
-  background:rgba(0,0,0,0.2);
-}
-.slider-dot{
-  width:6px;height:6px;border-radius:50%;
-  background:var(--line);
-  transition:background 0.25s,transform 0.25s;border:none;padding:0;
-}
-.slider-dot.active{background:var(--teal);transform:scale(1.3);}
-
-/* TRUST STRIP */
-.trust-strip{background:rgba(0,212,170,0.04);border-top:1px solid var(--line);border-bottom:1px solid var(--line);padding:2.5rem 2.5rem;position:relative;z-index:2;}
-.trust-inner{max-width:940px;margin:0 auto;text-align:center;}
-.trust-title{font-size:1rem;font-weight:600;margin-bottom:1rem;color:var(--ink);}
-.trust-badges{display:flex;justify-content:center;gap:1.5rem;flex-wrap:wrap;margin-bottom:0.75rem;}
-.trust-badge{font-family:"Space Mono",monospace;font-size:0.72rem;letter-spacing:0.06em;padding:6px 14px;border-radius:4px;background:rgba(0,212,170,0.08);color:var(--teal);border:1px solid rgba(0,212,170,0.2);}
-.trust-note{font-size:0.78rem;color:var(--ink3);line-height:1.65;max-width:560px;margin:0 auto;}
-
-/* CONTACT FORM */
-.contact-form{max-width:480px;margin:2rem auto 0;text-align:left;}
-.contact-form .form-group{margin-bottom:1rem;}
-.contact-form label{display:block;font-family:"Space Mono",monospace;font-size:0.68rem;letter-spacing:0.08em;color:var(--ink3);text-transform:uppercase;margin-bottom:0.35rem;}
-.contact-form input,.contact-form textarea{width:100%;padding:10px 14px;border-radius:6px;border:1px solid var(--line);background:rgba(244,242,255,0.04);color:var(--ink);font-family:"Space Grotesk",sans-serif;font-size:0.88rem;transition:border-color 0.2s;}
-.contact-form input:focus,.contact-form textarea:focus{outline:none;border-color:rgba(0,212,170,0.5);}
-.contact-form textarea{min-height:100px;resize:vertical;}
-.contact-form .btn{width:100%;justify-content:center;}
-.form-promise{text-align:center;font-size:0.78rem;color:var(--ink3);margin-top:0.75rem;font-style:italic;}
-
-/* SOCIAL PROOF */
-.social-proof{background:#0A0910;position:relative;z-index:2;padding:6.5rem 2.5rem;}
-.social-proof .container{max-width:940px;margin:0 auto;}
-.quotes-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--line);border:1px solid var(--line);border-radius:12px;overflow:hidden;margin-top:2.5rem;}
-.quote-card{background:#1A1825;padding:2rem;display:flex;flex-direction:column;gap:0.75rem;}
-.quote-text{font-size:0.88rem;color:var(--ink2);line-height:1.72;font-style:italic;}
-.quote-name{font-size:0.84rem;font-weight:600;color:var(--ink);}
-.quote-role{font-size:0.72rem;color:var(--ink3);font-family:"Space Mono",monospace;}
-.social-proof-cta{text-align:center;margin-top:2rem;font-size:0.88rem;color:var(--ink3);font-style:italic;}
-@media(max-width:900px){.quotes-grid{grid-template-columns:1fr;}}
-
-/* CARDS */
-.work-header{display:flex;justify-content:space-between;align-items:flex-end;gap:2rem;margin-bottom:3.5rem;flex-wrap:wrap;}
-.work-header p{font-size:0.92rem;color:var(--ink2);max-width:340px;line-height:1.75;}
-.projects{display:flex;flex-direction:column;gap:1rem;}
-.card{background:#1A1825;isolation:isolate;border:1px solid rgba(244,242,255,0.08);border-radius:12px;padding:2rem 2.25rem;text-decoration:none;color:inherit;transition:border-color 0.25s,transform 0.25s,box-shadow 0.25s;position:relative;overflow:hidden;}
-.card::before{content:"";position:absolute;inset:0;border-radius:12px;background:linear-gradient(135deg,rgba(0,212,170,0.03),rgba(0,152,166,0.03));opacity:0;transition:opacity 0.25s;}
-.card:hover{border-color:rgba(0,212,170,0.25);transform:translateY(-2px);box-shadow:0 0 30px rgba(0,212,170,0.07);}
-.card:hover::before{opacity:1;}
-.projects:hover .card:not(:hover){
-  box-shadow:0 22px 44px rgba(0,0,0,0.48);
-  border-color:rgba(244,242,255,0.04);
-  opacity:0.72;
-  transform:scale(0.985);
-  filter:saturate(0.72) brightness(0.78);
-}
-.card-featured{display:flex;align-items:center;gap:2.5rem;}
-.card-top{display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:1rem;}
-.card-num{font-family:"Space Mono",monospace;font-size:0.62rem;letter-spacing:0.1em;color:var(--ink3);}
-.card-arrow{width:28px;height:28px;border-radius:6px;border:1px solid var(--line);display:flex;align-items:center;justify-content:center;font-size:0.8rem;color:var(--ink3);transition:all 0.22s;}
-.card:hover .card-arrow{background:linear-gradient(135deg,var(--teal),var(--teal2));border-color:transparent;color:white;box-shadow:0 0 12px rgba(0,212,170,0.4);}
-.card-title{font-size:1.35rem;font-weight:600;margin-bottom:0.5rem;letter-spacing:-0.01em;}
-.card-featured .card-title{font-size:1.75rem;}
-.card-desc{font-size:0.84rem;color:var(--ink2);line-height:1.68;margin-bottom:1rem;}
-.card-tags{display:flex;gap:6px;flex-wrap:wrap;}
-.tag{font-family:"Space Mono",monospace;font-size:0.6rem;letter-spacing:0.05em;padding:4px 10px;border-radius:4px;background:#0E0D16;color:var(--ink3);border:1px solid rgba(244,242,255,0.08);}
-.card-visual{width:160px;flex-shrink:0;aspect-ratio:4/3;display:flex;align-items:center;justify-content:center;font-size:2.2rem;color:var(--teal);}
-.card-thumb{width:100%;aspect-ratio:16/9;object-fit:cover;border-radius:8px;margin-bottom:1.25rem;display:block;border:1px solid rgba(0,212,170,0.22);box-shadow:0 0 0 1px rgba(0,212,170,0.05),0 0 14px rgba(0,212,170,0.07);}
-.project-row{display:grid;grid-template-columns:1fr 1fr;gap:1rem;}
-.card-link-btn{display:inline-flex;align-items:center;gap:6px;font-size:0.8rem;font-weight:500;color:var(--teal);text-decoration:none;margin-top:1.25rem;padding:0.4rem 0;border-bottom:1px solid rgba(0,212,170,0.2);transition:gap 0.2s,border-color 0.2s;}
-.card-link-btn:hover{gap:10px;border-color:rgba(0,212,170,0.55);}
-
-/* SERVICES */
-.services{background:#0A0910;position:relative;z-index:2;}
-.services-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:var(--line);border:1px solid var(--line);border-radius:12px;overflow:hidden;margin-top:3rem;}
-.service{background:#1A1825;padding:2.25rem;transition:background 0.2s;}
-.service:hover{background:#211E2C;}
-.services-grid:hover .service:not(:hover){
-  background:#120F1A;
-  box-shadow:inset 0 0 0 1px rgba(244,242,255,0.02), 0 16px 32px rgba(0,0,0,0.24);
-  opacity:0.7;
-  transform:scale(0.985);
-  filter:saturate(0.7) brightness(0.78);
-}
-.service-dot{width:8px;height:8px;border-radius:50%;background:var(--teal);box-shadow:0 0 10px rgba(0,212,170,0.7);margin-bottom:1.5rem;}
-.service h3{font-size:1.1rem;font-weight:600;margin-bottom:0.65rem;}
-.service p{font-size:0.84rem;color:var(--ink2);line-height:1.72;}
-
-/* ABOUT */
-.about-grid{display:grid;grid-template-columns:1fr 1.4fr;gap:5rem;align-items:center;}
-.about-box{background:linear-gradient(145deg,#1A1825,#211E2C);border:1px solid var(--line);border-radius:12px;aspect-ratio:3/4;display:flex;align-items:center;justify-content:center;position:relative;overflow:hidden;}
-.about-glow{position:absolute;width:200px;height:200px;border-radius:50%;background:linear-gradient(135deg,var(--teal),var(--teal2));opacity:0.15;filter:blur(60px);}
-.about-mono{font-family:"Space Grotesk",sans-serif;font-size:5rem;font-weight:700;color:rgba(244,242,255,0.04);position:relative;z-index:1;letter-spacing:-0.05em;}
-.about-badge{position:absolute;bottom:-1rem;right:-1rem;background:#1A1825;border:1px solid var(--line);border-radius:10px;padding:1rem 1.5rem;box-shadow:0 0 20px rgba(0,212,170,0.15);}
-.badge-num{font-family:"Space Grotesk",sans-serif;font-size:1.8rem;font-weight:700;background:linear-gradient(135deg,var(--neon),var(--neon2));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;line-height:1;}
-.badge-label{font-size:0.72rem;color:var(--ink3);margin-top:3px;font-family:"Space Mono",monospace;}
-.about-text h2{margin-bottom:1.5rem;}
-.about-text p{font-size:0.94rem;color:var(--ink2);line-height:1.82;margin-bottom:0.9rem;}
-.skills{display:flex;flex-wrap:wrap;gap:6px;margin-top:1.5rem;}
-.skill{font-family:"Space Mono",monospace;font-size:0.65rem;padding:5px 12px;border-radius:4px;border:1px solid var(--line);color:var(--ink3);transition:all 0.2s;}
-.skill:hover{border-color:rgba(0,212,170,0.4);color:var(--teal);}
-
-/* TECH STACK STRIP */
-.tech-stack{background:transparent;padding:6rem 2.5rem;text-align:center;}
-.tech-stack-inner{max-width:900px;margin:0 auto;}
-.tech-stack-heading{font-family:"Space Mono",monospace;font-size:0.66rem;letter-spacing:0.1em;color:var(--ink3);text-transform:uppercase;margin-bottom:2rem;opacity:0.8;}
-.tech-icons{display:flex;gap:2rem;justify-content:center;flex-wrap:wrap;align-items:center;}
-.tech-icon{width:48px;height:48px;display:flex;align-items:center;justify-content:center;background:rgba(244,242,255,0.03);border:1px solid rgba(0,212,170,0.15);border-radius:8px;transition:all 0.25s var(--ease);position:relative;overflow:hidden;}
-.tech-icon::before{content:"";position:absolute;inset:0;background:linear-gradient(135deg,rgba(0,212,170,0.1),rgba(255,107,43,0.05));opacity:0;transition:opacity 0.25s;border-radius:8px;}
-.tech-icon:hover{border-color:rgba(0,212,170,0.35);background:rgba(0,212,170,0.08);transform:translateY(-3px);box-shadow:0 6px 20px rgba(0,212,170,0.15);}
-.tech-icon:hover::before{opacity:1;}
-.tech-icon svg{width:28px;height:28px;fill:currentColor;color:var(--teal);transition:color 0.2s;}
-.tech-icon:hover svg{color:var(--orange);filter:drop-shadow(0 0 8px rgba(255,107,43,0.4));}
-
-/* CONTACT */
-.contact{background:#0A0910;color:var(--ink);text-align:center;padding:8rem 2.5rem;}
-.contact h2{max-width:680px;margin:0 auto 1rem;}
-.contact .eyebrow{justify-content:center;}
-.contact-sub{color:var(--ink2);font-size:1rem;max-width:420px;margin:0 auto 2.5rem;line-height:1.75;}
-.contact-links{margin-top:4rem;padding-top:2rem;border-top:1px solid var(--line);display:flex;justify-content:center;gap:2.5rem;flex-wrap:wrap;}
-.contact-links a{color:var(--ink3);font-size:0.8rem;text-decoration:none;transition:color 0.2s;font-family:"Space Mono",monospace;}
-.contact-links a:hover{color:var(--teal);}
-
-/* FOOTER */
-footer{position:relative;z-index:1;padding:1.2rem 2.5rem;display:flex;justify-content:space-between;font-family:"Space Mono",monospace;font-size:0.65rem;color:var(--ink3);letter-spacing:0.05em;background:var(--bg);border-top:1px solid var(--line);flex-wrap:wrap;gap:0.5rem;}
-footer a{color:var(--ink3);text-decoration:none;transition:color 0.2s;}
-footer a:hover{color:var(--teal);}
-.footer-btn{background:none;border:none;padding:0;color:var(--ink3);font:inherit;letter-spacing:inherit;transition:color 0.2s;}
-.footer-btn:hover{color:var(--teal);}
-
-/* REVEAL */
-.reveal{opacity:0;transform:translateY(18px);transition:opacity 0.6s var(--ease),transform 0.6s var(--ease);}
-.reveal.visible{opacity:1;transform:translateY(0);}
-.d1{transition-delay:0.1s;}.d2{transition-delay:0.2s;}.d3{transition-delay:0.3s;}
-
-@media(max-width:900px){
-  .hero{grid-template-columns:1fr;padding:5.2rem 1rem 2rem;gap:2.1rem;min-height:auto;}
-  .hero-left{order:1;margin-top:0;}
-  .hero-mobile-lab{order:2;width:min(100%,400px);height:360px;margin-left:auto;margin-right:auto;}
-  .hero h1{font-size:clamp(2.45rem,12.5vw,3.6rem);}
-  .hero-sub{margin:1rem 0 1.2rem;line-height:1.6;}
-  .hero-scroll{margin-top:0.9rem;}
-  section{padding:4rem 1.25rem;}
-  .card-featured{flex-direction:column;}.card-visual{width:100%;}
-  .project-row{grid-template-columns:1fr;}
-  .services-grid{grid-template-columns:1fr 1fr;}
-  .about-grid{grid-template-columns:1fr;gap:3rem;}
-  .about-box{aspect-ratio:unset;height:220px;}
-  .about-badge{right:0.75rem;bottom:0.75rem;}
-  footer{flex-direction:column;text-align:center;padding:1.2rem;}
-  .contact{padding:5rem 1.25rem;}
-  .topbar{padding:1rem 1.25rem;}
-  .topbar-role-dynamic{font-size:1.25rem;min-width:0;}
-  .topbar-logo-text{font-size:1.25rem;}
-  .fab-wrap{bottom:1.5rem;right:1.25rem;}
-  .eyebrow-text{font-size:0.92rem;}
-
-}
-
-@media (max-width: 767px){
-  .services-grid{grid-template-columns:1fr;}
-  .services-grid{grid-template-columns:1fr;}
-  .hero{padding-top:5.5rem;gap:1.5rem;padding-bottom:2rem;align-items:start;}
-  .hero-left{max-width:100%;order:1;margin-top:0;}
-  .hero-mobile-lab{
-    order:2;
-    width:min(100%,360px);
-    height:220px;
-    margin:0 auto;
+  :root {
+    --bg: #0b0b0e;
+    --surface: #111116;
+    --border: rgba(255,255,255,0.07);
+    --text: #e8e8ec;
+    --muted: #a0a0b0;
+    --accent: #ff3c6e;
+    --accent2: #7c3fff;
+    --white: #ffffff;
+    --mono: 'DM Mono', monospace;
+    --display: 'Unbounded', sans-serif;
   }
-}
 
-.slide-with-img{display:flex;gap:1rem;align-items:flex-start;padding:1.25rem 1.75rem;}
-.slide-left{flex:1;min-width:0;}
-.slide-preview{width:130px;flex-shrink:0;border-radius:8px;overflow:hidden;border:1px solid rgba(0,212,170,0.15);opacity:0;transform:scale(0.95);transition:opacity 0.4s ease 0.6s,transform 0.4s ease 0.6s;}
-.slide.active .slide-preview{opacity:1;transform:scale(1);}
-.slide-preview img{width:100%;display:block;object-fit:cover;}
-.slide-more .slide-title{background:linear-gradient(135deg,var(--neon),#FF6B2B);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;}
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; }
 
-.lang-toggle{
-  display:flex;align-items:center;gap:2px;
-  font-family:"Space Mono",monospace;font-size:0.62rem;
-  letter-spacing:0.08em;
-}
-.lang-btn{
-  background:none;border:none;
-  padding:4px 8px;border-radius:4px;
-  color:var(--ink3);font-family:"Space Mono",monospace;
-  font-size:0.62rem;letter-spacing:0.08em;
-  transition:color 0.2s,background 0.2s;
-}
-.lang-btn.active{color:var(--teal);background:rgba(0,212,170,0.08);}
-.lang-btn:hover{color:var(--ink);}
-.lang-sep{color:var(--ink3);font-size:0.6rem;}
-[data-lang]{transition:opacity 0.15s ease;}
+  body {
+    background: var(--bg);
+    color: var(--text);
+    font-family: var(--mono);
+    font-size: 15px;
+    line-height: 1.7;
+    -webkit-font-smoothing: antialiased;
+    overflow-x: hidden;
+  }
 
-.radar-frame {
-  position: relative;
-  background: var(--bg2);
-  border-radius: 8px;
-  overflow: hidden;
-  border: 1px solid rgba(0,212,170,0.25);
-  box-shadow: 0 0 0 1px rgba(0,212,170,0.06), inset 0 0 18px rgba(0,212,170,0.04);
-}
-.radar-frame::before {
-  content: '';
-  position: absolute;
-  inset: 0;
-  background:
-    repeating-linear-gradient(0deg, transparent, transparent 14px, rgba(0,212,170,0.025) 14px, rgba(0,212,170,0.025) 15px),
-    repeating-linear-gradient(90deg, transparent, transparent 14px, rgba(0,212,170,0.025) 14px, rgba(0,212,170,0.025) 15px);
-  z-index: 2;
-  pointer-events: none;
-}
-.radar-frame::after {
-  content: '';
-  position: absolute;
-  inset: 0;
-  background: radial-gradient(ellipse at 50% 0%, rgba(0,212,170,0.07) 0%, transparent 65%);
-  z-index: 2;
-  pointer-events: none;
-}
-.radar-scanline {
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  height: 1px;
-  background: linear-gradient(90deg, transparent, rgba(0,212,170,0.4), transparent);
-  z-index: 3;
-  animation: scan 4s ease-in-out infinite;
-}
-@keyframes scan {
-  0% { top: 0; opacity: 0; }
-  5% { opacity: 1; }
-  95% { opacity: 1; }
-  100% { top: 100%; opacity: 0; }
-}
-.radar-corner { position: absolute; width: 8px; height: 8px; z-index: 4; }
-.radar-corner.tl { top: 5px; left: 5px; border-top: 1px solid var(--teal); border-left: 1px solid var(--teal); }
-.radar-corner.tr { top: 5px; right: 5px; border-top: 1px solid var(--teal); border-right: 1px solid var(--teal); }
-.radar-corner.bl { bottom: 5px; left: 5px; border-bottom: 1px solid var(--teal); border-left: 1px solid var(--teal); }
-.radar-corner.br { bottom: 5px; right: 5px; border-bottom: 1px solid var(--teal); border-right: 1px solid var(--teal); }
-.radar-label {
-  position: absolute;
-  bottom: 5px;
-  left: 0;
-  right: 0;
-  text-align: center;
-  z-index: 4;
-  font-family: "Space Mono", monospace;
-  font-size: 8px;
-  color: rgba(0,212,170,0.45);
-  letter-spacing: 0.12em;
-}
-.radar-frame img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  opacity: 0.82;
-  display: block;
-}
+  /* ── NOISE OVERLAY ─────────────────────────── */
+  body::before {
+    content: '';
+    position: fixed;
+    inset: 0;
+    opacity: 0.025;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E");
+    pointer-events: none;
+    z-index: 9999;
+  }
 
-.consent-banner{
-  position:fixed;
-  inset:0;
-  z-index:450;
-  background:rgba(2,4,8,0.68);
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  padding:1rem;
-}
-.consent-banner[hidden]{display:none;}
-.consent-inner{
-  width:min(920px,96vw);
-  max-height:92vh;
-  overflow:auto;
-  background:#e8ebf1;
-  border:1px solid rgba(32,54,98,0.25);
-  border-radius:8px;
-  box-shadow:0 32px 70px rgba(0,0,0,0.45);
-  color:#2f3642;
-}
-.consent-panel{padding:1.35rem 1.45rem;}
-.consent-head{display:flex;align-items:center;justify-content:space-between;gap:1rem;margin-bottom:0.85rem;}
-.consent-title{font-size:1.02rem;font-weight:700;letter-spacing:0.02em;color:#1e3b86;margin:0;}
-.consent-lang-toggle{display:flex;align-items:center;gap:0.25rem;font-family:"Space Mono",monospace;font-size:0.64rem;letter-spacing:0.08em;color:#4c5872;}
-.consent-lang-btn{border:1px solid rgba(31,60,133,0.35);background:transparent;color:#1f3c85;padding:0.22rem 0.46rem;border-radius:4px;font:inherit;}
-.consent-lang-btn.active{background:#1f3c85;color:#f4f7ff;border-color:#1f3c85;}
-.consent-text{font-size:0.82rem;color:#4a5261;line-height:1.6;margin-bottom:1rem;}
-.consent-categories{display:grid;gap:0.6rem;margin-bottom:1rem;}
-.consent-category{display:grid;grid-template-columns:auto 1fr;gap:0.5rem 0.7rem;padding:0.62rem 0.7rem;border:1px solid rgba(44,62,92,0.2);border-radius:6px;background:rgba(255,255,255,0.32);}
-.consent-category input{margin-top:0.12rem;accent-color:#ff6b2b;}
-.consent-category label{font-size:0.8rem;font-weight:600;color:#3b4354;}
-.consent-category small{grid-column:2;font-size:0.75rem;line-height:1.52;color:#5a6376;}
-.consent-actions{display:flex;gap:0.6rem;justify-content:flex-end;flex-wrap:wrap;}
-.consent-actions .btn{padding:9px 16px;font-size:0.76rem;}
-.consent-actions .btn-secondary{background:#eef1f7;border-color:#2c4fa3;color:#2c4fa3;}
-.consent-actions .btn-primary{background:#ff6b2b;color:#fff;border-color:#ff6b2b;}
+  /* ── ANIMATED BACKGROUND CANVAS ────────────── */
+  #bg-canvas {
+    position: fixed;
+    inset: 0;
+    z-index: 0;
+    pointer-events: none;
+  }
 
-.consent-settings{min-height:min(86vh,760px);display:flex;flex-direction:column;gap:0.8rem;}
-.consent-settings-list{display:grid;gap:0.5rem;}
-.consent-settings-item{border:1px solid rgba(44,62,92,0.2);border-radius:6px;background:rgba(255,255,255,0.34);padding:0.75rem 0.85rem;}
-.consent-settings-row{display:flex;align-items:center;gap:0.55rem;font-size:0.84rem;font-weight:600;color:#3b4354;margin-bottom:0.45rem;}
-.consent-settings-row input{accent-color:#ff6b2b;}
-.consent-settings-item p{font-size:0.77rem;line-height:1.58;color:#596175;}
-.consent-settings-footer{margin-top:auto;display:flex;justify-content:flex-end;gap:0.6rem;flex-wrap:wrap;padding-top:0.7rem;}
+  /* ── TOP BAR (logo + lang only) ─────────────── */
+  .topbar {
+    position: fixed;
+    top: 0; left: 0; right: 0;
+    z-index: 200;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1.25rem 2.5rem;
+    border-bottom: 1px solid var(--border);
+    background: rgba(11,11,14,0.85);
+    backdrop-filter: blur(16px);
+  }
 
-@media (max-width: 720px){
-  .consent-inner{width:100%;max-height:94vh;}
-  .consent-head{align-items:flex-start;flex-direction:column;}
-  .consent-actions,.consent-settings-footer{justify-content:stretch;}
-  .consent-actions .btn,.consent-settings-footer .btn{width:100%;}
-}
+  .nav-logo {
+    font-family: var(--display);
+    font-weight: 900;
+    font-size: 1.1rem;
+    letter-spacing: -0.02em;
+    color: var(--white);
+    text-decoration: none;
+    transition: opacity 0.2s;
+  }
+  .nav-logo:hover { opacity: 0.7; }
+  .nav-logo span { color: var(--accent); }
+  .nav-logo-media { color: rgba(255,255,255,0.35); font-weight: 400; font-size: 0.85em; letter-spacing: 0.05em; margin-left: 0.2em; }
+
+  .lang-toggle {
+    display: flex;
+    border: 1px solid var(--border);
+    border-radius: 4px;
+    overflow: hidden;
+  }
+  .lang-btn {
+    background: transparent;
+    border: none;
+    color: var(--muted);
+    font-family: var(--mono);
+    font-size: 0.7rem;
+    letter-spacing: 0.1em;
+    padding: 0.3rem 0.65rem;
+    cursor: pointer;
+    transition: all 0.2s;
+  }
+  .lang-btn.active { background: var(--accent); color: #000; }
+  .lang-btn:not(.active):hover { color: var(--white); }
+
+  /* ── FLOATING MENU ──────────────────────────── */
+  .fab-wrap {
+    position: fixed;
+    top: 4.8rem;
+    right: 2rem;
+    z-index: 300;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 0.5rem;
+  }
+
+  /* Nav items — drop DOWN from button */
+  .fab-items {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 0.4rem;
+    pointer-events: none;
+    opacity: 0;
+    transform: translateY(-8px);
+    transition: opacity 0.22s ease, transform 0.22s ease;
+  }
+  .fab-items.open {
+    pointer-events: all;
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  .fab-link {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    text-decoration: none;
+    color: var(--text);
+    font-size: 0.72rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    background: rgba(11,11,14,0.96);
+    border: 1px solid var(--border);
+    backdrop-filter: blur(16px);
+    padding: 0.55rem 1rem;
+    border-radius: 4px;
+    white-space: nowrap;
+    transition: color 0.2s, border-color 0.2s, transform 0.15s;
+    transform: translateX(6px);
+  }
+  .fab-items.open .fab-link { transform: translateX(0); }
+  .fab-link:hover {
+    color: var(--white);
+    border-color: rgba(255,255,255,0.2);
+  }
+
+  .fab-link .fab-dot {
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: var(--accent);
+    flex-shrink: 0;
+    transition: transform 0.2s;
+  }
+  .fab-link:hover .fab-dot { transform: scale(1.4); }
+
+  /* The main FAB button */
+  .fab-btn {
+    width: 52px;
+    height: 52px;
+    border-radius: 50%;
+    background: var(--accent);
+    border: none;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    box-shadow: 0 4px 20px rgba(255,60,110,0.35);
+    transition: transform 0.25s ease, box-shadow 0.25s ease, background 0.25s;
+    position: relative;
+  }
+  .fab-btn:hover {
+    transform: scale(1.08);
+    box-shadow: 0 6px 28px rgba(255,60,110,0.5);
+  }
+  .fab-btn.open { background: var(--surface); box-shadow: 0 4px 20px rgba(0,0,0,0.4); }
+
+  /* Hamburger / X icon */
+  .fab-icon {
+    width: 20px;
+    height: 14px;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+  .fab-icon span {
+    display: block;
+    height: 2px;
+    background: var(--white);
+    border-radius: 2px;
+    transform-origin: center;
+    transition: transform 0.3s ease, opacity 0.3s ease;
+  }
+  .fab-btn.open .fab-icon span:nth-child(1) { transform: translateY(6px) rotate(45deg); }
+  .fab-btn.open .fab-icon span:nth-child(2) { opacity: 0; transform: scaleX(0); }
+  .fab-btn.open .fab-icon span:nth-child(3) { transform: translateY(-6px) rotate(-45deg); }
+
+  /* ── BUTTONS ─────────────────────────────────── */
+  .btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.85rem 1.75rem;
+    font-family: var(--mono);
+    font-size: 0.78rem;
+    letter-spacing: 0.06em;
+    text-decoration: none;
+    border-radius: 4px;
+    transition: transform 0.2s, box-shadow 0.2s, background 0.2s, border-color 0.2s;
+    cursor: pointer;
+    border: none;
+    position: relative;
+    overflow: hidden;
+  }
+
+  /* Shine sweep on primary */
+  .btn-primary {
+    background: var(--accent);
+    color: var(--white);
+  }
+  .btn-primary::after {
+    content: '';
+    position: absolute;
+    top: 0; left: -100%;
+    width: 60%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255,255,255,0.18), transparent);
+    transition: left 0.45s ease;
+  }
+  .btn-primary:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 22px rgba(255,60,110,0.4);
+  }
+  .btn-primary:hover::after { left: 160%; }
+
+  .btn-ghost {
+    background: transparent;
+    color: var(--text);
+    border: 1px solid var(--border);
+  }
+  .btn-ghost:hover {
+    border-color: rgba(255,255,255,0.3);
+    color: var(--white);
+    transform: translateY(-2px);
+    background: rgba(255,255,255,0.04);
+  }
+
+  /* ── HERO ───────────────────────────────────── */
+  .hero {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    padding: 8rem 2.5rem 5rem;
+    position: relative;
+    overflow: hidden;
+    z-index: 1;
+  }
+
+  .hero-label {
+    font-size: 0.7rem;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--accent);
+    margin-bottom: 2rem;
+    opacity: 0;
+    animation: fadeUp 0.8s 0.2s forwards;
+  }
+
+  .hero h1 {
+    font-family: var(--display);
+    font-size: clamp(2.8rem, 7vw, 6.5rem);
+    font-weight: 900;
+    line-height: 0.95;
+    letter-spacing: -0.04em;
+    color: var(--white);
+    max-width: 14ch;
+    opacity: 0;
+    animation: fadeUp 0.9s 0.35s forwards;
+  }
+  .hero h1 em {
+    font-style: normal;
+    color: transparent;
+    -webkit-text-stroke: 1.5px rgba(255,255,255,0.8);
+  }
+
+  .hero-sub {
+    margin-top: 2.5rem;
+    max-width: 52ch;
+    color: var(--muted);
+    font-size: 0.95rem;
+    line-height: 1.8;
+    opacity: 0;
+    animation: fadeUp 0.9s 0.5s forwards;
+  }
+
+  .hero-ctas {
+    margin-top: 3rem;
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+    opacity: 0;
+    animation: fadeUp 0.9s 0.65s forwards;
+  }
+
+  .hero-scroll {
+    position: absolute;
+    bottom: 2.5rem;
+    right: 2.5rem;
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    font-size: 0.65rem;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--muted);
+    opacity: 0;
+    animation: fadeIn 1s 1.2s forwards;
+  }
+  .scroll-line {
+    width: 40px; height: 1px;
+    background: var(--muted);
+    position: relative; overflow: hidden;
+  }
+  .scroll-line::after {
+    content: '';
+    position: absolute;
+    left: -100%; top: 0;
+    width: 100%; height: 100%;
+    background: var(--accent);
+    animation: lineSlide 2s 1.5s infinite;
+  }
+
+  /* ── SECTIONS ───────────────────────────────── */
+  .section {
+    padding: 6rem 2.5rem;
+    max-width: 1200px;
+    margin: 0 auto;
+    position: relative;
+    z-index: 1;
+  }
+
+  .section-meta {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin-bottom: 3.5rem;
+  }
+  .section-tag {
+    font-size: 0.65rem;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--accent);
+  }
+  .section-line {
+    flex: 1;
+    height: 1px;
+    background: var(--border);
+    position: relative;
+    overflow: hidden;
+  }
+  .section-line::after {
+    content: '';
+    position: absolute;
+    left: -100%; top: 0;
+    width: 100%; height: 100%;
+    background: var(--accent);
+    transition: left 0.55s ease;
+  }
+  .section-line.fired::after { left: 0; }
+  .section-line.fired { background: var(--border); }
+  .section-num { font-size: 0.65rem; letter-spacing: 0.1em; color: var(--muted); }
+
+  .section h2 {
+    font-family: var(--display);
+    font-size: clamp(1.8rem, 4vw, 3rem);
+    font-weight: 700;
+    letter-spacing: -0.03em;
+    color: var(--white);
+    line-height: 1.1;
+    margin-bottom: 1.5rem;
+  }
+  .section-intro {
+    color: var(--muted);
+    max-width: 60ch;
+    margin-bottom: 4rem;
+    line-height: 1.9;
+  }
+
+  /* ── SERVICES GRID ──────────────────────────── */
+  .services-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1px;
+    background: var(--border);
+    border: 1px solid var(--border);
+  }
+
+  .service-card {
+    background: var(--bg);
+    padding: 2.5rem;
+    transition: background 0.3s;
+    position: relative;
+    overflow: hidden;
+  }
+  .service-card:hover { background: var(--surface); }
+  .service-card::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0;
+    width: 2px; height: 0;
+    background: var(--accent);
+    transition: height 0.4s ease;
+  }
+  .service-card:hover::before { height: 100%; }
+
+  .service-icon {
+    font-size: 1.5rem;
+    margin-bottom: 1.25rem;
+    display: inline-block;
+    transition: transform 0.3s ease, color 0.3s ease;
+    color: var(--muted);
+  }
+  .service-card:hover .service-icon {
+    transform: scale(1.2) rotate(-5deg);
+    color: var(--accent);
+  }
+
+  .service-card h3 {
+    font-family: var(--display);
+    font-size: 0.95rem;
+    font-weight: 700;
+    letter-spacing: -0.01em;
+    color: var(--white);
+    margin-bottom: 0.75rem;
+  }
+  .service-card p { color: var(--muted); font-size: 0.85rem; line-height: 1.8; }
+
+  .service-tags { margin-top: 1.5rem; display: flex; flex-wrap: wrap; gap: 0.4rem; }
+  .tag {
+    font-size: 0.65rem;
+    letter-spacing: 0.05em;
+    padding: 0.2rem 0.6rem;
+    border: 1px solid var(--border);
+    color: var(--muted);
+    transition: border-color 0.2s, color 0.2s;
+  }
+  .service-card:hover .tag { border-color: rgba(255,60,110,0.2); color: var(--text); }
+
+  /* ── PROJECTS ───────────────────────────────── */
+  .projects-list {
+    display: flex;
+    flex-direction: column;
+    gap: 1px;
+    background: var(--border);
+    border: 1px solid var(--border);
+  }
+
+  .project-item {
+    background: var(--bg);
+    padding: 2rem 2.5rem;
+    display: grid;
+    grid-template-columns: 1fr auto;
+    align-items: start;
+    gap: 2rem;
+    transition: background 0.3s;
+    position: relative;
+    overflow: hidden;
+  }
+  .project-item::after {
+    content: '';
+    position: absolute;
+    bottom: 0; left: 0;
+    width: 0; height: 1px;
+    background: var(--accent);
+    transition: width 0.4s ease;
+  }
+  .project-item:hover { background: var(--surface); }
+  .project-item:hover::after { width: 100%; }
+
+  .project-meta { display: flex; align-items: center; gap: 1rem; margin-bottom: 0.75rem; }
+  .project-type {
+    font-size: 0.65rem;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--accent);
+  }
+  .project-year { font-size: 0.65rem; color: var(--muted); letter-spacing: 0.1em; }
+
+  .project-item h3 {
+    font-family: var(--display);
+    font-size: 1.1rem;
+    font-weight: 700;
+    letter-spacing: -0.02em;
+    color: var(--white);
+    margin-bottom: 0.5rem;
+  }
+  .project-item p { color: var(--muted); font-size: 0.85rem; line-height: 1.75; max-width: 55ch; }
+
+  .project-link {
+    color: var(--muted);
+    text-decoration: none;
+    font-size: 0.7rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    border: 1px solid var(--border);
+    padding: 0.4rem 0.9rem;
+    transition: color 0.2s, border-color 0.2s, background 0.2s, transform 0.2s;
+    white-space: nowrap;
+    align-self: flex-start;
+  }
+  .project-link:hover {
+    color: var(--white);
+    border-color: var(--accent);
+    background: rgba(255,60,110,0.08);
+    transform: translateX(-2px);
+  }
+  .project-cta {
+    background: var(--surface);
+    border-top: 1px solid rgba(255,60,110,0.2);
+  }
+  .project-cta h3 { color: var(--white); }
+  .section h2 em { font-style: normal; color: transparent; -webkit-text-stroke: 1.5px rgba(255,255,255,0.8); }
+
+  /* ── BACKGROUND SECTION ─────────────────────── */
+  .bg-full {
+    background: var(--surface);
+    border-top: 1px solid var(--border);
+    border-bottom: 1px solid var(--border);
+    padding: 6rem 2.5rem;
+    position: relative;
+    z-index: 1;
+  }
+  /* bg-inner defined below in portrait section */
+  .bg-text p { color: var(--muted); line-height: 1.9; margin-bottom: 1.5rem; font-size: 0.9rem; }
+  .bg-text strong { color: var(--text); font-weight: 400; }
+
+  .credentials {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1px;
+    background: var(--border);
+    border: 1px solid var(--border);
+  }
+  .credential-item {
+    background: var(--surface);
+    padding: 1.1rem 1.75rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.25rem;
+    position: relative;
+    overflow: hidden;
+    transition: background 0.25s;
+    cursor: default;
+  }
+  .credential-item::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(90deg, rgba(255,60,110,0.06) 0%, transparent 60%);
+    transform: translateX(-100%);
+    transition: transform 0.4s ease;
+  }
+  .credential-item:hover { background: rgba(255,255,255,0.03); }
+  .credential-item:hover::before { transform: translateX(0); }
+
+  .credential-title { font-size: 0.85rem; color: var(--text); line-height: 1.3; position: relative; font-weight: 400; }
+  .credential-detail { font-size: 0.71rem; color: var(--muted); letter-spacing: 0.04em; position: relative; }
+
+  .golden { display: none; } /* replaced by golden-full */
+
+  .golden-full {
+    max-width: 1200px;
+    margin: 2rem auto 0;
+    padding: 1rem 1.5rem;
+    border: 1px solid rgba(255,200,0,0.2);
+    background: rgba(255,200,0,0.04);
+    font-size: 0.82rem;
+    color: rgba(255,200,0,0.8);
+    line-height: 1.6;
+    transition: border-color 0.3s, background 0.3s;
+    cursor: default;
+  }
+  .golden-full:hover {
+    border-color: rgba(255,200,0,0.35);
+    background: rgba(255,200,0,0.07);
+  }
+
+  .credentials-header {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    margin-bottom: 1.25rem;
+  }
+  .credentials-header span {
+    font-family: var(--display);
+    font-size: 0.75rem;
+    font-weight: 700;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--accent);
+  }
+  @keyframes cherry-ring {
+    0%   { transform: rotate(0deg) scale(1); }
+    10%  { transform: rotate(-12deg) scale(1.08); }
+    20%  { transform: rotate(12deg) scale(1.08); }
+    30%  { transform: rotate(-10deg) scale(1.05); }
+    40%  { transform: rotate(10deg) scale(1.05); }
+    50%  { transform: rotate(-6deg) scale(1.02); }
+    60%  { transform: rotate(6deg) scale(1.02); }
+    70%  { transform: rotate(-3deg) scale(1); }
+    80%  { transform: rotate(3deg) scale(1); }
+    100% { transform: rotate(0deg) scale(1); }
+  }
+
+  .cherry-icon {
+    flex-shrink: 0;
+    width: 36px;
+    height: 36px;
+    transform-origin: 50% 20%;
+  }
+  .cherry-icon.cherry-ring {
+    animation: cherry-ring 0.7s ease;
+  }
+  .credentials-header:hover .cherry-icon {
+    animation: cherry-ring 0.7s ease;
+  }
+
+  /* ── CONTACT ─────────────────────────────────── */
+  .contact-section {
+    padding: 8rem 2.5rem;
+    max-width: 1200px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 6rem;
+    align-items: center;
+    position: relative;
+    z-index: 1;
+  }
+  .contact-left h2 {
+    font-family: var(--display);
+    font-size: clamp(2rem, 5vw, 4rem);
+    font-weight: 900;
+    letter-spacing: -0.04em;
+    color: var(--white);
+    line-height: 1;
+    margin-bottom: 1.5rem;
+  }
+  .contact-left p { color: var(--muted); font-size: 0.9rem; line-height: 1.8; max-width: 42ch; }
+
+  .contact-right {
+    display: flex;
+    flex-direction: column;
+    gap: 1px;
+    background: var(--border);
+    border: 1px solid var(--border);
+  }
+  .contact-row {
+    background: var(--bg);
+    padding: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.25rem;
+    transition: background 0.2s;
+  }
+  .contact-row:hover { background: var(--surface); }
+  .contact-label { font-size: 0.65rem; letter-spacing: 0.15em; text-transform: uppercase; color: var(--muted); }
+  .contact-value {
+    font-size: 0.9rem;
+    color: var(--text);
+    text-decoration: none;
+    transition: color 0.2s;
+  }
+  .contact-value:hover { color: var(--accent); }
+
+  /* ── FOOTER ──────────────────────────────────── */
+  footer {
+    border-top: 1px solid var(--border);
+    padding: 1.5rem 2.5rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 0.7rem;
+    color: var(--muted);
+    letter-spacing: 0.05em;
+    position: relative;
+    z-index: 1;
+  }
+
+  .divider { border: none; border-top: 1px solid var(--border); margin: 0; position: relative; z-index: 1; }
+
+  /* ── REVEAL ──────────────────────────────────── */
+  .reveal {
+    opacity: 0;
+    transform: translateY(24px);
+    transition: opacity 0.7s ease, transform 0.7s ease;
+  }
+  .reveal.visible { opacity: 1; transform: none; }
+
+  /* ── KEYFRAMES ───────────────────────────────── */
+  @keyframes fadeUp {
+    from { opacity: 0; transform: translateY(20px); }
+    to   { opacity: 1; transform: translateY(0); }
+  }
+  @keyframes fadeIn {
+    from { opacity: 0; } to { opacity: 1; }
+  }
+  @keyframes lineSlide {
+    0%   { left: -100%; }
+    50%  { left: 0; }
+    100% { left: 100%; }
+  }
+
+  /* ── RESPONSIVE ──────────────────────────────── */
+  @media (max-width: 768px) {
+    .topbar { padding: 1rem 1.5rem; }
+    .hero { padding: 7rem 1.5rem 4rem; }
+    .hero-scroll { display: none; }
+    .section { padding: 4rem 1.5rem; }
+    .bg-full { padding: 4rem 1.5rem; }
+    .bg-inner { grid-template-columns: 1fr; gap: 3rem; }
+    .contact-section { grid-template-columns: 1fr; gap: 3rem; padding: 4rem 1.5rem; }
+    footer { flex-direction: column; gap: 0.5rem; text-align: center; }
+    .project-item { grid-template-columns: 1fr; }
+    .services-grid { grid-template-columns: 1fr; }
+    .fab-wrap { top: 4rem; right: 1rem; }
+  }
+
+  /* ── TRUST BAR ───────────────────────────────── */
+  .trust-bar {
+    background: var(--surface);
+    border-top: 1px solid var(--border);
+    padding: 1.25rem 2.5rem;
+    position: relative;
+    z-index: 1;
+  }
+  .trust-inner {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0;
+    flex-wrap: wrap;
+  }
+  .badge {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: 0.7rem;
+    letter-spacing: 0.06em;
+    color: #9898a8;
+    padding: 0.4rem 1.5rem;
+    transition: color 0.2s;
+    cursor: default;
+  }
+  .badge:hover { color: var(--text); }
+  .badge svg { flex-shrink: 0; opacity: 0.6; transition: opacity 0.2s; }
+  .badge:hover svg { opacity: 1; }
+  .badge-sep {
+    width: 1px; height: 20px;
+    background: var(--border);
+    flex-shrink: 0;
+  }
+
+  /* ── FOOTER ──────────────────────────────────── */
+  footer {
+    border-top: 1px solid var(--border);
+    padding: 1.25rem 2.5rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 0.7rem;
+    color: #9898a8;
+    letter-spacing: 0.05em;
+    position: relative;
+    z-index: 1;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+  }
+  .footer-links {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+  }
+  .footer-link {
+    background: none;
+    border: none;
+    color: #9898a8;
+    font-family: var(--mono);
+    font-size: 0.7rem;
+    letter-spacing: 0.05em;
+    cursor: pointer;
+    padding: 0;
+    transition: color 0.2s;
+    text-decoration: underline;
+    text-underline-offset: 3px;
+    text-decoration-color: transparent;
+  }
+  .footer-link:hover { color: var(--text); text-decoration-color: var(--border); }
+  .footer-sep { color: var(--border); }
+
+  /* ── COOKIE BANNER ───────────────────────────── */
+  .cookie-banner {
+    position: fixed;
+    bottom: 1.5rem;
+    left: 50%;
+    transform: translateX(-50%) translateY(0);
+    width: min(680px, calc(100vw - 3rem));
+    background: #f5f4f2;
+    border: 1px solid rgba(0,0,0,0.1);
+    border-top: 3px solid var(--accent);
+    z-index: 500;
+    font-size: 0.82rem;
+    box-shadow: 0 8px 40px rgba(0,0,0,0.18), 0 2px 8px rgba(255,60,110,0.08);
+    transition: opacity 0.45s cubic-bezier(0.22,1,0.36,1), transform 0.45s cubic-bezier(0.22,1,0.36,1);
+  }
+  .cookie-banner.hidden {
+    opacity: 0;
+    pointer-events: none;
+    transform: translateX(-50%) translateY(calc(100% + 2.5rem));
+  }
+  .cookie-main {
+    padding: 1.25rem 1.5rem;
+    display: flex;
+    align-items: flex-start;
+    gap: 1.5rem;
+    flex-wrap: wrap;
+  }
+  .cookie-text { flex: 1; min-width: 200px; }
+  .cookie-text strong { color: #111; font-size: 0.8rem; display: block; margin-bottom: 0.3rem; }
+  .cookie-text p { color: #444; line-height: 1.6; font-size: 0.78rem; }
+  .cookie-actions {
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
+    flex-shrink: 0;
+    flex-wrap: wrap;
+  }
+  .cookie-details-btn {
+    background: none;
+    border: none;
+    color: var(--accent);
+    font-family: var(--mono);
+    font-size: 0.72rem;
+    cursor: pointer;
+    padding: 0.4rem 0.6rem;
+    letter-spacing: 0.05em;
+    transition: color 0.2s;
+    white-space: nowrap;
+  }
+  .cookie-details-btn:hover { color: #c4003a; }
+  .cookie-btn-sm { padding: 0.5rem 1rem; font-size: 0.72rem; }
+
+  .cookie-details {
+    border-top: 2px solid var(--accent);
+    padding: 1.25rem 1.5rem;
+    display: none;
+    background: #1a1a22;
+  }
+  .cookie-details.open { display: block; }
+  .cookie-category { margin-bottom: 1rem; }
+  .cookie-cat-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 1rem;
+  }
+  .cookie-cat-header strong { color: #f0eef0; font-size: 0.78rem; display: block; margin-bottom: 0.25rem; }
+  .cookie-cat-header p { color: #9a96a8; font-size: 0.73rem; line-height: 1.6; max-width: 44ch; }
+  .cookie-always-on {
+    font-size: 0.65rem;
+    letter-spacing: 0.1em;
+    color: var(--accent);
+    white-space: nowrap;
+    padding-top: 0.2rem;
+  }
+
+  /* Toggle switch */
+  .toggle-switch { position: relative; display: inline-block; width: 36px; height: 20px; flex-shrink: 0; }
+  .toggle-switch input { opacity: 0; width: 0; height: 0; }
+  .toggle-slider {
+    position: absolute; inset: 0;
+    background: rgba(255,255,255,0.1);
+    border-radius: 20px;
+    cursor: pointer;
+    transition: background 0.25s;
+    border: 1px solid rgba(255,255,255,0.18);
+  }
+  .toggle-slider::before {
+    content: '';
+    position: absolute;
+    left: 2px; top: 2px;
+    width: 14px; height: 14px;
+    background: #6b677a;
+    border-radius: 50%;
+    transition: transform 0.25s, background 0.25s;
+  }
+  .toggle-switch input:checked + .toggle-slider { background: rgba(255,60,110,0.18); border-color: var(--accent); }
+  .toggle-switch input:checked + .toggle-slider::before { transform: translateX(16px); background: var(--accent); }
+
+  /* btn-ghost override inside light cookie banner */
+  .cookie-banner .btn-ghost {
+    color: #333;
+    border-color: rgba(0,0,0,0.2);
+  }
+  .cookie-banner .btn-ghost:hover {
+    border-color: var(--accent);
+    color: var(--accent);
+    background: rgba(255,60,110,0.06);
+    transform: translateY(-2px);
+  }
+
+  /* ── MODALS ──────────────────────────────────── */
+  .modal-overlay {
+    position: fixed;
+    inset: 0;
+    background: rgba(0,0,0,0.75);
+    backdrop-filter: blur(6px);
+    z-index: 600;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 2rem;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.25s ease;
+  }
+  .modal-overlay.open { opacity: 1; pointer-events: all; }
+
+  .modal-box {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    width: min(640px, 100%);
+    max-height: 85vh;
+    overflow-y: auto;
+    padding: 2.5rem;
+    position: relative;
+    transform: translateY(16px);
+    transition: transform 0.3s ease;
+  }
+  .modal-overlay.open .modal-box { transform: translateY(0); }
+
+  .modal-close {
+    position: absolute;
+    top: 1.25rem; right: 1.25rem;
+    background: none; border: none;
+    color: var(--muted);
+    font-size: 1rem;
+    cursor: pointer;
+    transition: color 0.2s;
+    line-height: 1;
+    padding: 0.25rem;
+  }
+  .modal-close:hover { color: var(--white); }
+
+  .modal-title {
+    font-family: var(--display);
+    font-size: 1.2rem;
+    font-weight: 700;
+    letter-spacing: -0.02em;
+    color: var(--white);
+    margin-bottom: 1.75rem;
+    padding-right: 2rem;
+  }
+
+  .modal-content p { color: var(--muted); font-size: 0.83rem; line-height: 1.8; margin-bottom: 1rem; }
+  .modal-content h3 {
+    font-family: var(--display);
+    font-size: 0.75rem;
+    font-weight: 700;
+    letter-spacing: 0.02em;
+    color: var(--text);
+    margin: 1.5rem 0 0.5rem;
+    text-transform: uppercase;
+  }
+  .modal-version { font-size: 0.72rem; color: var(--muted); margin-top: 2rem; }
+
+  /* scrollbar in modal */
+  .modal-box::-webkit-scrollbar { width: 4px; }
+  .modal-box::-webkit-scrollbar-track { background: transparent; }
+  .modal-box::-webkit-scrollbar-thumb { background: var(--border); border-radius: 2px; }
+
+  @media (max-width: 768px) {
+    .trust-bar { padding: 1rem 1.5rem; }
+    .badge { padding: 0.4rem 0.75rem; }
+    footer { padding: 1.25rem 1.5rem; }
+    .cookie-banner { bottom: 1rem; width: calc(100vw - 2rem); }
+    .cookie-main { flex-direction: column; gap: 1rem; }
+    .cookie-actions { width: 100%; }
+    .modal-box { padding: 1.75rem 1.5rem; }
+  }
+
+  /* ── CONTACT FORM ────────────────────────────── */
+  .contact-section {
+    padding: 8rem 2.5rem;
+    max-width: 1200px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 5rem;
+    align-items: start;
+    position: relative;
+    z-index: 1;
+  }
+  .contact-left h2 {
+    font-family: var(--display);
+    font-size: clamp(2rem, 5vw, 3.5rem);
+    font-weight: 900;
+    letter-spacing: -0.04em;
+    color: var(--white);
+    line-height: 1;
+    margin-bottom: 1.5rem;
+  }
+  .contact-left p { color: var(--muted); font-size: 0.9rem; line-height: 1.8; max-width: 38ch; margin-bottom: 1.75rem; }
+  .contact-direct { display: flex; flex-direction: column; gap: 0.5rem; }
+  .contact-direct .contact-value { color: var(--muted); font-size: 0.82rem; text-decoration: none; transition: color 0.2s; }
+  .contact-direct a.contact-value:hover { color: var(--accent); }
+
+  .contact-form-wrap {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1.25rem;
+  }
+  .form-field { display: flex; flex-direction: column; gap: 0.4rem; }
+  .form-label {
+    font-size: 0.65rem;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--muted);
+  }
+  .form-input {
+    background: rgba(255,60,110,0.04);
+    border: 1px solid rgba(255,60,110,0.25);
+    color: #d8d8de;
+    font-family: var(--mono);
+    font-size: 0.9rem;
+    padding: 0.75rem 1rem;
+    outline: none;
+    transition: border-color 0.2s, background 0.2s;
+    width: 100%;
+  }
+  .form-input::placeholder { color: var(--muted); opacity: 0.55; }
+  .form-input:focus { border-color: var(--accent); background: rgba(255,60,110,0.03); }
+  .form-textarea { resize: vertical; min-height: 100px; line-height: 1.6; }
+  .form-submit { width: 100%; justify-content: center; margin-top: 0.25rem; }
+  .form-note {
+    font-size: 0.68rem;
+    color: var(--muted);
+    line-height: 1.5;
+    text-align: center;
+    opacity: 0.7;
+  }
+  .contact-thanks {
+    background: var(--surface);
+    border: 1px solid rgba(255,60,110,0.2);
+    padding: 3rem 2rem;
+    text-align: center;
+  }
+  .thanks-icon { font-size: 2rem; color: var(--accent); margin-bottom: 1rem; }
+  .contact-thanks p { color: var(--muted); font-size: 0.9rem; }
+
+  @media (max-width: 768px) {
+    .contact-section { grid-template-columns: 1fr; gap: 3rem; padding: 4rem 1.5rem; }
+  }
+
+  /* ── ABOUT: 3-COLUMN WITH PORTRAIT ─────────── */
+  .bg-inner {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1fr min(260px, 28%) 1fr;
+    gap: 3rem;
+    align-items: start;
+  }
+
+  .portrait-wrap { display: flex; justify-content: center; }
+
+  .portrait-frame {
+    position: relative;
+    width: 100%;
+    max-width: 280px;
+    overflow: hidden;
+    background: var(--surface);
+  }
+
+  .portrait-img {
+    width: 100%;
+    height: auto;
+    display: block;
+    transition: transform 0.5s ease;
+  }
+  .portrait-frame:hover .portrait-img { transform: scale(1.03); }
+
+  /* Subtle accent glow at bottom */
+  .portrait-frame::after {
+    content: '';
+    position: absolute;
+    bottom: 0; left: 0; right: 0;
+    height: 60px;
+    background: linear-gradient(to top, rgba(255,60,110,0.18), transparent);
+    pointer-events: none;
+  }
+
+  /* Left accent bar */
+  .portrait-frame::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0;
+    width: 3px; height: 100%;
+    background: var(--accent);
+    z-index: 1;
+  }
+  .portrait-accent { display: none; }
+
+  /* Responsive: stack on tablet */
+  @media (max-width: 960px) {
+    .bg-inner {
+      grid-template-columns: 1fr 1fr;
+      grid-template-rows: auto auto;
+    }
+    .portrait-wrap {
+      grid-column: 1 / -1;
+      justify-content: flex-start;
+    }
+    .portrait-frame { max-width: 220px; }
+  }
+
+  @media (max-width: 600px) {
+    .bg-inner { grid-template-columns: 1fr; }
+    .portrait-wrap { grid-column: auto; }
+  }
 </style>
 </head>
 <body>
-<canvas id="neural-canvas"></canvas>
 
-<aside class="consent-banner" id="consentBanner" hidden aria-live="polite">
-  <div class="consent-inner">
-    <section class="consent-panel" id="consentMainPanel">
-      <div class="consent-head">
-        <p class="consent-title">
-          <span data-consent-lang="nl">Cookies &amp; dataverwerking</span>
-          <span data-consent-lang="en" style="display:none">Consent to Cookies &amp; Data processing</span>
-        </p>
-        <div class="consent-lang-toggle" aria-label="Cookie language">
-          <button class="consent-lang-btn active" id="consentLangNl" type="button">NL</button>
-          <span>/</span>
-          <button class="consent-lang-btn" id="consentLangEn" type="button">EN</button>
-        </div>
-      </div>
+<!-- ANIMATED BACKGROUND -->
+<canvas id="bg-canvas"></canvas>
 
-      <p class="consent-text">
-        <span data-consent-lang="nl">Op deze website gebruik ik cookies en vergelijkbare functies voor functionele werking, statistiek en marketing. Je keuze is vrijwillig, wordt per kalendermaand opgeslagen en op de eerste dag van een nieuwe maand opnieuw gevraagd.</span>
-        <span data-consent-lang="en" style="display:none">On this website I use cookies and similar functions for functional operation, statistics and marketing. Your choice is voluntary, stored per calendar month and requested again on the first day of each new month.</span>
-      </p>
-
-      <div class="consent-categories">
-        <div class="consent-category">
-          <input id="consentNecessaryMain" type="checkbox" checked disabled>
-          <label for="consentNecessaryMain"><span data-consent-lang="nl">Functioneel</span><span data-consent-lang="en" style="display:none">Functional</span></label>
-          <small><span data-consent-lang="nl">Nodig voor basisfunctionaliteit van de website.</span><span data-consent-lang="en" style="display:none">Required for essential website functionality.</span></small>
-        </div>
-        <div class="consent-category">
-          <input id="consentStatisticsMain" type="checkbox">
-          <label for="consentStatisticsMain"><span data-consent-lang="nl">Statistiek</span><span data-consent-lang="en" style="display:none">Statistics</span></label>
-          <small><span data-consent-lang="nl">Meet anonieme prestaties en gebruik om de site te verbeteren.</span><span data-consent-lang="en" style="display:none">Measures anonymous usage and performance to improve the site.</span></small>
-        </div>
-        <div class="consent-category">
-          <input id="consentMarketingMain" type="checkbox">
-          <label for="consentMarketingMain"><span data-consent-lang="nl">Marketing</span><span data-consent-lang="en" style="display:none">Marketing</span></label>
-          <small><span data-consent-lang="nl">Helpt om relevante promotionele content te tonen.</span><span data-consent-lang="en" style="display:none">Helps show relevant promotional content.</span></small>
-        </div>
-      </div>
-
-      <div class="consent-actions">
-        <button class="btn btn-secondary" id="consentOpenSettings" type="button"><span>Settings</span></button>
-        <button class="btn btn-primary" id="consentAcceptAll" type="button"><span>Accept all</span></button>
-      </div>
-    </section>
-
-    <section class="consent-panel consent-settings" id="consentSettingsPanel" hidden>
-      <div class="consent-head">
-        <p class="consent-title">
-          <span data-consent-lang="nl">Pas je keuze aan</span>
-          <span data-consent-lang="en" style="display:none">Customize your choice</span>
-        </p>
-      </div>
-
-      <p class="consent-text">
-        <span data-consent-lang="nl">Op deze pagina vind je meer informatie over de doeleinden van dataverwerking en kun je per categorie je voorkeur instellen.</span>
-        <span data-consent-lang="en" style="display:none">On this page you can find more information about data processing purposes and set your preference per category.</span>
-      </p>
-
-      <div class="consent-settings-list">
-        <div class="consent-settings-item">
-          <div class="consent-settings-row">
-            <input id="consentNecessarySettings" type="checkbox" checked disabled>
-            <label for="consentNecessarySettings"><span data-consent-lang="nl">Functioneel</span><span data-consent-lang="en" style="display:none">Functional</span></label>
-          </div>
-          <p><span data-consent-lang="nl">Altijd actief om de website technisch te laten werken, waaronder navigatie, beveiliging en basisvoorkeuren.</span><span data-consent-lang="en" style="display:none">Always active to keep the website technically operational, including navigation, security and basic preferences.</span></p>
-        </div>
-
-        <div class="consent-settings-item">
-          <div class="consent-settings-row">
-            <input id="consentStatisticsSettings" type="checkbox">
-            <label for="consentStatisticsSettings"><span data-consent-lang="nl">Statistiek</span><span data-consent-lang="en" style="display:none">Statistics</span></label>
-          </div>
-          <p><span data-consent-lang="nl">Helpt mij te begrijpen hoe bezoekers de website gebruiken, zodat ik prestaties en gebruikservaring kan verbeteren.</span><span data-consent-lang="en" style="display:none">Helps me understand how visitors use the website so I can improve performance and experience.</span></p>
-        </div>
-
-        <div class="consent-settings-item">
-          <div class="consent-settings-row">
-            <input id="consentMarketingSettings" type="checkbox">
-            <label for="consentMarketingSettings"><span data-consent-lang="nl">Marketing</span><span data-consent-lang="en" style="display:none">Marketing</span></label>
-          </div>
-          <p><span data-consent-lang="nl">Maakt het mogelijk om promotionele content relevanter te tonen via advertentie- en socialkanalen.</span><span data-consent-lang="en" style="display:none">Enables more relevant promotional content across advertising and social channels.</span></p>
-        </div>
-      </div>
-
-      <div class="consent-settings-footer">
-        <button class="btn btn-secondary" id="consentBackToMain" type="button"><span>Back to main page</span></button>
-        <button class="btn btn-primary" id="consentSaveExit" type="button"><span>Save + Exit</span></button>
-      </div>
-    </section>
-  </div>
-</aside>
-
-<header class="topbar" id="topbar">
-  <div class="topbar-logo"><a href="#hero" class="topbar-logo-text">PHNK</a><span class="topbar-role-dynamic" id="topbarRoleDynamic"> denkt.</span></div>
+<!-- TOP BAR -->
+<header class="topbar">
+  <a href="#" class="nav-logo">PH<span>NK</span><span class="nav-logo-media"> MEDIA</span></a>
   <div class="lang-toggle">
-    <button class="lang-btn active" id="btn-nl" type="button">NL</button>
-    <span class="lang-sep">/</span>
-    <button class="lang-btn" id="btn-en" type="button">EN</button>
+    <button class="lang-btn active" data-lang="nl">NL</button>
+    <button class="lang-btn" data-lang="en">EN</button>
   </div>
 </header>
 
+<main>
+
+<!-- FLOATING MENU -->
 <div class="fab-wrap">
-  <div class="fab-items" id="fabItems">
-    <a href="#hero" class="fab-item"><span class="fab-icon">&#9632;</span> <span data-lang="nl">Home</span><span data-lang="en" style="display:none">Home</span></a>
-    <a href="#services" class="fab-item"><span class="fab-icon">&#9670;</span> <span data-lang="nl">Diensten</span><span data-lang="en" style="display:none">Services</span></a>
-    <a href="#work" class="fab-item"><span class="fab-icon">&#9724;</span> <span data-lang="nl">Werk</span><span data-lang="en" style="display:none">Work</span></a>
-    <a href="#about" class="fab-item"><span class="fab-icon">&#9711;</span> <span data-lang="nl">Over PHNK</span><span data-lang="en" style="display:none">About PHNK</span></a>
-    <a href="#contact" class="fab-item"><span class="fab-icon">&#8594;</span> <span data-lang="nl">Contact</span><span data-lang="en" style="display:none">Contact</span></a>
-  </div>
-  <button class="fab-btn" id="fabBtn" aria-label="Menu">+</button>
+  <button class="fab-btn" id="fabBtn" aria-label="Menu">
+    <div class="fab-icon">
+      <span></span><span></span><span></span>
+    </div>
+  </button>
+  <nav class="fab-items" id="fabItems">
+    <a href="#services" class="fab-link"><span class="fab-dot"></span><span data-nl="Diensten" data-en="Services">Diensten</span></a>
+    <a href="#work"     class="fab-link"><span class="fab-dot"></span><span data-nl="Werk" data-en="Work">Werk</span></a>
+    <a href="#about"    class="fab-link"><span class="fab-dot"></span><span data-nl="Achtergrond" data-en="About">Achtergrond</span></a>
+    <a href="#contact"  class="fab-link"><span class="fab-dot"></span><span>Contact</span></a>
+  </nav>
 </div>
 
-<section class="hero" id="hero">
-  <div class="hero-left reveal">
-    <h1><span data-lang="nl">AI vouwt,<br><em>jij bouwt.</em></span><span data-lang="en" style="display:none">AI folds,<br><em>you build.</em></span></h1>
-    <p class="hero-sub"><span data-lang="nl">AI-maatwerk dat doet wat jij wilt &mdash; sneller, zodat jij toekomt aan je eigenlijke werk.</span><span data-lang="en" style="display:none">Custom AI that does exactly what you want &mdash; faster, so you get back to the work that&rsquo;s actually yours.</span></p>
-    <div class="hero-cta">
-      <a href="#work" class="btn btn-primary"><span data-lang="nl">Bekijk het werk</span><span data-lang="en" style="display:none">See the work</span></a>
-      <a href="#contact" class="btn btn-secondary"><span data-lang="nl">Plan een gesprek</span><span data-lang="en" style="display:none">Let's talk</span></a>
-    </div>
-    <div class="hero-scroll">
-      <div class="ping-wrap"><div class="ping-ring"></div><div class="ping-ring2"></div><div class="ping-dot"></div></div>
-      <span data-lang="nl">Scroll</span><span data-lang="en" style="display:none">Scroll</span>
-    </div>
+<!-- HERO -->
+<section class="hero">
+  <p class="hero-label" data-nl="Patrick Hink — PHNK Media, Oldeberkoop" data-en="Patrick Hink — PHNK Media, Oldeberkoop">Patrick Hink — PHNK Media, Oldeberkoop</p>
+  <h1 data-nl="Concept.<br>Web.<br><em>AI.</em>" data-en="Concept.<br>Web.<br><em>AI.</em>">Concept.<br>Web.<br><em>AI.</em></h1>
+  <p class="hero-sub" data-nl="Ik bedenk digitale producten, bouw ze — en zorg dat ze werken. Strategie, ontwerp en AI-integratie in één hand. Van idee tot live." data-en="I design digital products, build them — and make sure they work. Strategy, design and AI integration in one. From idea to live.">
+    Ik bedenk digitale producten, bouw ze — en zorg dat ze werken. Strategie, ontwerp en AI-integratie in één hand. Van idee tot live.
+  </p>
+  <div class="hero-ctas">
+    <a href="#contact" class="btn btn-primary" data-nl="Neem contact op" data-en="Get in touch">Neem contact op</a>
+    <a href="#work"    class="btn btn-ghost"   data-nl="Bekijk mijn werk" data-en="See my work">Bekijk mijn werk</a>
   </div>
-  <div class="hero-mobile-lab reveal d1" id="heroMobileLab" aria-label="Interactief 3D object">
-    <canvas id="boatCanvas"></canvas>
+  <div class="hero-scroll">
+    <div class="scroll-line"></div>
+    <span data-nl="scroll" data-en="scroll">scroll</span>
   </div>
 </section>
 
-<!-- Trust strip -->
-<section class="trust-strip reveal">
+<div class="divider"></div>
+
+<!-- SERVICES -->
+<section id="services" class="section">
+  <div class="section-meta reveal">
+    <span class="section-tag" data-nl="Wat ik doe" data-en="What I do">Wat ik doe</span>
+    <div class="section-line"></div>
+    <span class="section-num">01</span>
+  </div>
+  <h2 class="reveal" data-nl="Concept, design<br>en AI — één aanspreekpunt" data-en="Concept, design<br>and AI — one point of contact">Concept, design<br>en AI — één aanspreekpunt</h2>
+  <p class="section-intro reveal" data-nl="Ik verbind drie vakgebieden die normaal gescheiden zijn: conceptdenken, visueel ontwerp en technische AI-integratie. Dat levert scherpe, werkende producten op zonder afstemverlies." data-en="I connect three disciplines that are normally separate: conceptual thinking, visual design, and technical AI integration. The result is sharp, functional products without the friction of coordination.">
+    Ik verbind drie vakgebieden die normaal gescheiden zijn: conceptdenken, visueel ontwerp en technische AI-integratie. Dat levert scherpe, werkende producten op zonder afstemverlies.
+  </p>
+
+  <div class="services-grid reveal">
+    <div class="service-card">
+      <span class="service-icon">◎</span>
+      <h3 data-nl="Concept & Strategie" data-en="Concept & Strategy">Concept & Strategie</h3>
+      <p data-nl="Ik help ideeën scherp te krijgen voordat er ook maar één pixel ontworpen wordt. Format, structuur, propositie. Hoe vertel je dit? Aan wie? Waarom nu?" data-en="I help sharpen ideas before a single pixel is designed. Format, structure, proposition. How do you tell this? To whom? Why now?">
+        Ik help ideeën scherp te krijgen voordat er ook maar één pixel ontworpen wordt. Format, structuur, propositie. Hoe vertel je dit? Aan wie? Waarom nu?
+      </p>
+      <div class="service-tags">
+        <span class="tag">Conceptontwikkeling</span>
+        <span class="tag">Formatdenken</span>
+        <span class="tag">Go-to-market</span>
+      </div>
+    </div>
+
+    <div class="service-card">
+      <span class="service-icon">▣</span>
+      <h3 data-nl="Webdesign & Development" data-en="Web Design & Development">Webdesign & Development</h3>
+      <p data-nl="Van landingspagina tot volwaardige webapplicatie. Ik ontwerp én bouw — in Wix Studio (Velo) of Next.js / React voor SaaS en complexe systemen, in HTML/CSS/JS voor snelle, scherpe sites. Data via JSON, deployment via Vercel of GitHub Pages." data-en="From landing page to full web application. I design and build — in Wix Studio (Velo) or Next.js / React for SaaS and complex systems, in HTML/CSS/JS for fast, sharp sites. Data via JSON, deployment via Vercel or GitHub Pages.">
+        Van landingspagina tot volwaardige webapplicatie. Ik ontwerp én bouw — in Wix Studio (Velo) of Next.js / React voor SaaS en complexe systemen, in HTML/CSS/JS voor snelle, scherpe sites. Data via JSON, deployment via Vercel of GitHub Pages.
+      </p>
+      <div class="service-tags">
+        <span class="tag">Wix Studio + Velo</span>
+        <span class="tag">Next.js / React</span>
+        <span class="tag">HTML / CSS / JS</span>
+        <span class="tag">JSON</span>
+        <span class="tag">Vercel</span>
+      </div>
+    </div>
+
+    <div class="service-card">
+      <span class="service-icon">◈</span>
+      <h3 data-nl="AI-strategie & Engineering" data-en="AI Strategy & Engineering">AI-strategie & Engineering</h3>
+      <p data-nl="Van spraakagenten tot geautomatiseerde workflows. Ik ontwerp de strategie, kies de juiste tools en integreer ze in bestaande systemen. AI die écht werkt voor jouw proces." data-en="From voice agents to automated workflows. I design the strategy, choose the right tools, and integrate them into existing systems. AI that actually works for your process.">
+        Van spraakagenten tot geautomatiseerde workflows. Ik ontwerp de strategie, kies de juiste tools en integreer ze in bestaande systemen. AI die écht werkt voor jouw proces.
+      </p>
+      <div class="service-tags">
+        <span class="tag">ElevenLabs</span>
+        <span class="tag">Voice Agents</span>
+        <span class="tag">n8n / Zapier / Make</span>
+        <span class="tag">LLM-integratie</span>
+      </div>
+    </div>
+
+    <div class="service-card">
+      <span class="service-icon">◉</span>
+      <h3 data-nl="AI-training & Workshops" data-en="AI Training & Workshops">AI-training & Workshops</h3>
+      <p data-nl="Wat is AI eigenlijk? Hoe werkt het veilig — en hoe ondersteunt het je dagelijkse werk zonder dat je erin verdrinkt? Ik geef praktische trainingen en workshops voor teams die willen begrijpen wat AI voor hen kan doen. Geen hype, geen angst. Gewoon aan de slag." data-en="What is AI, really? How do you use it safely — and how does it support your daily work without overwhelming you? I give practical training and workshops for teams that want to understand what AI can do for them. No hype, no fear. Just getting started.">
+        Wat is AI eigenlijk? Hoe werkt het veilig — en hoe ondersteunt het je dagelijkse werk zonder dat je erin verdrinkt? Ik geef praktische trainingen en workshops voor teams die willen begrijpen wat AI voor hen kan doen. Geen hype, geen angst. Gewoon aan de slag.
+      </p>
+      <div class="service-tags">
+        <span class="tag" data-nl="Repetitieve taken automatiseren" data-en="Automating repetitive tasks">Repetitieve taken automatiseren</span>
+        <span class="tag" data-nl="Veilig werken met AI" data-en="Working safely with AI">Veilig werken met AI</span>
+        <span class="tag" data-nl="Teamworkshops" data-en="Team workshops">Teamworkshops</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- WORK -->
+<section id="work" class="section">
+  <div class="section-meta reveal">
+    <span class="section-tag" data-nl="Projecten" data-en="Projects">Projecten</span>
+    <div class="section-line"></div>
+    <span class="section-num">02</span>
+  </div>
+  <h2 class="reveal" data-nl="Gebouwd.<br>Getest. <em>Live.</em>" data-en="Built.<br>Tested. <em>Live.</em>">Gebouwd.<br>Getest. <em>Live.</em></h2>
+
+  <div class="projects-list reveal">
+
+    <div class="project-item">
+      <div>
+        <div class="project-meta">
+          <span class="project-type" data-nl="SaaS · AI Voice Platform" data-en="SaaS · AI Voice Platform">SaaS · AI Voice Platform</span>
+          <span class="project-year">2026</span>
+        </div>
+        <h3>Bellers</h3>
+        <p data-nl="AI-gedreven digitale medewerkers voor het Nederlandse MKB — ze nemen de telefoon op, mailen, plannen afspraken én reageren op social posts zodat je altijd zichtbaar actief bent zonder ooit de verkeerde toon aan te slaan. Concept, platform-architectuur, agent-ontwerp en go-to-market strategie — volledig door mij ontwikkeld." data-en="AI-driven digital employees for Dutch SMEs — they answer the phone, send emails, schedule appointments, and respond to social posts so you're always visibly active without ever striking the wrong tone. Concept, platform architecture, agent design and go-to-market strategy — fully developed by me.">
+          AI-gedreven digitale medewerkers voor het Nederlandse MKB — ze nemen de telefoon op, mailen, plannen afspraken én reageren op social posts zodat je altijd zichtbaar actief bent zonder ooit de verkeerde toon aan te slaan. Concept, platform-architectuur, agent-ontwerp en go-to-market strategie — volledig door mij ontwikkeld.
+        </p>
+      </div>
+      <a href="https://bellers.eu" target="_blank" class="project-link">bellers.eu →</a>
+    </div>
+
+    <div class="project-item">
+      <div>
+        <div class="project-meta">
+          <span class="project-type" data-nl="SaaS · Digitale Medewerkers · AI" data-en="SaaS · Digital Employees · AI">SaaS · Digitale Medewerkers · AI</span>
+          <span class="project-year">2026</span>
+        </div>
+        <h3 data-nl="Digitale Medewerkers" data-en="Digital Employees">Digitale Medewerkers</h3>
+        <p data-nl="AI-medewerkers die specifieke taken overnemen: telefonische bereikbaarheid, e-mail afhandeling, afspraken inplannen en social media reacties. Onderdeel van het Bellers platform — afzonderlijk inzetbaar per functie." data-en="AI employees that take over specific tasks: phone availability, email handling, scheduling appointments and social media responses. Part of the Bellers platform — deployable individually per function.">
+          AI-medewerkers die specifieke taken overnemen: telefonische bereikbaarheid, e-mail afhandeling, afspraken inplannen en social media reacties. Onderdeel van het Bellers platform — afzonderlijk inzetbaar per functie.
+        </p>
+      </div>
+      <a href="https://bellers.eu" target="_blank" class="project-link">bellers.eu →</a>
+    </div>
+
+    <div class="project-item">
+      <div>
+        <div class="project-meta">
+          <span class="project-type" data-nl="Web App · Calculator · Meertalig" data-en="Web App · Calculator · Multilingual">Web App · Calculator · Meertalig</span>
+          <span class="project-year">2025</span>
+        </div>
+        <h3 data-nl="Elektrische buitenboordmotor — productselectietool" data-en="Electric outboard motor — product selection tool">Elektrische buitenboordmotor — productselectietool</h3>
+        <p data-nl="Interactieve calculator als embedded UI-element: bezoekers vinden het juiste product in vijf stappen. Gebouwd in NL, EN, DE, SE en DK, gedeployed via Vercel. Bijvangst: de tool genereert rijke klantdata die gerichte marketingcampagnes mogelijk maakt." data-en="Interactive calculator as an embedded UI element: visitors find the right product in five steps. Built in NL, EN, DE, SE and DK, deployed via Vercel. Bonus: the tool generates rich customer data that enables targeted marketing campaigns.">
+          Interactieve calculator als embedded UI-element: bezoekers vinden het juiste product in vijf stappen. Gebouwd in NL, EN, DE, SE en DK, gedeployed via Vercel. Bijvangst: de tool genereert rijke klantdata die gerichte marketingcampagnes mogelijk maakt.
+        </p>
+      </div>
+    </div>
+
+    <div class="project-item">
+      <div>
+        <div class="project-meta">
+          <span class="project-type" data-nl="Concept · Cultuur · AI Gids" data-en="Concept · Culture · AI Guide">Concept · Cultuur · AI Gids</span>
+          <span class="project-year">2025–2026</span>
+        </div>
+        <h3>WalkWithMe</h3>
+        <p data-nl="Een auditief cultuurconcept waarbij je een locatie ontdekt begeleid door een AI-gids — en alle vragen kunt stellen die je wilt. Dat maakt de experience ineens veel persoonlijker dan een traditionele audiogids. Track 1 live in Oldeberkoop via Stichting De Oolde Schoele. Track 2 in ontwikkeling op grotere schaal." data-en="An auditory cultural concept where you discover a location guided by an AI guide — and you can ask any question you want. That suddenly makes the experience far more personal than a traditional audio guide. Track 1 live in Oldeberkoop via Stichting De Oolde Schoele. Track 2 in development at a larger scale.">
+          Een auditief cultuurconcept waarbij je een locatie ontdekt begeleid door een AI-gids — en alle vragen kunt stellen die je wilt. Dat maakt de experience ineens veel persoonlijker dan een traditionele audiogids. Track 1 live in Oldeberkoop via Stichting De Oolde Schoele. Track 2 in ontwikkeling op grotere schaal.
+        </p>
+      </div>
+    </div>
+
+    <div class="project-item">
+      <div>
+        <div class="project-meta">
+          <span class="project-type" data-nl="Klantproject · Web · UX" data-en="Client Project · Web · UX">Klantproject · Web · UX</span>
+          <span class="project-year">2025</span>
+        </div>
+        <h3>Ruimte om te Spreken</h3>
+        <p data-nl="One-page website met interactieve intake-flow voor een presentatie- en sprekerscoachingpraktijk. Concept, ontwerp, development en copywriting." data-en="One-page website with interactive intake flow for a presentation and speaker coaching practice. Concept, design, development and copywriting.">
+          One-page website met interactieve intake-flow voor een presentatie- en sprekerscoachingpraktijk. Concept, ontwerp, development en copywriting.
+        </p>
+      </div>
+      <a href="https://ruimteomtespreken.nl" target="_blank" class="project-link" data-nl="Bekijk →" data-en="View →">Bekijk →</a>
+    </div>
+
+    <div class="project-item">
+      <div>
+        <div class="project-meta">
+          <span class="project-type" data-nl="Portfolio · Web · AI" data-en="Portfolio · Web · AI">Portfolio · Web · AI</span>
+          <span class="project-year">2026</span>
+        </div>
+        <h3>phnkmedia.com</h3>
+        <p data-nl="Deze site. Gebouwd als single-page HTML/CSS/JS — geen framework, geen CMS. Lighthouse-score 100/100/100. Wat je niet ziet: beveiliging (CSP, HTTPS, privacywetgeving), Google Analytics 4, meertaligheid, toegankelijkheid en een werkend contactformulier. Vibecoded en bijgestuurd — maar het werkt omdat ik weet wat een product moet doen. Twintig jaar verhalen maken leert je dat een goede site hetzelfde is als een goed tv-programma: structuur, ritme en een duidelijke boodschap." data-en="This site. Built as single-page HTML/CSS/JS — no framework, no CMS. Lighthouse score 100/100/100. What you don't see: security (CSP, HTTPS, privacy compliance), Google Analytics 4, multilingual support, accessibility and a working contact form. Vibecoded and corrected — but it works because I know what a product needs to do. Twenty years of storytelling teaches you that a good site is like a good TV show: structure, rhythm and a clear message.">
+          Deze site. Gebouwd als single-page HTML/CSS/JS — geen framework, geen CMS. Lighthouse-score 100/100/100. Wat je niet ziet: beveiliging (CSP, HTTPS, privacywetgeving), Google Analytics 4, meertaligheid, toegankelijkheid en een werkend contactformulier. Vibecoded en bijgestuurd — maar het werkt omdat ik weet wat een product moet doen. Twintig jaar verhalen maken leert je dat een goede site hetzelfde is als een goed tv-programma: structuur, ritme en een duidelijke boodschap.
+        </p>
+      </div>
+    </div>
+
+    <div class="project-item project-cta">
+      <div>
+        <div class="project-meta">
+          <span class="project-type" data-nl="Jouw Bedrijf" data-en="Your Business">Jouw Bedrijf</span>
+        </div>
+        <h3 data-nl="Volgende op de lijst?" data-en="Next on the list?">Volgende op de lijst?</h3>
+        <p data-nl="Enthousiast geworden? Neem contact op." data-en="Feeling inspired? Get in touch.">
+          Enthousiast geworden? Neem contact op.
+        </p>
+      </div>
+      <a href="#contact" class="project-link" data-nl="Laten we praten →" data-en="Let's talk →">Laten we praten →</a>
+    </div>
+
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- BACKGROUND -->
+<section id="about" class="bg-full">
+  <div class="bg-inner">
+    <!-- TEXT -->
+    <div>
+      <div class="section-meta reveal">
+        <span class="section-tag" data-nl="Achtergrond" data-en="About">Achtergrond</span>
+        <div class="section-line"></div>
+        <span class="section-num">03</span>
+      </div>
+      <h2 style="font-family:var(--display);font-size:clamp(1.6rem,3vw,2.5rem);font-weight:700;letter-spacing:-0.03em;color:var(--white);line-height:1.1;margin-bottom:2rem;" class="reveal" data-nl="Twintig jaar verhalen maken.<br>Nu digitale producten." data-en="Twenty years making stories.<br>Now digital products.">Twintig jaar verhalen maken.<br>Nu digitale producten.</h2>
+      <div class="bg-text reveal">
+        <p data-nl="Ik heb twintig jaar lang televisie gemaakt in Amsterdam — als verslaggever, regisseur, eindredacteur en programmaontwikkelaar. Formats ontwikkelen voor grote doelgroepen, concepten die werken onder druk, producties van idee tot uitzending. Dat is de basis van alles wat ik nu bouw." data-en="I spent twenty years making television in Amsterdam — as reporter, director, editor-in-chief and format developer. Creating concepts for large audiences, ideas that hold up under pressure, productions from concept to broadcast. That foundation shapes everything I build now.">
+          Ik heb twintig jaar lang televisie gemaakt in Amsterdam — als verslaggever, regisseur, eindredacteur en programmaontwikkelaar. Formats ontwikkelen voor grote doelgroepen, concepten die werken onder druk, producties van idee tot uitzending. Dat is de basis van alles wat ik nu bouw.
+        </p>
+        <p data-nl="Bewust overgestapt naar Friesland en de digitale wereld. Niet als hobbyist — als operator. Ik bouw werkende producten, integreer AI in echte processen, en lever op." data-en="Deliberately moved to Friesland and the digital world. Not as a hobbyist — as an operator. I build working products, integrate AI into real processes, and deliver.">
+          Bewust overgestapt naar Friesland en de digitale wereld. Niet als hobbyist — als operator. Ik bouw werkende producten, integreer AI in echte processen, en lever op.
+        </p>
+      </div>
+    </div>
+
+    <!-- PORTRAIT -->
+    <div class="portrait-wrap reveal">
+      <div class="portrait-frame">
+        <picture>
+          <source srcset="assets/images/portret-image.webp" type="image/webp">
+          <img
+            src="assets/images/portret-image.png"
+            alt="Patrick Hink — oprichter PHNK Media, concept developer, webdesigner en AI engineer, Oldeberkoop Friesland"
+            width="520"
+            height="708"
+            loading="lazy"
+            class="portrait-img"
+          >
+        </picture>
+        <div class="portrait-accent"></div>
+      </div>
+    </div>
+
+    <!-- CREDENTIALS -->
+    <div class="reveal">
+      <div class="credentials-header">
+        <picture>
+          <source srcset="assets/images/cherry.webp" type="image/webp">
+          <img src="assets/images/cherry.png" alt="" class="cherry-icon" width="36" height="36" aria-hidden="true" id="cherryIcon">
+        </picture>
+        <span data-nl="Cherry-picked" data-en="Cherry-picked">Cherry-picked</span>
+      </div>
+      <div class="credentials">
+        <div class="credential-item">
+          <span class="credential-title">The Masked Singer NL</span>
+          <span class="credential-detail" data-nl="Verslaggever / Camjo" data-en="Reporter / Camjo">Verslaggever / Camjo</span>
+        </div>
+        <div class="credential-item">
+          <span class="credential-title">Holland's Got Talent</span>
+          <span class="credential-detail">Format · Camjo</span>
+        </div>
+        <div class="credential-item">
+          <span class="credential-title">X Factor NL</span>
+          <span class="credential-detail">Regie</span>
+        </div>
+        <div class="credential-item">
+          <span class="credential-title">Dragons' Den NL</span>
+          <span class="credential-detail">Eindredactie</span>
+        </div>
+        <div class="credential-item">
+          <span class="credential-title">Ik Weet Er Alles Van</span>
+          <span class="credential-detail" data-nl="Programmaontwikkeling" data-en="Format development">Programmaontwikkeling</span>
+        </div>
+        <div class="credential-item" style="border-top:1px solid var(--border);margin-top:1px;">
+          <span class="credential-title">Google AI Certificates</span>
+          <span class="credential-detail">2025–2026</span>
+        </div>
+        <div class="credential-item">
+          <span class="credential-title">ElevenLabs · Twilio · n8n</span>
+          <span class="credential-detail">AI Stack</span>
+        </div>
+        <div class="credential-item">
+          <span class="credential-title">Wix Studio · Vercel · GitHub</span>
+          <span class="credential-detail">Development</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- GOLDEN TICKET — full width -->
+  <div class="golden-full reveal" data-nl="★ Bedenker van het Golden Ticket-concept — het formatelement dat wereldwijd bekendheid verwierf als de Golden Buzzer in Got Talent." data-en="★ Creator of the Golden Ticket concept — the format element that gained worldwide recognition as the Golden Buzzer in Got Talent.">
+    ★&nbsp; Bedenker van het Golden Ticket-concept — het formatelement dat wereldwijd bekendheid verwierf als de Golden Buzzer in Got Talent.
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact" class="contact-section">
+  <div class="contact-left reveal">
+    <div class="section-meta">
+      <span class="section-tag" data-nl="Maak verbinding" data-en="Make contact">Maak verbinding</span>
+      <div class="section-line"></div>
+      <span class="section-num">04</span>
+    </div>
+    <h2 data-nl="Heb je een idee —<br>of juist nog niet?" data-en="Got an idea —<br>or not yet?">Heb je een idee —<br>of juist nog niet?</h2>
+    <p data-nl="Dat maakt niet uit. Laten we praten om te kijken of we iets voor elkaar kunnen betekenen. Ik werk met MKB, culturele organisaties en iedereen die wil weten wat AI en digitaal voor hen kan doen." data-en="Doesn't matter. Let's talk and see if we can be of use to each other. I work with SMEs, cultural organisations, and anyone wondering what AI and digital can do for them.">
+      Dat maakt niet uit. Laten we praten om te kijken of we iets voor elkaar kunnen betekenen. Ik werk met MKB, culturele organisaties en iedereen die wil weten wat AI en digitaal voor hen kan doen.
+    </p>
+    <div class="contact-direct">
+      <a href="mailto:info@phnkmedia.com" class="contact-value">info@phnkmedia.com</a>
+      <a href="https://www.linkedin.com/in/patrickhink/" target="_blank" class="contact-value">/in/patrickhink</a>
+      <span class="contact-value" data-nl="Heel Nederland &middot; fysiek in Oldeberkoop, Friesland" data-en="All of the Netherlands &middot; physically in Oldeberkoop, Friesland">Heel Nederland &middot; fysiek in Oldeberkoop, Friesland</span>
+    </div>
+  </div>
+
+  <div class="contact-right reveal">
+    <div id="contactForm" class="contact-form-wrap">
+      <div class="form-field">
+        <label class="form-label" for="cf-name" data-nl="Naam" data-en="Name">Naam</label>
+        <input class="form-input" id="cf-name" type="text" autocomplete="name" data-placeholder-nl="Jouw naam" data-placeholder-en="Your name" placeholder="Jouw naam">
+      </div>
+      <div class="form-field">
+        <label class="form-label" for="cf-email">Email</label>
+        <input class="form-input" id="cf-email" type="email" autocomplete="email" data-placeholder-nl="jouw@email.nl" data-placeholder-en="your@email.com" placeholder="jouw@email.nl">
+      </div>
+      <div class="form-field">
+        <label class="form-label" for="cf-subject" data-nl="Onderwerp" data-en="Subject">Onderwerp</label>
+        <input class="form-input" id="cf-subject" type="text" data-placeholder-nl="Waar gaat het over?" data-placeholder-en="What is it about?" placeholder="Waar gaat het over?">
+      </div>
+      <div class="form-field">
+        <label class="form-label" for="cf-msg" data-nl="Bericht" data-en="Message">Bericht</label>
+        <textarea class="form-input form-textarea" id="cf-msg" rows="4" data-placeholder-nl="Vertel me meer..." data-placeholder-en="Tell me more..." placeholder="Vertel me meer..."></textarea>
+      </div>
+      <button class="btn btn-primary form-submit" id="cfSubmit" data-nl="Verstuur bericht" data-en="Send message">Verstuur bericht</button>
+      <p class="form-note" data-nl="Je bericht opent in je e-mailprogramma — zo houd je een eigen kopie." data-en="Your message opens in your email client — so you keep your own copy.">Je bericht opent in je e-mailprogramma — zo houd je een eigen kopie.</p>
+    </div>
+    <div id="contactThanks" class="contact-thanks" style="display:none;">
+      <div class="thanks-icon">&#10003;</div>
+      <p data-nl="Bericht klaar om te verzenden. Tot snel." data-en="Message ready to send. Talk soon.">Bericht klaar om te verzenden. Tot snel.</p>
+    </div>
+  </div>
+</section>
+
+<!-- TRUST BAR -->
+<div class="trust-bar">
   <div class="trust-inner">
-    <p class="trust-title"><span data-lang="nl">Beveiliging zit ingebouwd. Dat is de basis.</span><span data-lang="en" style="display:none">Security is built in. That&rsquo;s the baseline.</span></p>
-    <div class="trust-badges">
-      <span class="trust-badge"><span data-lang="nl">AVG-proof</span><span data-lang="en" style="display:none">GDPR-proof</span></span>
-      <span class="trust-badge">Privacy by design</span>
-      <span class="trust-badge"><!-- TODO Patrick: Google AI Developer badge image -->Google AI Developer</span>
-      <span class="trust-badge">EU-servers</span>
+    <div class="badge" title="Ingeschreven in het Handelsregister van de Kamer van Koophandel">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18M9 21V9"/></svg>
+      <span>KVK-ingeschreven</span>
     </div>
-    <p class="trust-note"><span data-lang="nl">Geen achterdeurtjes, geen data die wegwandelen, geen onduidelijke buitenlandse servers. Pas daarna begint het werk.</span><span data-lang="en" style="display:none">No backdoors, no data wandering off, no murky foreign servers. Only after that does the real work start.</span></p>
-  </div>
-</section>
-
-<section id="services" class="services">
-  <div class="container">
-    <div class="reveal"><div class="eyebrow"><div class="eyebrow-line"></div><span class="eyebrow-text"><span data-lang="nl">Wat PHNK doet</span><span data-lang="en" style="display:none">What PHNK does</span></span></div><h2><span data-lang="nl">Lijkt ingewikkeld.<br>Is het niet.</span><span data-lang="en" style="display:none">Looks complicated.<br>It isn&rsquo;t.</span></h2></div>
-    <div class="services-grid reveal">
-      <div class="service"><div class="service-dot"></div><h3>AI Concept &amp; Strategie</h3><p><span data-lang="nl">Je weet dat er iets slimmer kan in je bedrijf &mdash; maar niet precies hoe. Dat is waar PHNK begint. Samen zoek ik uit waar AI tijd, geld of energie bespaart. Geen hype, geen vakjargon. Een helder plan dat past bij jouw bedrijf.</span><span data-lang="en" style="display:none">You know something in your business could be smarter &mdash; but you&rsquo;re not sure how. That&rsquo;s exactly where PHNK starts. Together I figure out where AI saves time, money or energy. No hype, no jargon. A clear plan that fits your business.</span></p></div>
-      <div class="service"><div class="service-dot"></div><h3>Digitale Tools &amp; Calculators</h3><p><span data-lang="nl">Offertetools, intake-formulieren, configurators, aanbevelingsmodules &mdash; tools die 24/7 voor jou werken. Klanten worden meteen goed geholpen. Jij bespaart tijd bij elke aanvraag, zonder dat je er naar om hoeft te kijken.</span><span data-lang="en" style="display:none">Quote tools, intake forms, configurators, recommendation modules &mdash; tools that work for you 24/7. Customers get helped straight away. You save time on every enquiry without having to look at it.</span></p></div>
-      <div class="service"><div class="service-dot"></div><h3>Voice &amp; Chat Agents</h3><p><span data-lang="nl">Telefoon wordt niet opgenomen? Vragen blijven liggen? Een AI voice- of chatagent neemt het over &mdash; beantwoordt vragen, plant afspraken in en kwalificeert leads. Automatisch. En menselijk genoeg dat niemand het doorheeft.</span><span data-lang="en" style="display:none">Phone going unanswered? Questions piling up? An AI voice or chat agent takes over &mdash; answers questions, books appointments and qualifies leads. Automatically. And human enough that no one notices the difference.</span></p></div>
-      <div class="service" style="position:relative;"><span style="position:absolute;top:12px;right:12px;font-family:'Space Mono',monospace;font-size:0.55rem;letter-spacing:0.08em;padding:2px 8px;border-radius:3px;background:rgba(255,107,43,0.12);color:var(--orange);border:1px solid rgba(255,107,43,0.25);"><span data-lang="nl">Instap</span><span data-lang="en" style="display:none">Entry</span></span><div class="service-dot" style="background:var(--orange);box-shadow:0 0 10px rgba(255,107,43,0.7);"></div><h3><span data-lang="nl">De Eerste Vouw &mdash; AI-scan voor jouw bedrijf</span><span data-lang="en" style="display:none">The First Fold &mdash; AI scan for your business</span></h3><p><span data-lang="nl">Voordat je iets bouwt, wil je weten w&aacute;t er te winnen is. In een paar dagen breng ik je werkprocessen in kaart, identificeer ik de taken waar AI het meeste oplevert, en lever ik een rapport met cijfers, aanbevelingen en een plan van aanpak. Inclusief analytics-setup en een baseline-meting, zodat je later kunt zien wat AI &eacute;cht heeft opgeleverd.<br><br>Geen verplichting om daarna iets te bouwen. Dit is de eerste vouw &mdash; niet meteen het hele hoedje.</span><span data-lang="en" style="display:none">Before you build anything, you want to know what&rsquo;s actually worth building. In a few days I map your workflows, identify the tasks where AI pays off most, and deliver a report with numbers, recommendations and a plan of action. Including analytics setup and a baseline measurement, so later you can see what AI actually delivered.<br><br>No obligation to build anything afterwards. This is the first fold &mdash; not the whole hat yet.</span></p></div>
+    <div class="badge-sep"></div>
+    <div class="badge" title="Verwerking van persoonsgegevens conform AVG / GDPR">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+      <span>AVG / GDPR-compliant</span>
     </div>
-  </div>
-</section>
-
-<section id="work">
-  <div class="container">
-    <div class="work-header reveal">
-      <div><div class="eyebrow"><div class="eyebrow-line"></div><span class="eyebrow-text"><span data-lang="nl">Geselecteerd werk</span><span data-lang="en" style="display:none">Selected work</span></span></div><h2><span data-lang="nl">Tools die werken<br>terwijl jij werkt.</span><span data-lang="en" style="display:none">Tools that work<br>while you work.</span></h2></div>
-      <p><span data-lang="nl">Geen prototypes. Elk project live, in gebruik &mdash; gebouwd voor echte bedrijven met echte uitdagingen.</span><span data-lang="en" style="display:none">No prototypes. Every project live and in use &mdash; built for real businesses with real challenges.</span></p>
-      <p style="font-size:0.84rem;color:var(--ink3);font-style:italic;margin-top:0.5rem;"><span data-lang="nl">Terwijl je dit leest, vouwt iemand anders al.</span><span data-lang="en" style="display:none">While you&rsquo;re reading this, someone else is already folding.</span></p>
+    <div class="badge-sep"></div>
+    <div class="badge" title="Verbinding beveiligd via HTTPS">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="5" y="11" width="14" height="10" rx="2"/><path d="M8 11V7a4 4 0 0 1 8 0v4"/></svg>
+      <span>SSL-beveiligd</span>
     </div>
-    <div class="projects">
-      <!-- 01: AI Voice Agent Suite -->
-      <div class="card card-featured reveal">
-        <div class="card-visual radar-frame">
-          <div class="radar-scanline"></div>
-          <div class="radar-corner tl"></div>
-          <div class="radar-corner tr"></div>
-          <div class="radar-corner bl"></div>
-          <div class="radar-corner br"></div>
-          <div class="radar-label">VOICE AI</div>
-          <img src="assets/images/projects/bellers-ai-voice-agents.webp" alt="AI Voice Agents">
-        </div>
-        <div>
-          <div class="card-top"><span class="card-num">// 01</span></div>
-          <div class="card-title"><span data-lang="nl">AI Voice Agent Suite</span><span data-lang="en" style="display:none">AI Voice Agent Suite</span></div>
-          <p class="card-desc"><span data-lang="nl">Suite van inkomende AI voice agents op ElevenLabs, Gemini en Twilio. Neemt gesprekken aan, kwalificeert leads en plant afspraken in.</span><span data-lang="en" style="display:none">Suite of inbound AI voice agents on ElevenLabs, Gemini and Twilio. Handles calls, qualifies leads, books appointments.</span></p>
-          <div class="card-tags"><span class="tag">ElevenLabs</span><span class="tag">Twilio</span><span class="tag">Zapier</span></div>
-          <a href="#contact" class="card-link-btn"><span data-lang="nl">Vraag ernaar &#8594;</span><span data-lang="en" style="display:none">Ask about this &#8594;</span></a>
-        </div>
-      </div>
-      <div class="project-row">
-        <!-- 02: SYS.ONLINE -->
-        <div class="card reveal d1">
-          <img class="card-thumb" src="assets/images/projects/green-marine-motors.webp" alt="Aanbevelingscalculator" loading="lazy">
-          <div class="card-top"><span class="card-num">// 02</span></div>
-          <div class="card-title"><span data-lang="nl">Meertalige aanbevelingscalculator</span><span data-lang="en" style="display:none">Multilingual recommendation calculator</span></div>
-          <p class="card-desc"><span data-lang="nl">6-staps configurator voor buitenboordmotoren. Gebouwd in React, live op Vercel, gekoppeld aan Pipedrive CRM. Beschikbaar in NL, EN, DE, SE en DK.</span><span data-lang="en" style="display:none">6-step configurator for outboard motors. Built in React, live on Vercel, connected to Pipedrive CRM. Available in NL, EN, DE, SE and DK.</span></p>
-          <div class="card-tags"><span class="tag">React</span><span class="tag"><span data-lang="nl">Meertalig</span><span data-lang="en" style="display:none">Multilingual</span></span><span class="tag">CRM</span><span class="tag">Vercel</span></div>
-          <a href="https://greenmarinemotors.com" target="_blank" rel="noopener noreferrer" class="card-link-btn"><span data-lang="nl">Bekijk live &#8599;</span><span data-lang="en" style="display:none">View live &#8599;</span></a>
-        </div>
-        <!-- 03: Interactieve ervaringen -->
-        <div class="card reveal d2">
-          <img class="card-thumb" src="assets/images/projects/family-easter-quiz.webp" alt="Interactieve ervaringen" loading="lazy">
-          <div class="card-top"><span class="card-num">// 03</span></div>
-          <div class="card-title"><span data-lang="nl">Interactieve ervaringen</span><span data-lang="en" style="display:none">Interactive experiences</span></div>
-          <p class="card-desc"><span data-lang="nl">Games, quizzen en interactieve ervaringen gebouwd in React. Thematisch, met tijdslimiet, scoretracking en geanimeerde resultaten.</span><span data-lang="en" style="display:none">Games, quizzes and interactive experiences built in React. Themed, with time limits, score tracking and animated results.</span></p>
-          <div class="card-tags"><span class="tag">React</span><span class="tag"><span data-lang="nl">Game design</span><span data-lang="en" style="display:none">Game design</span></span><span class="tag">GitHub Pages</span></div>
-          <a href="#contact" class="card-link-btn"><span data-lang="nl">Vraag ernaar &#8594;</span><span data-lang="en" style="display:none">Ask about this &#8594;</span></a>
-        </div>
-      </div>
-      <div class="project-row">
-        <!-- 04: Intake-tool -->
-        <div class="card reveal d1">
-          <img class="card-thumb" src="assets/images/projects/ruimte-om-te-spreken.webp" alt="Intake-tool voor coaches" loading="lazy">
-          <div class="card-top"><span class="card-num">// 04</span></div>
-          <div class="card-title"><span data-lang="nl">Intake-tool voor coaches</span><span data-lang="en" style="display:none">Intake tool for coaches</span></div>
-          <p class="card-desc"><span data-lang="nl">Interactieve intake voor een spreekcoach. Bezoekers brengen eerst hun spreekangst in kaart voordat ze boeken.</span><span data-lang="en" style="display:none">Interactive intake for a speaking coach. Visitors identify their speaking anxiety before booking.</span></p>
-          <div class="card-tags"><span class="tag">Velo</span><span class="tag"><span data-lang="nl">Leadtool</span><span data-lang="en" style="display:none">Lead tool</span></span></div>
-          <a href="https://ruimteomtespreken.nl" target="_blank" rel="noopener noreferrer" class="card-link-btn"><span data-lang="nl">Bekijk live &#8599;</span><span data-lang="en" style="display:none">View live &#8599;</span></a>
-        </div>
-        <!-- 05: De Stelling -->
-        <div class="card reveal d2">
-          <img class="card-thumb" src="assets/images/projects/de-stelling.webp" alt="Redactionele website" loading="lazy">
-          <div class="card-top"><span class="card-num">// 05</span></div>
-          <div class="card-title"><span data-lang="nl">Redactionele website</span><span data-lang="en" style="display:none">Editorial website</span></div>
-          <p class="card-desc"><span data-lang="nl">Website voor een debat- en opinieplatform. Redactioneel ontwerp gericht op helderheid en inhoudshi&euml;rarchie.</span><span data-lang="en" style="display:none">Website for a debate and opinion platform. Editorial design focused on clarity and content hierarchy.</span></p>
-          <div class="card-tags"><span class="tag"><span data-lang="nl">Webdesign</span><span data-lang="en" style="display:none">Web Design</span></span><span class="tag"><span data-lang="nl">Redactioneel</span><span data-lang="en" style="display:none">Editorial</span></span></div>
-          <a href="https://www.destelling.online" target="_blank" rel="noopener noreferrer" class="card-link-btn"><span data-lang="nl">Bekijk live &#8599;</span><span data-lang="en" style="display:none">View live &#8599;</span></a>
-        </div>
-      </div>
+    <div class="badge-sep"></div>
+    <div class="badge" title="Google AI Essentials &amp; Certificate 2025/2026">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="8" r="4"/><path d="M12 12v8M8 16l4 4 4-4"/></svg>
+      <span>Google AI Certified</span>
     </div>
   </div>
-</section>
+</div>
 
-<section id="about">
-  <div class="container">
-    <div class="about-grid">
-      <div style="position:relative" class="reveal">
-        <div class="about-box"><div class="about-glow"></div><div class="about-mono">PH</div></div>
-        <div class="about-badge"><div class="badge-num">10+</div><div class="badge-label"><span data-lang="nl">jaar<br>media &amp; productie</span><span data-lang="en" style="display:none">years<br>media &amp; production</span></div></div>
-      </div>
-      <div class="about-text reveal d1">
-        <div class="eyebrow"><div class="eyebrow-line"></div><span class="eyebrow-text"><span data-lang="nl">Over PHNK</span><span data-lang="en" style="display:none">About PHNK</span></span></div>
-        <h2><span data-lang="nl">Dezelfde vraag.<br>Ander gereedschap.</span><span data-lang="en" style="display:none">Same question.<br>Different tools.</span></h2>
-        <p><span data-lang="nl">Meer dan twintig jaar televisieprogramma's bedacht en gemaakt. Formats die bleven hangen. Grote teams, krappe deadlines, alles tegelijk &mdash; je leert snel wat werkt en wat niet. Die manier van denken neem ik mee naar elk digitaal project.</span><span data-lang="en" style="display:none">For over twenty years I conceived and produced television programmes. Formats that kept audiences watching. Big teams, tight deadlines, everything at once &mdash; you learn fast what works and what doesn&rsquo;t. That way of thinking I bring to every digital project.</span></p>
-        <p><span data-lang="nl">Ik werk vanuit Friesland &mdash; voor klanten door heel Nederland. Geen account manager, geen doorschuifcultuur. Jij praat altijd met mij, van het eerste gesprek tot het moment dat het live gaat.</span><span data-lang="en" style="display:none">I work from Friesland &mdash; for clients across the Netherlands. No account manager, no passing the buck. You always talk directly to me, from the first conversation to the moment it goes live.</span></p>
-        <p><span data-lang="nl">Ik kies per project het AI-model dat past &mdash; OpenAI, Anthropic, Google, of iets lokaals als dat slimmer is. Jij hoeft daar niet over na te denken; ik zorg dat het werkt.</span><span data-lang="en" style="display:none">I pick the AI model that fits the project &mdash; OpenAI, Anthropic, Google, or something local if that&rsquo;s smarter. You don&rsquo;t need to think about it; I make sure it works.</span></p>
-        <div class="skills"><span class="skill">react</span><span class="skill">vercel</span><span class="skill">github</span><span class="skill">cursor</span><span class="skill">elevenlabs</span><span class="skill">twilio</span><span class="skill">zapier</span><span class="skill">n8n</span><span class="skill">conceptueel denken</span><span class="skill">storytelling</span></div>
-      </div>
-    </div>
-  </div>
-</section>
+</main>
 
-<section class="tech-stack reveal">
-  <div class="tech-stack-inner">
-    <div class="tech-stack-heading"><span data-lang="nl">Mijn gereedschap</span><span data-lang="en" style="display:none">Tech Stack</span></div>
-    <div class="tech-icons">
-      <div class="tech-icon" title="React"><svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><circle cx="12" cy="13.5" r="1.5"/><path d="M12 2C6.48 2 2 9 2 13.5s4.48 11.5 10 11.5 10-7 10-11.5-4.48-11.5-10-11.5zm0 19c-4.41 0-8-5.82-8-9.5S7.59 5 12 5s8 5.82 8 9.5-3.59 8-8 8z" fill="currentColor"/></svg></div>
-      <div class="tech-icon" title="Vercel"><svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><polygon points="12,2 24,22 0,22" fill="currentColor"/></svg></div>
-      <div class="tech-icon" title="GitHub"><svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z" fill="currentColor"/></svg></div>
-      <div class="tech-icon" title="Cursor"><svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M4 4h16v4H8v8h12v4H4V4z" fill="currentColor"/></svg></div>
-      <div class="tech-icon" title="ElevenLabs"><svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.42 0-8-3.58-8-8s3.58-8 8-8 8 3.58 8 8-3.58 8-8 8zm3.5-9c.83 0 1.5-.67 1.5-1.5S16.33 8 15.5 8 14 8.67 14 9.5s.67 1.5 1.5 1.5zm-7 0c.83 0 1.5-.67 1.5-1.5S9.33 8 8.5 8 7 8.67 7 9.5 7.67 11 8.5 11zm3.5 6.5c2.33 0 4.31-1.46 5.11-3.5H6.89c.8 2.04 2.78 3.5 5.11 3.5z" fill="currentColor"/></svg></div>
-      <div class="tech-icon" title="Twilio"><svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><circle cx="6" cy="6" r="2" fill="currentColor"/><circle cx="18" cy="6" r="2" fill="currentColor"/><circle cx="6" cy="18" r="2" fill="currentColor"/><circle cx="18" cy="18" r="2" fill="currentColor"/><circle cx="12" cy="12" r="2" fill="currentColor"/><line x1="6" y1="6" x2="12" y2="12" stroke="currentColor" stroke-width="1"/><line x1="18" y1="6" x2="12" y2="12" stroke="currentColor" stroke-width="1"/><line x1="6" y1="18" x2="12" y2="12" stroke="currentColor" stroke-width="1"/><line x1="18" y1="18" x2="12" y2="12" stroke="currentColor" stroke-width="1"/></svg></div>
-      <div class="tech-icon" title="Zapier"><svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M7 5c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2zm10 10c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2zM7 15c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2zm10-10c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2z" fill="currentColor"/><path d="M8 9l8-8" stroke="currentColor" stroke-width="1" fill="none"/><path d="M8 17l8-8" stroke="currentColor" stroke-width="1" fill="none"/></svg></div>
-      <div class="tech-icon" title="n8n"><svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><rect x="3" y="3" width="5" height="5" fill="currentColor"/><rect x="10" y="3" width="5" height="5" fill="currentColor"/><rect x="17" y="3" width="4" height="5" fill="currentColor"/><rect x="3" y="10" width="5" height="5" fill="currentColor"/><rect x="10" y="10" width="5" height="5" fill="currentColor"/><rect x="17" y="10" width="4" height="5" fill="currentColor"/><rect x="3" y="17" width="5" height="4" fill="currentColor"/><rect x="10" y="17" width="5" height="4" fill="currentColor"/><rect x="17" y="17" width="4" height="4" fill="currentColor"/></svg></div>
-    </div>
-  </div>
-</section>
-
-<!-- TODO Patrick: quotes vervangen zodra ROC en andere ondernemers reageren -->
-<section class="social-proof reveal">
-  <div class="container">
-    <div class="eyebrow"><div class="eyebrow-line"></div><span class="eyebrow-text"><span data-lang="nl">Referenties</span><span data-lang="en" style="display:none">Testimonials</span></span></div>
-    <h2><span data-lang="nl">Anderen gingen je voor.</span><span data-lang="en" style="display:none">Others went before you.</span></h2>
-    <div class="quotes-grid">
-      <div class="quote-card">
-        <p class="quote-text">&ldquo;<span data-lang="nl">[Quote van ROC &mdash; nog op te halen]</span><span data-lang="en" style="display:none">[ROC quote &mdash; to be collected]</span>&rdquo;</p>
-        <span class="quote-name">[Naam contactpersoon]</span>
-        <span class="quote-role">[Functie], ROC</span>
-      </div>
-      <div class="quote-card">
-        <p class="quote-text">&ldquo;<span data-lang="nl">[Quote van ondernemer 1 &mdash; nog op te halen]</span><span data-lang="en" style="display:none">[Entrepreneur 1 quote &mdash; to be collected]</span>&rdquo;</p>
-        <span class="quote-name">[Naam]</span>
-        <span class="quote-role">[Functie + bedrijf]</span>
-      </div>
-      <div class="quote-card">
-        <p class="quote-text">&ldquo;<span data-lang="nl">[Quote van ondernemer 2 &mdash; nog op te halen]</span><span data-lang="en" style="display:none">[Entrepreneur 2 quote &mdash; to be collected]</span>&rdquo;</p>
-        <span class="quote-name">[Naam]</span>
-        <span class="quote-role">[Functie + bedrijf]</span>
-      </div>
-    </div>
-    <p class="social-proof-cta"><span data-lang="nl">De beste tijd om te beginnen was gisteren. De tweede beste is nu.</span><span data-lang="en" style="display:none">The best time to start was yesterday. The second best is now.</span></p>
-  </div>
-</section>
-
-<section class="contact" id="contact">
-  <div style="position:relative;">
-    <div class="eyebrow" style="justify-content:center;margin-bottom:1rem;">
-      <div class="eyebrow-line"></div><span class="eyebrow-text"><span data-lang="nl">Contact</span><span data-lang="en" style="display:none">Contact</span></span>
-    </div>
-    <h2 class="reveal"><span data-lang="nl">Alles begint met een gesprek.</span><span data-lang="en" style="display:none">Everything starts with a conversation.</span></h2>
-    <p class="contact-sub reveal" style="font-size:0.92rem;margin-bottom:0.5rem;"><span data-lang="nl">Zo ging het altijd al.</span><span data-lang="en" style="display:none">That&rsquo;s how it always was.</span></p>
-    <p class="contact-sub reveal d1"><span data-lang="nl">Vertel wat er speelt &mdash; bij de koffie, aan de telefoon, of via het formulier hieronder. Ik luister, denk mee, en kom met een plan. Meer is er niet nodig om aan de slag te gaan.</span><span data-lang="en" style="display:none">Tell me what&rsquo;s going on &mdash; over coffee, by phone, or via the form below. I&rsquo;ll listen, think along, and come back with a plan. That&rsquo;s all it takes to get started.</span></p>
-    <div class="reveal d2" style="display:flex;gap:1rem;justify-content:center;flex-wrap:wrap;">
-      <a href="mailto:patrick@phnkmedia.com" class="btn btn-primary"><span data-lang="nl">Stuur een bericht</span><span data-lang="en" style="display:none">Send a message</span></a>
-      <a href="https://linkedin.com/in/patrickhink" target="_blank" rel="noopener noreferrer" class="btn btn-secondary"><span>LinkedIn</span></a>
-    </div>
-    <!-- TODO Patrick: form endpoint configureren -->
-    <!-- TODO Patrick: marketing tag event toevoegen aan submit handler -->
-    <form class="contact-form reveal d3" id="contactForm" action="https://formspree.io/f/FORM_ID" method="POST" novalidate>
-      <div class="form-group">
-        <label for="cf-name"><span data-lang="nl">Naam *</span><span data-lang="en" style="display:none">Name *</span></label>
-        <input type="text" id="cf-name" name="name" autocomplete="name" required>
-      </div>
-      <div class="form-group">
-        <label for="cf-company"><span data-lang="nl">Bedrijf *</span><span data-lang="en" style="display:none">Company *</span></label>
-        <input type="text" id="cf-company" name="company" autocomplete="organization" required>
-      </div>
-      <div class="form-group">
-        <label for="cf-email">E-mail *</label>
-        <input type="email" id="cf-email" name="email" autocomplete="email" required>
-      </div>
-      <div class="form-group">
-        <label for="cf-phone"><span data-lang="nl">Telefoonnummer</span><span data-lang="en" style="display:none">Phone</span></label>
-        <input type="tel" id="cf-phone" name="phone" autocomplete="tel">
-      </div>
-      <div class="form-group">
-        <label for="cf-message"><span data-lang="nl">Wat speelt er? *</span><span data-lang="en" style="display:none">What&rsquo;s going on? *</span></label>
-        <textarea id="cf-message" name="message" required minlength="20"></textarea>
-      </div>
-      <button type="submit" class="btn btn-primary"><span data-lang="nl">Verstuur &rarr;</span><span data-lang="en" style="display:none">Send &rarr;</span></button>
-      <p class="form-promise"><span data-lang="nl">Ik reageer binnen &eacute;&eacute;n werkdag.</span><span data-lang="en" style="display:none">I reply within one working day.</span></p>
-    </form>
-    <div class="contact-links reveal d3">
-      <a href="mailto:patrick@phnkmedia.com">patrick@phnkmedia.com</a>
-      <a href="https://www.phnkmedia.com" target="_blank" rel="noopener noreferrer">phnkmedia.com</a>
-      <a href="https://linkedin.com/in/patrickhink" target="_blank" rel="noopener noreferrer">LinkedIn</a>
-    </div>
-  </div>
-</section>
-
+<!-- FOOTER -->
 <footer>
-  <span>&copy; 2026 PHNK Media &amp; Design</span>
-  <span><a href="/privacy.html"><span data-lang="nl">Privacybeleid</span><span data-lang="en" style="display:none">Privacy Policy</span></a></span>
-  <span><button id="privacySettingsBtn" class="footer-btn" type="button"><span data-lang="nl">Privacy-instellingen</span><span data-lang="en" style="display:none">Privacy Settings</span></button></span>
-  <span>Oldeberkoop, Friesland</span>
+  <span>PHNK Media &mdash; Patrick Hink</span>
+  <div class="footer-links">
+    <button class="footer-link" onclick="openModal('modal-privacy')" data-nl="Privacybeleid" data-en="Privacy Policy">Privacybeleid</button>
+    <span class="footer-sep">&middot;</span>
+    <button class="footer-link" onclick="openModal('modal-av')" data-nl="Algemene voorwaarden" data-en="Terms &amp; Conditions">Algemene voorwaarden</button>
+    <span class="footer-sep">&middot;</span>
+    <button class="footer-link" onclick="openModal('modal-cookies')" data-nl="Cookiebeleid" data-en="Cookie Policy">Cookiebeleid</button>
+  </div>
+  <span data-nl="Oldeberkoop, Friesland &middot; &copy; 2026" data-en="Oldeberkoop, Friesland &middot; &copy; 2026">Oldeberkoop, Friesland &middot; &copy; 2026</span>
 </footer>
+<div class="cookie-banner" id="cookieBanner">
+  <div class="cookie-main">
+    <div class="cookie-text">
+      <strong data-nl="Cookies" data-en="Cookies">Cookies</strong>
+      <p data-nl="Ik gebruik analytische cookies (Google Analytics) om te begrijpen hoe bezoekers de site gebruiken. Geen advertentietracking." data-en="I use analytics cookies (Google Analytics) to understand how visitors use this site. No ad tracking.">Ik gebruik analytische cookies (Google Analytics) om te begrijpen hoe bezoekers de site gebruiken. Geen advertentietracking.</p>
+    </div>
+    <div class="cookie-actions">
+      <button class="cookie-details-btn" id="cookieDetailsToggle" data-nl="Details" data-en="Details">Details</button>
+      <button class="btn btn-ghost cookie-btn-sm" id="cookieDeny" data-nl="Alleen noodzakelijk" data-en="Necessary only">Alleen noodzakelijk</button>
+      <button class="btn btn-primary cookie-btn-sm" id="cookieAccept" data-nl="Accepteren" data-en="Accept all">Accepteren</button>
+    </div>
+  </div>
+  <div class="cookie-details" id="cookieDetails">
+    <div class="cookie-category">
+      <div class="cookie-cat-header">
+        <div>
+          <strong data-nl="Noodzakelijk" data-en="Necessary">Noodzakelijk</strong>
+          <p data-nl="Vereist voor het functioneren van de site. Kunnen niet worden uitgeschakeld." data-en="Required for the site to function. Cannot be disabled.">Vereist voor het functioneren van de site. Kunnen niet worden uitgeschakeld.</p>
+        </div>
+        <span class="cookie-always-on" data-nl="Altijd aan" data-en="Always on">Altijd aan</span>
+      </div>
+    </div>
+    <div class="cookie-category">
+      <div class="cookie-cat-header">
+        <div>
+          <strong data-nl="Analytisch (Google Analytics)" data-en="Analytics (Google Analytics)">Analytisch (Google Analytics)</strong>
+          <p data-nl="Anonieme statistieken: paginabezoeken, sessieduur, herkomst. IP-adressen worden geanonimiseerd. Niet gebruikt voor advertenties. Toestemming reset elke 1e van de maand conform overheidsrichtlijnen." data-en="Anonymous stats: page visits, session duration, referral. IPs are anonymised. Not used for ads. Consent resets on the 1st of each month per government guidelines.">Anonieme statistieken: paginabezoeken, sessieduur, herkomst. IP-adressen worden geanonimiseerd. Niet gebruikt voor advertenties. Toestemming reset elke 1e van de maand conform overheidsrichtlijnen.</p>
+        </div>
+        <label class="toggle-switch">
+          <input type="checkbox" id="analyticsToggle">
+          <span class="toggle-slider"></span>
+        </label>
+      </div>
+    </div>
+    <div style="padding:1rem 0 0;">
+      <button class="btn btn-primary cookie-btn-sm" id="cookieSavePrefs" data-nl="Voorkeuren opslaan" data-en="Save preferences">Voorkeuren opslaan</button>
+    </div>
+  </div>
+</div>
 
+<!-- MODAL: PRIVACY -->
+<div class="modal-overlay" id="modal-privacy">
+  <div class="modal-box">
+    <button class="modal-close" onclick="closeModal('modal-privacy')">&#x2715;</button>
+    <h2 class="modal-title" data-nl="Privacybeleid" data-en="Privacy Policy">Privacybeleid</h2>
+    <div class="modal-content">
+      <p><strong>PHNK Media &mdash; Patrick Hink</strong><br>Oldeberkoop, Friesland &nbsp;&middot;&nbsp; KVK: 93711107<br>info@phnkmedia.com</p>
+      <h3>Welke gegevens verwerk ik?</h3>
+      <p>Wanneer je contact opneemt via e-mail verwerk ik uitsluitend de gegevens die je zelf verstrekt: naam, e-mailadres en de inhoud van je bericht. Er worden geen gegevens aan derden verstrekt zonder jouw toestemming.</p>
+      <h3>Google Analytics</h3>
+      <p>Indien je toestemming geeft worden geanonimiseerde bezoekersstatistieken verzameld via Google Analytics 4. IP-adressen worden geanonimiseerd. Gegevens worden niet gebruikt voor advertentiedoeleinden. Toestemming wordt maandelijks opnieuw gevraagd conform de aanbevelingen van de Autoriteit Persoonsgegevens.</p>
+      <h3>Bewaartermijn</h3>
+      <p>E-mailcorrespondentie wordt bewaard zolang noodzakelijk voor de afhandeling, maximaal 2 jaar. Analytics-data conform de standaardinstellingen van Google Analytics (maximaal 14 maanden).</p>
+      <h3>Jouw rechten (AVG)</h3>
+      <p>Je hebt recht op inzage, rectificatie, verwijdering en overdracht van jouw persoonsgegevens. Verzoeken richten aan: <a href="mailto:info@phnkmedia.com" style="color:var(--accent)">info@phnkmedia.com</a>. Je kunt ook een klacht indienen bij de Autoriteit Persoonsgegevens (autoriteitpersoonsgegevens.nl).</p>
+      <p class="modal-version">Versie: april 2026</p>
+    </div>
+  </div>
+</div>
+
+<!-- MODAL: ALGEMENE VOORWAARDEN -->
+<div class="modal-overlay" id="modal-av">
+  <div class="modal-box">
+    <button class="modal-close" onclick="closeModal('modal-av')">&#x2715;</button>
+    <h2 class="modal-title" data-nl="Algemene voorwaarden" data-en="Terms &amp; Conditions">Algemene voorwaarden</h2>
+    <div class="modal-content">
+      <p><strong>PHNK Media &mdash; Patrick Hink</strong><br>Oldeberkoop, Friesland &nbsp;&middot;&nbsp; KVK: 93711107</p>
+      <h3>Artikel 1 &mdash; Toepasselijkheid</h3>
+      <p>Deze voorwaarden zijn van toepassing op alle offertes, opdrachten en overeenkomsten tussen PHNK Media (Patrick Hink, hierna: opdrachtnemer) en opdrachtgever, tenzij schriftelijk anders overeengekomen.</p>
+      <h3>Artikel 2 &mdash; Offertes en overeenkomsten</h3>
+      <p>Alle offertes zijn vrijblijvend en geldig gedurende 30 dagen. Een overeenkomst komt tot stand na schriftelijke bevestiging (e-mail volstaat).</p>
+      <h3>Artikel 3 &mdash; Uitvoering</h3>
+      <p>Opdrachtnemer voert opdrachten naar beste inzicht en vermogen uit. Opdrachtgever draagt zorg voor tijdige aanlevering van benodigde materialen en informatie.</p>
+      <h3>Artikel 4 &mdash; Betaling</h3>
+      <p>Facturen dienen binnen 14 dagen na factuurdatum te worden voldaan. Bij overschrijding is de wettelijke handelsrente verschuldigd. Bij opdrachten boven &euro;500 wordt 50% aanbetaling gevraagd vóór aanvang.</p>
+      <h3>Artikel 5 &mdash; Intellectueel eigendom</h3>
+      <p>Na volledige betaling draagt opdrachtnemer de gebruiksrechten op het geleverde werk over aan opdrachtgever. Bronbestanden blijven eigendom van PHNK Media, tenzij uitdrukkelijk anders overeengekomen en gefactureerd.</p>
+      <h3>Artikel 6 &mdash; Aansprakelijkheid</h3>
+      <p>De aansprakelijkheid van PHNK Media is te allen tijde beperkt tot het bedrag van de betreffende opdracht. Opdrachtnemer is niet aansprakelijk voor indirecte schade, gevolgschade of gederfde winst.</p>
+      <h3>Artikel 7 &mdash; Toepasselijk recht</h3>
+      <p>Op alle overeenkomsten is Nederlands recht van toepassing. Geschillen worden voorgelegd aan de bevoegde rechter in het arrondissement Noord-Nederland.</p>
+      <p class="modal-version">Versie: april 2026</p>
+    </div>
+  </div>
+</div>
+
+<!-- MODAL: COOKIEBELEID -->
+<div class="modal-overlay" id="modal-cookies">
+  <div class="modal-box">
+    <button class="modal-close" onclick="closeModal('modal-cookies')">&#x2715;</button>
+    <h2 class="modal-title" data-nl="Cookiebeleid" data-en="Cookie Policy">Cookiebeleid</h2>
+    <div class="modal-content">
+      <p data-nl="Deze website gebruikt minimale cookies conform de Telecommunicatiewet en de AVG." data-en="This website uses minimal cookies in compliance with the Dutch Telecommunications Act and GDPR.">Deze website gebruikt minimale cookies conform de Telecommunicatiewet en de AVG.</p>
+      <h3 data-nl="Noodzakelijke cookies" data-en="Necessary cookies">Noodzakelijke cookies</h3>
+      <p data-nl="Slaan jouw cookievoorkeur op (phnk_consent). Geen persoonsgegevens. Bewaartermijn: tot de 1e van de volgende maand." data-en="Stores your cookie preference (phnk_consent). No personal data. Retention: until the 1st of the following month.">Slaan jouw cookievoorkeur op (phnk_consent). Geen persoonsgegevens. Bewaartermijn: tot de 1e van de volgende maand.</p>
+      <h3 data-nl="Analytische cookies (optioneel)" data-en="Analytics cookies (optional)">Analytische cookies (optioneel)</h3>
+      <p data-nl="Google Analytics 4 &mdash; uitsluitend na jouw toestemming. Verzamelt: paginabezoeken, sessieduur, herkomstkanaal. IP-adressen worden geanonimiseerd. Geen advertentietracking. Gegevens worden verwerkt op Google-servers (VS) onder EU-standaardcontractbepalingen (SCC)." data-en="Google Analytics 4 &mdash; only with your consent. Collects: page visits, session duration, referral channel. IP addresses anonymised. No ad tracking. Data processed on Google servers (US) under EU Standard Contractual Clauses.">Google Analytics 4 &mdash; uitsluitend na jouw toestemming. Verzamelt: paginabezoeken, sessieduur, herkomstkanaal. IP-adressen worden geanonimiseerd. Geen advertentietracking. Gegevens worden verwerkt op Google-servers (VS) onder EU-standaardcontractbepalingen (SCC).</p>
+      <h3 data-nl="Maandelijkse reset" data-en="Monthly reset">Maandelijkse reset</h3>
+      <p data-nl="Cookietoestemming vervalt automatisch op de 1e van elke maand. Je ziet dan opnieuw de banner. Dit is conform de aanbevelingen van de Autoriteit Persoonsgegevens voor actieve herhaling van toestemming bij analytische cookies." data-en="Cookie consent automatically expires on the 1st of each month. You will see the banner again. This complies with Dutch Data Protection Authority recommendations for active renewal of consent for analytics cookies.">Cookietoestemming vervalt automatisch op de 1e van elke maand. Je ziet dan opnieuw de banner. Dit is conform de aanbevelingen van de Autoriteit Persoonsgegevens voor actieve herhaling van toestemming bij analytische cookies.</p>
+      <p class="modal-version" data-nl="Versie: april 2026" data-en="Version: April 2026">Versie: april 2026</p>
+    </div>
+  </div>
+</div>
 <script>
-// Neural network canvas background
-const canvas = document.getElementById("neural-canvas");
-const ctx = canvas.getContext("2d");
-let W, H, nodes = [], scroll = 0, raf;
-
-function resize() {
-  W = canvas.width = window.innerWidth;
-  H = canvas.height = window.innerHeight;
-}
-
-function lerp(a, b, t) {
-  return a + (b - a) * t;
-}
-
-function initNodes() {
-  nodes = [];
-  const count = Math.floor((W * H) / 22000);
-  for (let i = 0; i < count; i++) {
-    nodes.push({
-      x: Math.random() * W,
-      y: Math.random() * H,
-      vx: (Math.random() - 0.5) * 0.3,
-      vy: (Math.random() - 0.5) * 0.3,
-      r: Math.random() * 2 + 1,
-      phase: Math.random() * Math.PI * 2,
+// ── LANGUAGE TOGGLE ──────────────────────────
+let currentLang = 'nl';
+document.querySelectorAll('.lang-btn').forEach(btn => {
+  btn.addEventListener('click', () => {
+    currentLang = btn.dataset.lang;
+    document.documentElement.lang = currentLang;
+    document.querySelectorAll('.lang-btn').forEach(b => b.classList.remove('active'));
+    btn.classList.add('active');
+    document.querySelectorAll('[data-nl]').forEach(el => {
+      const txt = el.getAttribute('data-' + currentLang);
+      if (txt) el.innerHTML = txt;
     });
-  }
-}
-
-function scrollColor(t) {
-  const stops = [
-    [0, 212, 170],
-    [0, 152, 166],
-    [0, 230, 200],
-  ];
-  const seg = t * (stops.length - 1);
-  const i = Math.min(Math.floor(seg), stops.length - 2);
-  const f = seg - i;
-  const a = stops[i], b = stops[i + 1];
-  return [
-    Math.round(lerp(a[0], b[0], f)),
-    Math.round(lerp(a[1], b[1], f)),
-    Math.round(lerp(a[2], b[2], f)),
-  ];
-}
-
-function draw() {
-  ctx.clearRect(0, 0, W, H);
-
-  const maxScroll = document.body.scrollHeight - window.innerHeight;
-  const scrollT = maxScroll > 0 ? Math.min(scroll / maxScroll, 1) : 0;
-  const [r, g, b] = scrollColor(scrollT);
-  const time = Date.now() * 0.0004;
-  const maxDist = 160;
-
-  nodes.forEach((n) => {
-    n.x += n.vx;
-    n.y += n.vy;
-    if (n.x < -10) n.x = W + 10;
-    if (n.x > W + 10) n.x = -10;
-    if (n.y < -10) n.y = H + 10;
-    if (n.y > H + 10) n.y = -10;
+    // Update placeholders
+    document.querySelectorAll('[data-placeholder-nl]').forEach(el => {
+      el.placeholder = el.getAttribute('data-placeholder-' + currentLang) || el.placeholder;
+    });
   });
+});
 
-  for (let i = 0; i < nodes.length; i++) {
-    for (let j = i + 1; j < nodes.length; j++) {
-      const dx = nodes[i].x - nodes[j].x;
-      const dy = nodes[i].y - nodes[j].y;
-      const dist = Math.sqrt(dx * dx + dy * dy);
-      if (dist < maxDist) {
-        const alpha = (1 - dist / maxDist) * 0.35;
-        const pulse = Math.sin(time + nodes[i].phase) * 0.5 + 0.5;
-        const a = alpha * (0.6 + pulse * 0.4);
-        ctx.beginPath();
-        ctx.strokeStyle = `rgba(${r},${g},${b},${a})`;
-        ctx.lineWidth = 0.6;
-        ctx.moveTo(nodes[i].x, nodes[i].y);
-        ctx.lineTo(nodes[j].x, nodes[j].y);
-        ctx.stroke();
+// ── FLOATING MENU ─────────────────────────────
+const fabBtn   = document.getElementById('fabBtn');
+const fabItems = document.getElementById('fabItems');
+let fabOpen = false;
+fabBtn.addEventListener('click', () => {
+  fabOpen = !fabOpen;
+  fabBtn.classList.toggle('open', fabOpen);
+  fabItems.classList.toggle('open', fabOpen);
+});
+fabItems.querySelectorAll('.fab-link').forEach(link => {
+  link.addEventListener('click', () => {
+    fabOpen = false;
+    fabBtn.classList.remove('open');
+    fabItems.classList.remove('open');
+  });
+});
+document.addEventListener('click', e => {
+  if (fabOpen && !e.target.closest('.fab-wrap')) {
+    fabOpen = false;
+    fabBtn.classList.remove('open');
+    fabItems.classList.remove('open');
+  }
+});
+
+// ── SCROLL REVEAL ─────────────────────────────
+const revealObserver = new IntersectionObserver((entries) => {
+  entries.forEach((e, i) => {
+    if (e.isIntersecting) {
+      setTimeout(() => e.target.classList.add('visible'), i * 80);
+      // Fire section-line once when parent section-meta becomes visible
+      const line = e.target.querySelector('.section-line');
+      if (line && !line.classList.contains('fired')) {
+        setTimeout(() => line.classList.add('fired'), i * 80 + 120);
       }
     }
-  }
-
-  nodes.forEach((n) => {
-    const pulse = Math.sin(time * 1.5 + n.phase) * 0.5 + 0.5;
-    const alpha = 0.5 + pulse * 0.5;
-    ctx.beginPath();
-    ctx.arc(n.x, n.y, n.r, 0, Math.PI * 2);
-    ctx.fillStyle = `rgba(${r},${g},${b},${alpha})`;
-    ctx.fill();
-
-    if (pulse > 0.7) {
-      ctx.beginPath();
-      ctx.arc(n.x, n.y, n.r * 2.5, 0, Math.PI * 2);
-      ctx.fillStyle = `rgba(${r},${g},${b},0.06)`;
-      ctx.fill();
-    }
   });
+}, { threshold: 0.08, rootMargin: '0px 0px -30px 0px' });
+document.querySelectorAll('.reveal').forEach(el => revealObserver.observe(el));
 
-  raf = requestAnimationFrame(draw);
+// ── CHERRY RING ON SCROLL-IN ──────────────────
+const cherryIcon = document.getElementById('cherryIcon');
+if (cherryIcon) {
+  const cherryObserver = new IntersectionObserver((entries) => {
+    entries.forEach(e => {
+      if (e.isIntersecting) {
+        setTimeout(() => {
+          cherryIcon.classList.add('cherry-ring');
+          cherryIcon.addEventListener('animationend', () => cherryIcon.classList.remove('cherry-ring'), { once: true });
+        }, 400);
+        cherryObserver.unobserve(e.target);
+      }
+    });
+  }, { threshold: 0.5 });
+  cherryObserver.observe(cherryIcon);
 }
 
+// ── SMOOTH NAV ────────────────────────────────
+document.querySelectorAll('a[href^="#"]').forEach(a => {
+  a.addEventListener('click', e => {
+    const target = document.querySelector(a.getAttribute('href'));
+    if (target) { e.preventDefault(); target.scrollIntoView({ behavior: 'smooth', block: 'start' }); }
+  });
+});
+
+// ── ANIMATED BACKGROUND ORBS ──────────────────
+const canvas = document.getElementById('bg-canvas');
+const ctx = canvas.getContext('2d');
+let W, H, mouse = { x: 0.5, y: 0.5 };
+function resize() { W = canvas.width = window.innerWidth; H = canvas.height = window.innerHeight; }
 resize();
-initNodes();
-draw();
-
-window.addEventListener("resize", () => {
-  resize();
-  initNodes();
-});
-window.addEventListener("scroll", () => {
-  scroll = window.scrollY;
-});
-
-// Topbar scroll: hide on scroll down, show on scroll up
-const topbar = document.getElementById("topbar");
-let lastScrollY = window.scrollY;
-window.addEventListener("scroll", () => {
-  const sy = window.scrollY;
-  topbar.classList.toggle("scrolled", sy > 60);
-  if (sy > 120) {
-    topbar.classList.toggle("hidden-up", sy > lastScrollY);
-  } else {
-    topbar.classList.remove("hidden-up");
-  }
-  lastScrollY = sy;
-});
-
-// Floating action menu
-const fabBtn = document.getElementById("fabBtn");
-const fabItems = document.querySelectorAll(".fab-item");
-let open = false;
-fabBtn.addEventListener("click", () => {
-  open = !open;
-  fabBtn.classList.toggle("open", open);
-  fabItems.forEach((el, i) => {
-    el.style.transitionDelay = (open ? i * 0.055 : (fabItems.length - 1 - i) * 0.04) + "s";
-    el.classList.toggle("visible", open);
+window.addEventListener('resize', resize);
+window.addEventListener('mousemove', e => { mouse.x = e.clientX / W; mouse.y = e.clientY / H; });
+const orbs = [
+  { x:0.75,y:0.2, r:0.38,cx:0.75,cy:0.2, color:'124,63,255',speed:0.00018,phase:0   },
+  { x:0.12,y:0.75,r:0.30,cx:0.12,cy:0.75,color:'255,60,110',speed:0.00013,phase:2.1 },
+  { x:0.5, y:0.5, r:0.22,cx:0.5, cy:0.5, color:'80,120,255',speed:0.00022,phase:4.3 },
+];
+let t = 0;
+function draw(ts) {
+  t = ts;
+  ctx.clearRect(0,0,W,H);
+  orbs.forEach(orb => {
+    const drift  = Math.sin(t * orb.speed + orb.phase);
+    const driftY = Math.cos(t * orb.speed * 0.7 + orb.phase);
+    const px = (mouse.x - 0.5) * 0.04;
+    const py = (mouse.y - 0.5) * 0.04;
+    orb.x += (orb.cx + drift * 0.12 + px - orb.x) * 0.012;
+    orb.y += (orb.cy + driftY * 0.08 + py - orb.y) * 0.012;
+    const x = orb.x * W, y = orb.y * H, r = orb.r * Math.min(W,H);
+    const g = ctx.createRadialGradient(x,y,0,x,y,r);
+    g.addColorStop(0,  `rgba(${orb.color},0.09)`);
+    g.addColorStop(0.5,`rgba(${orb.color},0.04)`);
+    g.addColorStop(1,  `rgba(${orb.color},0)`);
+    ctx.beginPath(); ctx.arc(x,y,r,0,Math.PI*2); ctx.fillStyle=g; ctx.fill();
   });
-});
-
-fabItems.forEach((el) => {
-  el.addEventListener("click", () => {
-    open = false;
-    fabBtn.classList.remove("open");
-    fabItems.forEach((item, i) => {
-      item.style.transitionDelay = (fabItems.length - 1 - i) * 0.04 + "s";
-      item.classList.remove("visible");
-    });
-  });
-});
-
-// Reveal-on-scroll animation
-const reveals = document.querySelectorAll(".reveal");
-const revealObserver = new IntersectionObserver(
-  (entries) => {
-    entries.forEach((entry) => {
-      if (entry.isIntersecting) {
-        entry.target.classList.add("visible");
-      }
-    });
-  },
-  { threshold: 0.12, rootMargin: "0px 0px -8% 0px" }
-);
-
-const heroReveal = document.querySelector(".hero-left") || document.querySelector(".hero-content");
-if (heroReveal) {
-  revealObserver.observe(heroReveal);
+  requestAnimationFrame(draw);
 }
-reveals.forEach((el) => revealObserver.observe(el));
+requestAnimationFrame(draw);
 
-// Language toggle for all span nodes that declare data-lang
-function setLang(lang) {
-  const nodes = document.querySelectorAll("[data-lang]");
-  nodes.forEach((node) => {
-    node.style.display = node.getAttribute("data-lang") === lang ? "" : "none";
-  });
+// ── CONTACT FORM (mailto) ─────────────────────
+document.getElementById('cfSubmit').addEventListener('click', () => {
+  const name    = document.getElementById('cf-name').value.trim();
+  const email   = document.getElementById('cf-email').value.trim();
+  const subject = document.getElementById('cf-subject').value.trim();
+  const msg     = document.getElementById('cf-msg').value.trim();
 
-  const btnNl = document.getElementById("btn-nl");
-  const btnEn = document.getElementById("btn-en");
-  if (btnNl && btnEn) {
-    btnNl.classList.toggle("active", lang === "nl");
-    btnEn.classList.toggle("active", lang === "en");
-  }
-}
-
-const btnNl = document.getElementById("btn-nl");
-const btnEn = document.getElementById("btn-en");
-if (btnNl && btnEn) {
-  btnNl.addEventListener("click", () => setLang("nl"));
-  btnEn.addEventListener("click", () => setLang("en"));
-}
-
-setLang("nl");
-
-// Topbar role typewriter (slow: 15+ seconds per transition)
-function initTopbarRoleTypewriter() {
-  const role = document.getElementById("topbarRoleDynamic");
-  if (!role) return;
-
-  const phrases = [" bedenkt.", " maakt.", " levert.", " gedaan."];
-  let phraseIndex = 0;
-  let charIndex = phrases[0].length;
-  let deleting = false;
-
-  // Prevent layout shift: measure longest phrase and lock min-width
-  const longest = phrases.reduce((a, b) => a.length > b.length ? a : b);
-  role.textContent = longest;
-  role.style.minWidth = role.offsetWidth + 'px';
-  role.textContent = phrases[0];
-
-  function tick() {
-    const phrase = phrases[phraseIndex];
-
-    if (deleting) {
-      charIndex = Math.max(0, charIndex - 1);
-    } else {
-      charIndex = Math.min(phrase.length, charIndex + 1);
-    }
-
-    role.textContent = phrase.slice(0, charIndex);
-
-    let delay = deleting ? 88 : 140;
-    if (!deleting && charIndex === phrase.length) {
-      delay = 8400;
-      deleting = true;
-    } else if (deleting && charIndex === 0) {
-      deleting = false;
-      phraseIndex = (phraseIndex + 1) % phrases.length;
-      delay = 480;
-    }
-
-    window.setTimeout(tick, delay);
-  }
-
-  role.textContent = phrases[0];
-  window.setTimeout(() => {
-    deleting = true;
-    tick();
-  }, 2400);
-}
-
-initTopbarRoleTypewriter();
-
-// Contact form GA event
-(function(){
-  const form = document.getElementById('contactForm');
-  if (!form) return;
-  form.addEventListener('submit', function(){
-    if (window.gtag) {
-      window.gtag('event', 'contact_form_submit', {event_category: 'engagement', event_label: 'contact'});
-    }
-  });
-})();
-
-// Cookie consent loading (categories: necessary/statistics/marketing)
-const COOKIE_CONSENT_KEY = "phnk_cookie_consent";
-const LEGACY_ANALYTICS_CONSENT_KEY = "phnk_analytics_consent";
-
-function getConsentCycleStamp(date = new Date()) {
-  return `${date.getFullYear()}-${String(date.getMonth() + 1).padStart(2, "0")}`;
-}
-
-function getDefaultConsentChoices() {
-  return {
-    necessary: true,
-    statistics: false,
-    marketing: false
-  };
-}
-
-function readStoredConsent() {
-  try {
-    const raw = localStorage.getItem(COOKIE_CONSENT_KEY);
-    if (raw) {
-      const parsed = JSON.parse(raw);
-      if (parsed && typeof parsed === "object" && parsed.cycle && parsed.choices) {
-        return parsed;
-      }
-    }
-
-    // Backwards compatibility for old analytics-only format
-    const legacyRaw = localStorage.getItem(LEGACY_ANALYTICS_CONSENT_KEY);
-    if (legacyRaw) {
-      const legacyParsed = JSON.parse(legacyRaw);
-      if (legacyParsed && legacyParsed.cycle && legacyParsed.status) {
-        return {
-          cycle: legacyParsed.cycle,
-          choices: {
-            necessary: true,
-            statistics: legacyParsed.status === "granted",
-            marketing: false
-          }
-        };
-      }
-    }
-  } catch (_) {
-    // Ignore parse errors and fall back to no consent state
-  }
-
-  return null;
-}
-
-function loadScript(src, options = {}) {
-  return new Promise((resolve, reject) => {
-    const script = document.createElement("script");
-    script.src = src;
-    script.async = options.async !== false;
-    if (options.integrity) script.integrity = options.integrity;
-    if (options.crossOrigin) script.crossOrigin = options.crossOrigin;
-    script.onload = resolve;
-    script.onerror = reject;
-    document.head.appendChild(script);
-  });
-}
-
-async function enableAnalytics() {
-  if (window.__analyticsLoaded) return;
-  window.__analyticsLoaded = true;
-
-  try {
-    await loadScript("https://www.googletagmanager.com/gtag/js?id=G-P89PQS3L");
-    window.dataLayer = window.dataLayer || [];
-    window.gtag = function() { window.dataLayer.push(arguments); };
-    window.gtag("js", new Date());
-    window.gtag("config", "G-P89PQS3L");
-
-    await loadScript("https://cdn.amplitude.com/libs/analytics-browser-2.11.0-min.js.gz", {
-      integrity: "sha384-pY2pkwHaLM/6UIseFHVU3hOKr6oAvhLcdYkoRZyaMDWLjpM6B7nTxtOdE823WAOQ",
-      crossOrigin: "anonymous"
-    });
-    if (window.amplitude && typeof window.amplitude.init === "function") {
-      window.amplitude.init("217325c60793eb6b4c06907fd3f25307", {
-        defaultTracking: true
-      });
-    }
-  } catch (err) {
-    console.warn("Analytics could not be loaded:", err);
-  }
-}
-
-function setCookieConsent(choices) {
-  const normalized = {
-    necessary: true,
-    statistics: Boolean(choices && choices.statistics),
-    marketing: Boolean(choices && choices.marketing)
-  };
-
-  try {
-    localStorage.setItem(COOKIE_CONSENT_KEY, JSON.stringify({
-      choices: normalized,
-      cycle: getConsentCycleStamp()
-    }));
-    localStorage.removeItem(LEGACY_ANALYTICS_CONSENT_KEY);
-    localStorage.removeItem("phnk_analytics_choice");
-  } catch (_) {}
-
-  const banner = document.getElementById("consentBanner");
-  if (banner) banner.hidden = true;
-  if (normalized.statistics) enableAnalytics();
-}
-
-function applyConsentChoicesToInputs(choices) {
-  const normalized = {
-    statistics: Boolean(choices && choices.statistics),
-    marketing: Boolean(choices && choices.marketing)
-  };
-
-  ["consentStatisticsMain", "consentStatisticsSettings"].forEach((id) => {
-    const input = document.getElementById(id);
-    if (input) input.checked = normalized.statistics;
-  });
-
-  ["consentMarketingMain", "consentMarketingSettings"].forEach((id) => {
-    const input = document.getElementById(id);
-    if (input) input.checked = normalized.marketing;
-  });
-}
-
-function getChoicesFromInputs() {
-  const statisticsMain = document.getElementById("consentStatisticsMain");
-  const statisticsSettings = document.getElementById("consentStatisticsSettings");
-  const marketingMain = document.getElementById("consentMarketingMain");
-  const marketingSettings = document.getElementById("consentMarketingSettings");
-
-  const statistics = statisticsMain ? statisticsMain.checked : Boolean(statisticsSettings && statisticsSettings.checked);
-  const marketing = marketingMain ? marketingMain.checked : Boolean(marketingSettings && marketingSettings.checked);
-
-  return {
-    necessary: true,
-    statistics,
-    marketing
-  };
-}
-
-function setConsentPanelMode(mode) {
-  const main = document.getElementById("consentMainPanel");
-  const settings = document.getElementById("consentSettingsPanel");
-  const inner = document.querySelector(".consent-inner");
-  if (!main || !settings) return;
-  const showSettings = mode === "settings";
-  main.hidden = showSettings;
-  settings.hidden = !showSettings;
-  if (inner) inner.scrollTop = 0;
-}
-
-function setConsentLanguage(lang) {
-  const nodes = document.querySelectorAll("[data-consent-lang]");
-  nodes.forEach((node) => {
-    node.style.display = node.getAttribute("data-consent-lang") === lang ? "" : "none";
-  });
-  const btnNl = document.getElementById("consentLangNl");
-  const btnEn = document.getElementById("consentLangEn");
-  if (btnNl && btnEn) {
-    btnNl.classList.toggle("active", lang === "nl");
-    btnEn.classList.toggle("active", lang === "en");
-  }
-}
-
-function bindConsentInputSync() {
-  const ids = [
-    "consentStatisticsMain",
-    "consentStatisticsSettings",
-    "consentMarketingMain",
-    "consentMarketingSettings"
-  ];
-
-  ids.forEach((id) => {
-    const input = document.getElementById(id);
-    if (!input) return;
-    input.addEventListener("change", () => {
-      applyConsentChoicesToInputs(getChoicesFromInputs());
-    });
-  });
-}
-
-function openPrivacySettings() {
-  const banner = document.getElementById("consentBanner");
-  if (!banner) return;
-  banner.hidden = false;
-  setConsentPanelMode("settings");
-
-  const currentCycle = getConsentCycleStamp();
-  const choice = readStoredConsent();
-  if (choice && choice.cycle === currentCycle && choice.choices) {
-    applyConsentChoicesToInputs(choice.choices);
-  } else {
-    applyConsentChoicesToInputs(getDefaultConsentChoices());
-  }
-
-  const saveExit = document.getElementById("consentSaveExit");
-  if (saveExit) saveExit.focus();
-}
-
-function initAnalyticsConsent() {
-  const banner = document.getElementById("consentBanner");
-  const acceptAll = document.getElementById("consentAcceptAll");
-  const openSettings = document.getElementById("consentOpenSettings");
-  const backToMain = document.getElementById("consentBackToMain");
-  const saveExit = document.getElementById("consentSaveExit");
-  const consentLangNl = document.getElementById("consentLangNl");
-  const consentLangEn = document.getElementById("consentLangEn");
-  const settings = document.getElementById("privacySettingsBtn");
-
-  setConsentPanelMode("main");
-  setConsentLanguage("nl");
-  bindConsentInputSync();
-
-  if (consentLangNl) consentLangNl.addEventListener("click", () => setConsentLanguage("nl"));
-  if (consentLangEn) consentLangEn.addEventListener("click", () => setConsentLanguage("en"));
-
-  if (acceptAll) {
-    acceptAll.addEventListener("click", () => {
-      setCookieConsent({ necessary: true, statistics: true, marketing: true });
-    });
-  }
-  if (openSettings) {
-    openSettings.addEventListener("click", () => {
-      setConsentPanelMode("settings");
-      applyConsentChoicesToInputs(getChoicesFromInputs());
-    });
-  }
-  if (backToMain) {
-    backToMain.addEventListener("click", () => {
-      setConsentPanelMode("main");
-      applyConsentChoicesToInputs(getChoicesFromInputs());
-    });
-  }
-  if (saveExit) {
-    saveExit.addEventListener("click", () => {
-      setCookieConsent(getChoicesFromInputs());
-    });
-  }
-  if (settings) settings.addEventListener("click", openPrivacySettings);
-
-  const choice = readStoredConsent();
-  const currentCycle = getConsentCycleStamp();
-
-  if (choice && choice.cycle === currentCycle) {
-    if (banner) banner.hidden = true;
-    if (choice.choices && choice.choices.statistics) {
-      enableAnalytics();
-    }
+  if (!name || !email || !msg) {
+    const missing = currentLang === 'en' ? 'Please fill in name, email and message.' : 'Vul naam, e-mail en bericht in.';
+    alert(missing);
     return;
   }
 
-  applyConsentChoicesToInputs(getDefaultConsentChoices());
-  // Cookie banner disabled
-  if (banner) banner.hidden = true;
-}
-
-initAnalyticsConsent();
-
-// Slider auto-rotation (disabled — slider replaced by 3D boat)
-// (function(){...})();
-
-// 3D Paper boat loader
-(function(){
-  const container = document.getElementById('heroMobileLab');
-  const cvs = document.getElementById('boatCanvas');
-  if (!container || !cvs) return;
-
-  const importMapEl = document.createElement('script');
-  importMapEl.type = 'importmap';
-  importMapEl.textContent = JSON.stringify({imports:{"three":"https://cdn.jsdelivr.net/npm/three@0.165.0/build/three.module.js","three/addons/":"https://cdn.jsdelivr.net/npm/three@0.165.0/examples/jsm/"}});
-  document.head.appendChild(importMapEl);
-
-  const loader = document.createElement('script');
-  loader.type = 'module';
-  loader.textContent = `
-import * as THREE from 'three';
-import {GLTFLoader} from 'three/addons/loaders/GLTFLoader.js';
-import {OrbitControls} from 'three/addons/controls/OrbitControls.js';
-
-const container=document.getElementById('heroMobileLab');
-const cvs=document.getElementById('boatCanvas');
-const w=()=>container.clientWidth, h=()=>container.clientHeight;
-
-const scene=new THREE.Scene();
-const camera=new THREE.PerspectiveCamera(38,w()/h(),0.1,100);
-camera.position.set(0,1.8,4.2);
-
-const renderer=new THREE.WebGLRenderer({canvas:cvs,alpha:true,antialias:true});
-renderer.setPixelRatio(Math.min(devicePixelRatio,2));
-renderer.setSize(w(),h());
-renderer.outputColorSpace=THREE.SRGBColorSpace;
-renderer.toneMapping=THREE.ACESFilmicToneMapping;
-renderer.toneMappingExposure=1.6;
-
-scene.add(new THREE.AmbientLight(0xffffff,1.4));
-const dir=new THREE.DirectionalLight(0xfff4e6,2.6);
-dir.position.set(3,5,4);
-scene.add(dir);
-const rim=new THREE.DirectionalLight(0x00d4aa,0.5);
-rim.position.set(-3,2,-3);
-scene.add(rim);
-
-const controls=new OrbitControls(camera,cvs);
-controls.enableDamping=true;
-controls.dampingFactor=0.08;
-controls.enableZoom=false;
-controls.enablePan=false;
-controls.autoRotate=true;
-controls.autoRotateSpeed=1.2;
-controls.target.set(0,0.9,0);
-
-new GLTFLoader().load('assets/images/paper-boat.glb',gltf=>{
-  const model=gltf.scene;
-  const box=new THREE.Box3().setFromObject(model);
-  const c=box.getCenter(new THREE.Vector3());
-  const s=box.getSize(new THREE.Vector3());
-  const scale=2/Math.max(s.x,s.y,s.z);
-  model.scale.setScalar(scale);
-  model.position.sub(c.multiplyScalar(scale));
-  model.position.y+=0.5;
-  scene.add(model);
-},undefined,()=>{});
-
-window.addEventListener('resize',()=>{
-  camera.aspect=w()/h();
-  camera.updateProjectionMatrix();
-  renderer.setSize(w(),h());
+  const body = `Naam: ${name}\nEmail: ${email}\n\n${msg}`;
+  const sub  = subject || (currentLang === 'en' ? 'Message via phnkmedia.com' : 'Bericht via phnkmedia.com');
+  window.location.href = `mailto:info@phnkmedia.com?subject=${encodeURIComponent(sub)}&body=${encodeURIComponent(body)}`;
 });
 
-(function anim(){requestAnimationFrame(anim);controls.update();renderer.render(scene,camera);})();
-`;
-  document.body.appendChild(loader);
+// ── COOKIE CONSENT (monthly reset) ───────────────
+(function() {
+  const KEY = 'phnk_consent';
+  const banner        = document.getElementById('cookieBanner');
+  const detailsBtn    = document.getElementById('cookieDetailsToggle');
+  const details       = document.getElementById('cookieDetails');
+  const acceptBtn     = document.getElementById('cookieAccept');
+  const denyBtn       = document.getElementById('cookieDeny');
+  const saveBtn       = document.getElementById('cookieSavePrefs');
+  const analyticsChk  = document.getElementById('analyticsToggle');
+
+  function getMonthKey() { const d = new Date(); return d.getFullYear()+'-'+(d.getMonth()+1); }
+
+  function loadGA() {
+    if (document.getElementById('ga4-script')) return;
+    gtag('consent','update',{analytics_storage:'granted'});
+    const s = document.createElement('script');
+    s.id = 'ga4-script'; s.async = true;
+    s.src = 'https://www.googletagmanager.com/gtag/js?id=' + window.GA_ID;
+    document.head.appendChild(s);
+    gtag('config', window.GA_ID, {anonymize_ip:true});
+  }
+
+  function saveConsent(analytics) {
+    localStorage.setItem(KEY, JSON.stringify({month:getMonthKey(), analytics}));
+    banner.classList.add('hidden');
+    if (analytics) loadGA();
+  }
+
+  function checkConsent() {
+    try {
+      const s = JSON.parse(localStorage.getItem(KEY));
+      if (s && s.month === getMonthKey()) { banner.classList.add('hidden'); if (s.analytics) loadGA(); return; }
+    } catch(e) {}
+    setTimeout(() => banner.classList.remove('hidden'), 900);
+  }
+
+  detailsBtn.addEventListener('click', () => {
+    const open = details.classList.toggle('open');
+    detailsBtn.textContent = open ? 'Details ↑' : 'Details';
+  });
+
+  acceptBtn.addEventListener('click',  () => { analyticsChk.checked = true;  saveConsent(true);  });
+  denyBtn.addEventListener('click',    () => { analyticsChk.checked = false; saveConsent(false); });
+  saveBtn.addEventListener('click',    () => saveConsent(analyticsChk.checked));
+
+  banner.classList.add('hidden');
+  checkConsent();
 })();
 
-
+// ── MODAL OPEN / CLOSE ────────────────────────────
+function openModal(id)  { document.getElementById(id).classList.add('open');    document.body.style.overflow = 'hidden'; }
+function closeModal(id) { document.getElementById(id).classList.remove('open'); document.body.style.overflow = '';       }
+document.querySelectorAll('.modal-overlay').forEach(o => {
+  o.addEventListener('click', e => { if (e.target === o) closeModal(o.id); });
+});
+document.addEventListener('keydown', e => {
+  if (e.key === 'Escape') document.querySelectorAll('.modal-overlay.open').forEach(m => closeModal(m.id));
+});
 </script>
+
 </body>
 </html>
