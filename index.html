@@ -48,11 +48,11 @@
 
 <style>
   :root {
-    --bg: #0b0b0e;
-    --surface: #111116;
-    --border: rgba(255,255,255,0.07);
-    --text: #e8e8ec;
-    --muted: #a0a0b0;
+    --bg: #0d0d1a;
+    --surface: #131320;
+    --border: rgba(255,255,255,0.11);
+    --text: #eeeef4;
+    --muted: #b4b4cc;
     --accent: #ff3c6e;
     --accent2: #7c3fff;
     --white: #ffffff;
@@ -102,7 +102,7 @@
     align-items: center;
     padding: 1.25rem 2.5rem;
     border-bottom: 1px solid var(--border);
-    background: rgba(11,11,14,0.85);
+    background: rgba(13,13,26,0.85);
     backdrop-filter: blur(16px);
   }
 
@@ -177,7 +177,7 @@
     font-size: 0.72rem;
     letter-spacing: 0.1em;
     text-transform: uppercase;
-    background: rgba(11,11,14,0.96);
+    background: rgba(13,13,26,0.96);
     border: 1px solid var(--border);
     backdrop-filter: blur(16px);
     padding: 0.55rem 1rem;
@@ -1547,11 +1547,11 @@
         <textarea class="form-input form-textarea" id="cf-msg" rows="4" data-placeholder-nl="Vertel me meer..." data-placeholder-en="Tell me more..." placeholder="Vertel me meer..."></textarea>
       </div>
       <button class="btn btn-primary form-submit" id="cfSubmit" data-nl="Verstuur bericht" data-en="Send message">Verstuur bericht</button>
-      <p class="form-note" data-nl="Je bericht opent in je e-mailprogramma — zo houd je een eigen kopie." data-en="Your message opens in your email client — so you keep your own copy.">Je bericht opent in je e-mailprogramma — zo houd je een eigen kopie.</p>
+      <p class="form-note" data-nl="Je bericht wordt direct verstuurd naar info@phnkmedia.com." data-en="Your message is sent directly to info@phnkmedia.com.">Je bericht wordt direct verstuurd naar info@phnkmedia.com.</p>
     </div>
     <div id="contactThanks" class="contact-thanks" style="display:none;">
       <div class="thanks-icon">&#10003;</div>
-      <p data-nl="Bericht klaar om te verzenden. Tot snel." data-en="Message ready to send. Talk soon.">Bericht klaar om te verzenden. Tot snel.</p>
+      <p data-nl="Bericht verzonden. Tot snel!" data-en="Message sent. Talk soon!">Bericht verzonden. Tot snel!</p>
     </div>
   </div>
 </section>
@@ -1808,8 +1808,8 @@ function draw(ts) {
     orb.y += (orb.cy + driftY * 0.08 + py - orb.y) * 0.012;
     const x = orb.x * W, y = orb.y * H, r = orb.r * Math.min(W,H);
     const g = ctx.createRadialGradient(x,y,0,x,y,r);
-    g.addColorStop(0,  `rgba(${orb.color},0.09)`);
-    g.addColorStop(0.5,`rgba(${orb.color},0.04)`);
+    g.addColorStop(0,  `rgba(${orb.color},0.16)`);
+    g.addColorStop(0.5,`rgba(${orb.color},0.07)`);
     g.addColorStop(1,  `rgba(${orb.color},0)`);
     ctx.beginPath(); ctx.arc(x,y,r,0,Math.PI*2); ctx.fillStyle=g; ctx.fill();
   });
@@ -1817,12 +1817,16 @@ function draw(ts) {
 }
 requestAnimationFrame(draw);
 
-// ── CONTACT FORM (mailto) ─────────────────────
-document.getElementById('cfSubmit').addEventListener('click', () => {
+// ── CONTACT FORM (Formspree) ─────────────────────
+// Replace YOUR_FORM_ID with your Formspree form ID (e.g. xabc1234)
+const FORMSPREE_ID = '2979623424353107554';
+
+document.getElementById('cfSubmit').addEventListener('click', async () => {
   const name    = document.getElementById('cf-name').value.trim();
   const email   = document.getElementById('cf-email').value.trim();
   const subject = document.getElementById('cf-subject').value.trim();
   const msg     = document.getElementById('cf-msg').value.trim();
+  const btn     = document.getElementById('cfSubmit');
 
   if (!name || !email || !msg) {
     const missing = currentLang === 'en' ? 'Please fill in name, email and message.' : 'Vul naam, e-mail en bericht in.';
@@ -1830,9 +1834,47 @@ document.getElementById('cfSubmit').addEventListener('click', () => {
     return;
   }
 
-  const body = `Naam: ${name}\nEmail: ${email}\n\n${msg}`;
-  const sub  = subject || (currentLang === 'en' ? 'Message via phnkmedia.com' : 'Bericht via phnkmedia.com');
-  window.location.href = `mailto:info@phnkmedia.com?subject=${encodeURIComponent(sub)}&body=${encodeURIComponent(body)}`;
+  const emailRx = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+  if (!emailRx.test(email)) {
+    const invalid = currentLang === 'en' ? 'Please enter a valid email address.' : 'Vul een geldig e-mailadres in.';
+    alert(invalid);
+    return;
+  }
+
+  btn.disabled = true;
+  btn.textContent = currentLang === 'en' ? 'Sending…' : 'Versturen…';
+
+  const sub = subject || (currentLang === 'en' ? 'Message via phnkmedia.com' : 'Bericht via phnkmedia.com');
+
+  try {
+    const res = await fetch(`https://formspree.io/f/${FORMSPREE_ID}`, {
+      method: 'POST',
+      headers: { 'Accept': 'application/json', 'Content-Type': 'application/json' },
+      body: JSON.stringify({
+        name,
+        email,
+        _replyto: email,
+        subject: sub,
+        message: msg
+      })
+    });
+
+    if (res.ok) {
+      document.getElementById('contactForm').style.display = 'none';
+      document.getElementById('contactThanks').style.display = '';
+    } else {
+      const data = await res.json().catch(() => ({}));
+      const err = (data.errors && data.errors.map(e => e.message).join(', ')) ||
+                  (currentLang === 'en' ? 'Something went wrong. Please try again.' : 'Er ging iets mis. Probeer het opnieuw.');
+      alert(err);
+      btn.disabled = false;
+      btn.textContent = currentLang === 'en' ? 'Send message' : 'Verstuur bericht';
+    }
+  } catch {
+    alert(currentLang === 'en' ? 'Could not send. Check your connection and try again.' : 'Versturen mislukt. Controleer je verbinding.');
+    btn.disabled = false;
+    btn.textContent = currentLang === 'en' ? 'Send message' : 'Verstuur bericht';
+  }
 });
 
 // ── COOKIE CONSENT (monthly reset) ───────────────
