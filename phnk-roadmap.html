@@ -1,0 +1,713 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>PHNK Media — Roadmap 2026</title>
+<style>
+  :root {
+    --bg: #0d0d0d;
+    --surface: #1a1a1a;
+    --surface-hover: #222;
+    --border: #2a2a2a;
+    --text: #e8e8e8;
+    --text-muted: #888;
+    --accent: #c8ff00;
+    --accent-dim: rgba(200, 255, 0, 0.12);
+    --now: #c8ff00;
+    --next: #5eead4;
+    --later: #818cf8;
+    --done: #22c55e;
+    --at-risk: #f59e0b;
+    --blocked: #ef4444;
+    --not-started: #64748b;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    font-family: 'SF Pro Display', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    background: var(--bg);
+    color: var(--text);
+    line-height: 1.5;
+    min-height: 100vh;
+  }
+
+  .container {
+    max-width: 1280px;
+    margin: 0 auto;
+    padding: 40px 24px;
+  }
+
+  /* Header */
+  .header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 48px;
+    flex-wrap: wrap;
+    gap: 16px;
+  }
+
+  .header h1 {
+    font-size: 32px;
+    font-weight: 700;
+    letter-spacing: -0.5px;
+  }
+
+  .header h1 span { color: var(--accent); }
+
+  .header-meta {
+    color: var(--text-muted);
+    font-size: 14px;
+    text-align: right;
+  }
+
+  .header-subtitle {
+    font-size: 18px;
+    color: var(--text-muted);
+    margin-top: 4px;
+    font-weight: 400;
+  }
+
+  /* Stats bar */
+  .stats-bar {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: 16px;
+    margin-bottom: 40px;
+  }
+
+  .stat-card {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 20px;
+    text-align: center;
+  }
+
+  .stat-number {
+    font-size: 36px;
+    font-weight: 700;
+    color: var(--accent);
+    line-height: 1;
+  }
+
+  .stat-label {
+    font-size: 13px;
+    color: var(--text-muted);
+    margin-top: 6px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+  }
+
+  /* Focus banner */
+  .focus-banner {
+    background: var(--accent-dim);
+    border: 1px solid rgba(200, 255, 0, 0.25);
+    border-radius: 12px;
+    padding: 20px 24px;
+    margin-bottom: 40px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+  }
+
+  .focus-icon {
+    font-size: 20px;
+    width: 40px;
+    height: 40px;
+    background: var(--accent);
+    color: var(--bg);
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 700;
+    flex-shrink: 0;
+  }
+
+  .focus-text strong { color: var(--accent); }
+  .focus-text { font-size: 15px; }
+
+  /* Filter tabs */
+  .filter-bar {
+    display: flex;
+    gap: 8px;
+    margin-bottom: 32px;
+    flex-wrap: wrap;
+  }
+
+  .filter-btn {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    color: var(--text-muted);
+    padding: 8px 18px;
+    border-radius: 8px;
+    font-size: 14px;
+    cursor: pointer;
+    transition: all 0.2s;
+    font-family: inherit;
+  }
+
+  .filter-btn:hover { border-color: var(--accent); color: var(--text); }
+  .filter-btn.active { background: var(--accent); color: var(--bg); border-color: var(--accent); font-weight: 600; }
+
+  /* Swimlanes */
+  .swimlane {
+    margin-bottom: 40px;
+  }
+
+  .swimlane-header {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 16px;
+  }
+
+  .swimlane-dot {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    flex-shrink: 0;
+  }
+
+  .swimlane-title {
+    font-size: 20px;
+    font-weight: 600;
+  }
+
+  .swimlane-desc {
+    font-size: 13px;
+    color: var(--text-muted);
+    margin-left: auto;
+  }
+
+  .swimlane.now .swimlane-dot { background: var(--now); }
+  .swimlane.next .swimlane-dot { background: var(--next); }
+  .swimlane.later .swimlane-dot { background: var(--later); }
+
+  /* Cards */
+  .cards-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
+    gap: 16px;
+  }
+
+  .card {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 20px;
+    transition: all 0.2s;
+    cursor: default;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .card::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0;
+    width: 4px;
+    height: 100%;
+  }
+
+  .card.lane-now::before { background: var(--now); }
+  .card.lane-next::before { background: var(--next); }
+  .card.lane-later::before { background: var(--later); }
+
+  .card:hover {
+    border-color: #444;
+    background: var(--surface-hover);
+  }
+
+  .card-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 12px;
+    margin-bottom: 8px;
+  }
+
+  .card-title {
+    font-size: 16px;
+    font-weight: 600;
+    line-height: 1.3;
+  }
+
+  .card-status {
+    font-size: 11px;
+    padding: 3px 10px;
+    border-radius: 20px;
+    font-weight: 600;
+    white-space: nowrap;
+    flex-shrink: 0;
+    text-transform: uppercase;
+    letter-spacing: 0.3px;
+  }
+
+  .status-on-track { background: rgba(34, 197, 94, 0.15); color: var(--done); }
+  .status-in-progress { background: rgba(200, 255, 0, 0.15); color: var(--now); }
+  .status-not-started { background: rgba(100, 116, 139, 0.15); color: var(--not-started); }
+  .status-at-risk { background: rgba(245, 158, 11, 0.15); color: var(--at-risk); }
+  .status-done { background: rgba(34, 197, 94, 0.15); color: var(--done); }
+
+  .card-desc {
+    font-size: 14px;
+    color: var(--text-muted);
+    margin-bottom: 14px;
+    line-height: 1.5;
+  }
+
+  .card-meta {
+    display: flex;
+    gap: 16px;
+    flex-wrap: wrap;
+    font-size: 12px;
+    color: var(--text-muted);
+  }
+
+  .card-meta-item {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+  }
+
+  .card-meta-label { opacity: 0.6; }
+
+  .card-tags {
+    display: flex;
+    gap: 6px;
+    margin-top: 12px;
+    flex-wrap: wrap;
+  }
+
+  .tag {
+    font-size: 11px;
+    padding: 2px 8px;
+    border-radius: 4px;
+    background: rgba(255,255,255,0.06);
+    color: var(--text-muted);
+  }
+
+  .tag.sales { background: rgba(200, 255, 0, 0.1); color: var(--now); }
+  .tag.build { background: rgba(94, 234, 212, 0.1); color: var(--next); }
+  .tag.strategy { background: rgba(129, 140, 248, 0.1); color: var(--later); }
+
+  /* Dependencies */
+  .deps {
+    margin-top: 10px;
+    padding-top: 10px;
+    border-top: 1px solid var(--border);
+    font-size: 12px;
+    color: var(--text-muted);
+  }
+
+  .deps-label { font-weight: 600; opacity: 0.7; }
+
+  /* Footer */
+  .footer {
+    text-align: center;
+    padding: 40px 0 20px;
+    color: var(--text-muted);
+    font-size: 13px;
+    border-top: 1px solid var(--border);
+    margin-top: 40px;
+  }
+
+  /* Priority indicator */
+  .priority {
+    display: inline-block;
+    width: 8px;
+    height: 8px;
+    border-radius: 2px;
+    margin-right: 4px;
+  }
+
+  .priority.p0 { background: var(--at-risk); }
+  .priority.p1 { background: var(--now); }
+  .priority.p2 { background: var(--next); }
+
+  /* Responsive */
+  @media (max-width: 640px) {
+    .container { padding: 24px 16px; }
+    .header h1 { font-size: 24px; }
+    .cards-grid { grid-template-columns: 1fr; }
+    .swimlane-desc { display: none; }
+  }
+</style>
+</head>
+<body>
+<div class="container">
+
+  <!-- Header -->
+  <div class="header">
+    <div>
+      <h1>PHNK <span>Roadmap</span></h1>
+      <div class="header-subtitle">Van bouwen naar verkopen — Q2-Q4 2026</div>
+    </div>
+    <div class="header-meta">
+      Laatst bijgewerkt: 12 april 2026<br>
+      Patrick Hink — PHNK Media & Design
+    </div>
+  </div>
+
+  <!-- Stats -->
+  <div class="stats-bar">
+    <div class="stat-card">
+      <div class="stat-number" id="stat-total">16</div>
+      <div class="stat-label">Totaal items</div>
+    </div>
+    <div class="stat-card">
+      <div class="stat-number" id="stat-now" style="color: var(--now);">6</div>
+      <div class="stat-label">Now — actief</div>
+    </div>
+    <div class="stat-card">
+      <div class="stat-number" id="stat-next" style="color: var(--next);">5</div>
+      <div class="stat-label">Next — gepland</div>
+    </div>
+    <div class="stat-card">
+      <div class="stat-number" id="stat-later" style="color: var(--later);">5</div>
+      <div class="stat-label">Later — horizon</div>
+    </div>
+  </div>
+
+  <!-- Focus banner -->
+  <div class="focus-banner">
+    <div class="focus-icon">!</div>
+    <div class="focus-text">
+      <strong>Kernfocus Q2 2026:</strong> Portfolio publiek lanceren, eerste betalende klant binnenhalen, verkoopgesprekken voeren. Momentum boven perfectie.
+    </div>
+  </div>
+
+  <!-- Filters -->
+  <div class="filter-bar">
+    <button class="filter-btn active" data-filter="all">Alles</button>
+    <button class="filter-btn" data-filter="sales">Sales & Marketing</button>
+    <button class="filter-btn" data-filter="build">Bouwen & Leveren</button>
+    <button class="filter-btn" data-filter="strategy">Strategie & Groei</button>
+  </div>
+
+  <!-- NOW -->
+  <div class="swimlane now">
+    <div class="swimlane-header">
+      <div class="swimlane-dot"></div>
+      <div class="swimlane-title">Now</div>
+      <div class="swimlane-desc">April — Mei 2026 / Committed werk</div>
+    </div>
+    <div class="cards-grid" id="cards-now">
+
+      <div class="card lane-now" data-category="sales">
+        <div class="card-top">
+          <div class="card-title"><span class="priority p0"></span>Portfolio-website live zetten</div>
+          <span class="card-status status-in-progress">In progress</span>
+        </div>
+        <div class="card-desc">Eén overzichtspagina met alle projecten (Robin, Emma, Green Marine, WalkWithMe, dashboard, quiz). Geen perfectie — live gaat voor.</div>
+        <div class="card-meta">
+          <div class="card-meta-item"><span class="card-meta-label">Effort:</span> 1-2 dagen</div>
+          <div class="card-meta-item"><span class="card-meta-label">Eigenaar:</span> Patrick</div>
+        </div>
+        <div class="card-tags"><span class="tag sales">Sales & Marketing</span></div>
+      </div>
+
+      <div class="card lane-now" data-category="sales">
+        <div class="card-top">
+          <div class="card-title"><span class="priority p0"></span>Eerste klantgesprek voeren</div>
+          <span class="card-status status-at-risk">At risk</span>
+        </div>
+        <div class="card-desc">Minimaal 1 concreet gesprek met een MKB-ondernemer deze week. Geen pitch deck nodig — portfolio + verhaal is genoeg.</div>
+        <div class="card-meta">
+          <div class="card-meta-item"><span class="card-meta-label">Effort:</span> Doorlopend</div>
+          <div class="card-meta-item"><span class="card-meta-label">Eigenaar:</span> Patrick</div>
+        </div>
+        <div class="card-tags"><span class="tag sales">Sales & Marketing</span></div>
+        <div class="deps"><span class="deps-label">Blokkade:</span> Overgang van bouwen naar verkopen — energie en focus nodig</div>
+      </div>
+
+      <div class="card lane-now" data-category="sales">
+        <div class="card-top">
+          <div class="card-title"><span class="priority p0"></span>LinkedIn actief inzetten</div>
+          <span class="card-status status-in-progress">In progress</span>
+        </div>
+        <div class="card-desc">2x per week posten: projectresultaten, behind-the-scenes, AI-inzichten voor MKB. Niet theoretisch — laten zien wat je bouwt.</div>
+        <div class="card-meta">
+          <div class="card-meta-item"><span class="card-meta-label">Effort:</span> 2 uur/week</div>
+          <div class="card-meta-item"><span class="card-meta-label">Eigenaar:</span> Patrick</div>
+        </div>
+        <div class="card-tags"><span class="tag sales">Sales & Marketing</span></div>
+      </div>
+
+      <div class="card lane-now" data-category="build">
+        <div class="card-top">
+          <div class="card-title"><span class="priority p1"></span>Green Marine Motors calculator afronden</div>
+          <span class="card-status status-in-progress">In progress</span>
+        </div>
+        <div class="card-desc">NL/EN/DE/SE/DK versies live en getest. Showcase-project voor portfolio — toont meertalig, technisch werk.</div>
+        <div class="card-meta">
+          <div class="card-meta-item"><span class="card-meta-label">Effort:</span> 3-5 dagen</div>
+          <div class="card-meta-item"><span class="card-meta-label">Eigenaar:</span> Patrick</div>
+        </div>
+        <div class="card-tags"><span class="tag build">Bouwen & Leveren</span></div>
+      </div>
+
+      <div class="card lane-now" data-category="sales">
+        <div class="card-top">
+          <div class="card-title"><span class="priority p1"></span>Diensten & prijzen helder maken</div>
+          <span class="card-status status-not-started">Not started</span>
+        </div>
+        <div class="card-desc">Eén A4 met wat je aanbiedt, wat het kost, en wat de klant krijgt. Nodig voor elk verkoopgesprek.</div>
+        <div class="card-meta">
+          <div class="card-meta-item"><span class="card-meta-label">Effort:</span> 1 dag</div>
+          <div class="card-meta-item"><span class="card-meta-label">Eigenaar:</span> Patrick</div>
+        </div>
+        <div class="card-tags"><span class="tag sales">Sales & Marketing</span></div>
+      </div>
+
+      <div class="card lane-now" data-category="build">
+        <div class="card-top">
+          <div class="card-title"><span class="priority p0"></span>Podcast productieservice lanceren</div>
+          <span class="card-status status-not-started">Not started</span>
+        </div>
+        <div class="card-desc">Complete podcast workflow als dienst voor MKB-klanten: opname, editing, mastering (-16 LUFS stereo / -19 LUFS mono), show notes, publicatie. Lage drempel, hoge waarde — veel ondernemers willen een podcast maar weten niet hoe.</div>
+        <div class="card-meta">
+          <div class="card-meta-item"><span class="card-meta-label">Effort:</span> 1-2 weken setup</div>
+          <div class="card-meta-item"><span class="card-meta-label">Eigenaar:</span> Patrick</div>
+        </div>
+        <div class="card-tags"><span class="tag build">Bouwen & Leveren</span><span class="tag sales">Sales & Marketing</span></div>
+        <div class="deps"><span class="deps-label">Synergie:</span> Combineert TV-productie ervaring + audio engineering + AI-tools (ElevenLabs, automation)</div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- NEXT -->
+  <div class="swimlane next">
+    <div class="swimlane-header">
+      <div class="swimlane-dot"></div>
+      <div class="swimlane-title">Next</div>
+      <div class="swimlane-desc">Juni — Augustus 2026 / Gepland, goed vertrouwen</div>
+    </div>
+    <div class="cards-grid" id="cards-next">
+
+      <div class="card lane-next" data-category="sales">
+        <div class="card-top">
+          <div class="card-title"><span class="priority p1"></span>Eerste betalende klant opleveren</div>
+          <span class="card-status status-not-started">Not started</span>
+        </div>
+        <div class="card-desc">Van gesprek naar oplevering. Eerste factureerbaar project voltooien — bewijs dat het model werkt.</div>
+        <div class="card-meta">
+          <div class="card-meta-item"><span class="card-meta-label">Effort:</span> 2-4 weken</div>
+          <div class="card-meta-item"><span class="card-meta-label">Eigenaar:</span> Patrick</div>
+        </div>
+        <div class="card-tags"><span class="tag sales">Sales & Marketing</span></div>
+        <div class="deps"><span class="deps-label">Afhankelijk van:</span> Portfolio live + klantgesprek</div>
+      </div>
+
+      <div class="card lane-next" data-category="build">
+        <div class="card-top">
+          <div class="card-title"><span class="priority p1"></span>Voice agents als productpakket</div>
+          <span class="card-status status-not-started">Not started</span>
+        </div>
+        <div class="card-desc">Robin/Emma/Bellers bundelen als herhaalbaar aanbod. Standaard setup + maatwerk laag. Duidelijke prijs per agent.</div>
+        <div class="card-meta">
+          <div class="card-meta-item"><span class="card-meta-label">Effort:</span> 1-2 weken</div>
+          <div class="card-meta-item"><span class="card-meta-label">Eigenaar:</span> Patrick</div>
+        </div>
+        <div class="card-tags"><span class="tag build">Bouwen & Leveren</span><span class="tag sales">Sales & Marketing</span></div>
+      </div>
+
+      <div class="card lane-next" data-category="build">
+        <div class="card-top">
+          <div class="card-title"><span class="priority p2"></span>WalkWithMe tour guide uitbreiden</div>
+          <span class="card-status status-not-started">Not started</span>
+        </div>
+        <div class="card-desc">Extra locaties, verbeterde UX. Potentieel showcase voor toerisme/horeca-klanten.</div>
+        <div class="card-meta">
+          <div class="card-meta-item"><span class="card-meta-label">Effort:</span> 1-2 weken</div>
+          <div class="card-meta-item"><span class="card-meta-label">Eigenaar:</span> Patrick</div>
+        </div>
+        <div class="card-tags"><span class="tag build">Bouwen & Leveren</span></div>
+      </div>
+
+      <div class="card lane-next" data-category="sales">
+        <div class="card-top">
+          <div class="card-title"><span class="priority p2"></span>Case studies schrijven</div>
+          <span class="card-status status-not-started">Not started</span>
+        </div>
+        <div class="card-desc">Voor elk opgeleverd project een korte case: probleem, aanpak, resultaat. Krachtigste salesmateriaal dat er is.</div>
+        <div class="card-meta">
+          <div class="card-meta-item"><span class="card-meta-label">Effort:</span> 1 dag per case</div>
+          <div class="card-meta-item"><span class="card-meta-label">Eigenaar:</span> Patrick</div>
+        </div>
+        <div class="card-tags"><span class="tag sales">Sales & Marketing</span></div>
+        <div class="deps"><span class="deps-label">Afhankelijk van:</span> Eerste klantproject opgeleverd</div>
+      </div>
+
+      <div class="card lane-next" data-category="strategy">
+        <div class="card-top">
+          <div class="card-title"><span class="priority p2"></span>Automatisering-pakketten definiëren</div>
+          <span class="card-status status-not-started">Not started</span>
+        </div>
+        <div class="card-desc">Social media automation (21 flows), Zapier-integraties, en AI-workflows als herhaalbaar product. Voorkom eenmalig maatwerk.</div>
+        <div class="card-meta">
+          <div class="card-meta-item"><span class="card-meta-label">Effort:</span> 1 week</div>
+          <div class="card-meta-item"><span class="card-meta-label">Eigenaar:</span> Patrick</div>
+        </div>
+        <div class="card-tags"><span class="tag strategy">Strategie & Groei</span><span class="tag build">Bouwen & Leveren</span></div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- LATER -->
+  <div class="swimlane later">
+    <div class="swimlane-header">
+      <div class="swimlane-dot"></div>
+      <div class="swimlane-title">Later</div>
+      <div class="swimlane-desc">September 2026+ / Strategisch, richting flexibel</div>
+    </div>
+    <div class="cards-grid" id="cards-later">
+
+      <div class="card lane-later" data-category="strategy">
+        <div class="card-top">
+          <div class="card-title">Recurring revenue model opzetten</div>
+          <span class="card-status status-not-started">Not started</span>
+        </div>
+        <div class="card-desc">Maandelijkse pakketten: hosting + onderhoud + AI-updates. Voorspelbare inkomsten in plaats van alleen projectwerk.</div>
+        <div class="card-meta">
+          <div class="card-meta-item"><span class="card-meta-label">Effort:</span> Doorlopend</div>
+          <div class="card-meta-item"><span class="card-meta-label">Eigenaar:</span> Patrick</div>
+        </div>
+        <div class="card-tags"><span class="tag strategy">Strategie & Groei</span></div>
+      </div>
+
+      <div class="card lane-later" data-category="build">
+        <div class="card-top">
+          <div class="card-title">Smart home dashboard als product</div>
+          <span class="card-status status-not-started">Not started</span>
+        </div>
+        <div class="card-desc">Huidige dashboard doorontwikkelen naar een white-label product voor MKB-kantoren of particulieren.</div>
+        <div class="card-meta">
+          <div class="card-meta-item"><span class="card-meta-label">Effort:</span> 4-6 weken</div>
+          <div class="card-meta-item"><span class="card-meta-label">Eigenaar:</span> Patrick</div>
+        </div>
+        <div class="card-tags"><span class="tag build">Bouwen & Leveren</span></div>
+      </div>
+
+      <div class="card lane-later" data-category="strategy">
+        <div class="card-top">
+          <div class="card-title">Partnerschappen lokaal MKB-netwerk</div>
+          <span class="card-status status-not-started">Not started</span>
+        </div>
+        <div class="card-desc">Samenwerkingen met boekhouders, marketingbureaus, IT-bedrijven in Friesland. Doorverwijzingen als groeikanaal.</div>
+        <div class="card-meta">
+          <div class="card-meta-item"><span class="card-meta-label">Effort:</span> Doorlopend</div>
+          <div class="card-meta-item"><span class="card-meta-label">Eigenaar:</span> Patrick</div>
+        </div>
+        <div class="card-tags"><span class="tag strategy">Strategie & Groei</span></div>
+      </div>
+
+      <div class="card lane-later" data-category="build">
+        <div class="card-top">
+          <div class="card-title">Relatietherapie-app publiek lanceren</div>
+          <span class="card-status status-not-started">Not started</span>
+        </div>
+        <div class="card-desc">Van prototype naar publiek product. Vereist gebruikerstests, AVG-compliance, en een go-to-market plan.</div>
+        <div class="card-meta">
+          <div class="card-meta-item"><span class="card-meta-label">Effort:</span> 6-8 weken</div>
+          <div class="card-meta-item"><span class="card-meta-label">Eigenaar:</span> Patrick</div>
+        </div>
+        <div class="card-tags"><span class="tag build">Bouwen & Leveren</span><span class="tag strategy">Strategie & Groei</span></div>
+      </div>
+
+      <div class="card lane-later" data-category="strategy">
+        <div class="card-top">
+          <div class="card-title">AI-workshops voor MKB</div>
+          <span class="card-status status-not-started">Not started</span>
+        </div>
+        <div class="card-desc">Korte hands-on sessies: "AI voor jouw bedrijf in 2 uur." Laagdrempelig, lead generation, positionering als expert.</div>
+        <div class="card-meta">
+          <div class="card-meta-item"><span class="card-meta-label">Effort:</span> 2-3 weken voorbereiding</div>
+          <div class="card-meta-item"><span class="card-meta-label">Eigenaar:</span> Patrick</div>
+        </div>
+        <div class="card-tags"><span class="tag strategy">Strategie & Groei</span><span class="tag sales">Sales & Marketing</span></div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- Risks & Dependencies -->
+  <div class="swimlane" style="margin-top: 48px;">
+    <div class="swimlane-header">
+      <div class="swimlane-dot" style="background: var(--at-risk);"></div>
+      <div class="swimlane-title">Risico's & Afhankelijkheden</div>
+    </div>
+    <div style="background: var(--surface); border: 1px solid var(--border); border-radius: 12px; padding: 24px;">
+      <div style="margin-bottom: 16px;">
+        <strong style="color: var(--at-risk);">Bottleneck:</strong>
+        <span style="color: var(--text-muted);"> De overgang van bouwen naar verkopen is de grootste risicofactor. Technisch is alles er — het gaat nu om zichtbaarheid en klantcontact.</span>
+      </div>
+      <div style="margin-bottom: 16px;">
+        <strong style="color: var(--at-risk);">Capaciteit:</strong>
+        <span style="color: var(--text-muted);"> Solo-operator. Maximaal 2-3 items tegelijk in "Now". Bescherm focus en energie — zeg nee tegen rabbit holes.</span>
+      </div>
+      <div>
+        <strong style="color: var(--next);">Kritiek pad:</strong>
+        <span style="color: var(--text-muted);"> Portfolio live → Klantgesprek → Eerste project → Case study → Herhaalbaar aanbod. Elke stap ontgrendelt de volgende.</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="footer">
+    PHNK Media & Design — Roadmap 2026 / Gegenereerd op 12 april 2026
+  </div>
+
+</div>
+
+<script>
+  // Filter functionality
+  const filterBtns = document.querySelectorAll('.filter-btn');
+  const allCards = document.querySelectorAll('.card');
+
+  filterBtns.forEach(btn => {
+    btn.addEventListener('click', () => {
+      filterBtns.forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+
+      const filter = btn.dataset.filter;
+
+      allCards.forEach(card => {
+        if (filter === 'all') {
+          card.style.display = '';
+        } else {
+          const category = card.dataset.category;
+          card.style.display = category === filter ? '' : 'none';
+        }
+      });
+
+      // Update stats
+      updateStats(filter);
+    });
+  });
+
+  function updateStats(filter) {
+    const lanes = ['now', 'next', 'later'];
+    let total = 0;
+
+    lanes.forEach(lane => {
+      const container = document.getElementById('cards-' + lane);
+      const cards = container.querySelectorAll('.card');
+      let visible = 0;
+      cards.forEach(c => {
+        if (c.style.display !== 'none') visible++;
+      });
+      document.getElementById('stat-' + lane).textContent = visible;
+      total += visible;
+    });
+
+    document.getElementById('stat-total').textContent = total;
+  }
+</script>
+</body>
+</html>
