@@ -48,11 +48,11 @@
 
 <style>
   :root {
-    --bg: #0d0d1a;
-    --surface: #131320;
-    --border: rgba(255,255,255,0.11);
-    --text: #eeeef4;
-    --muted: #b4b4cc;
+    --bg: #111130;
+    --surface: #191942;
+    --border: rgba(255,255,255,0.16);
+    --text: #f2f2fa;
+    --muted: #c2c2de;
     --accent: #ff3c6e;
     --accent2: #7c3fff;
     --white: #ffffff;
@@ -102,7 +102,7 @@
     align-items: center;
     padding: 1.25rem 2.5rem;
     border-bottom: 1px solid var(--border);
-    background: rgba(13,13,26,0.85);
+    background: rgba(17,17,48,0.88);
     backdrop-filter: blur(16px);
   }
 
@@ -177,7 +177,7 @@
     font-size: 0.72rem;
     letter-spacing: 0.1em;
     text-transform: uppercase;
-    background: rgba(13,13,26,0.96);
+    background: rgba(17,17,48,0.97);
     border: 1px solid var(--border);
     backdrop-filter: blur(16px);
     padding: 0.55rem 1rem;
@@ -1808,8 +1808,8 @@ function draw(ts) {
     orb.y += (orb.cy + driftY * 0.08 + py - orb.y) * 0.012;
     const x = orb.x * W, y = orb.y * H, r = orb.r * Math.min(W,H);
     const g = ctx.createRadialGradient(x,y,0,x,y,r);
-    g.addColorStop(0,  `rgba(${orb.color},0.16)`);
-    g.addColorStop(0.5,`rgba(${orb.color},0.07)`);
+    g.addColorStop(0,  `rgba(${orb.color},0.24)`);
+    g.addColorStop(0.5,`rgba(${orb.color},0.10)`);
     g.addColorStop(1,  `rgba(${orb.color},0)`);
     ctx.beginPath(); ctx.arc(x,y,r,0,Math.PI*2); ctx.fillStyle=g; ctx.fill();
   });
